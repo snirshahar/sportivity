@@ -1,5 +1,5 @@
 {
-  "users": [
+  "user": [
     {
       "id": "100",
       "fullName": "admin",
@@ -43,9 +43,23 @@
       "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
       "wishList": {},
       "createdAt": "1574795100000"
+<<<<<<< HEAD
+    },
+    {
+      "id": "105",
+      "fullName": "admin",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574690170000"
+=======
+>>>>>>> 3fe4012ad0e31691c501b122207cbd48ec3af166
     }
   ],
-  "activities": [
+  "activity": [
     {
       "id": "10c9b",
       "title": "Basketball on Friday",
