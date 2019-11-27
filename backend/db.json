@@ -1,0 +1,161 @@
+{
+  "user": [
+    {
+      "id": "100",
+      "fullName": "admin",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574690170000"
+    },
+    {
+      "id": "101",
+      "fullName": "daniel",
+      "email": "daniel@gmail.com",
+      "password": "123",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574745130000"
+    },
+    {
+      "id": "102",
+      "fullName": "ofer",
+      "email": "ofer@gmail.com",
+      "password": "123",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574705190000"
+    },
+    {
+      "id": 103,
+      "fullName": "snir",
+      "email": "snir@gmail.com",
+      "password": "123",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574795100000"
+    },
+    {
+      "id": "105",
+      "fullName": "admin",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "isAdmin": true,
+      "inbox": "{}",
+      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "wishList": {},
+      "createdAt": "1574690170000"
+    }
+  ],
+  "activity": [
+    {
+      "id": "10c9b",
+      "title": "Basketball on Friday",
+      "description": "Come to meet and play basketball with professional players",
+      "category": "Basketball",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "id": "101",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "id": "100",
+            "fullName": "Daniel Yona",
+            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          },
+          "createdAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "id": "101",
+            "fullName": "Ofer Baram",
+            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          },
+          "createdAt": 1574791800000
+        }
+      ],
+      "cycle": "weekly",
+      "isPublic": true,
+      "imgUrls": [],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "22:00"
+    },
+    {
+      "id": "a039c",
+      "title": "Soccer on Mondays",
+      "description": "Come to meet and play soccer with amateur players",
+      "category": "Soccer",
+      "createdBy": {
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "id": "101",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "id": "100",
+            "fullName": "Daniel Yona",
+            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          },
+          "createdAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "id": "101",
+            "fullName": "Ofer Baram",
+            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          },
+          "createdAt": 1574791800000
+        }
+      ],
+      "cycle": "weekly",
+      "isPublic": true,
+      "imgUrls": [],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "22:00"
+    }
+  ]
+}
