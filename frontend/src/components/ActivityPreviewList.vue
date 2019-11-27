@@ -1,6 +1,10 @@
 <template>
   <section class="activity-list">
-    <h1>Most Popular Activities At The Moment</h1>
+    <h1>Most Activities in Tel Aviv</h1>
+    <div v-for="activity in activities" :key="activity._id"></div>
+    <h1>Most Recent At The Moment</h1>
+    <div v-for="activity in activities" :key="activity._id"></div>
+    <h1>Today Activities Near You</h1>
     <div v-for="activity in activities" :key="activity._id"></div>
   </section>
 </template>
@@ -19,17 +23,7 @@ export default {
     // }
   },
   components: {
-    //   TEST TEST TEST!
     // activityPreview
   }
 };
 </script>
-
-<style scoped>
-.activity-list {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-}
-</style>
