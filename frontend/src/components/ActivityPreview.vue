@@ -1,14 +1,13 @@
 <template>
-  <section v-if="activity" class="preview-container">
-    <div class="preview-details">
-      <div class="preview-info">{{activity.title}}</div>
-      <div class="preview-desc">{{activity.description}}</div>
-      <div class="preview-creator">
-        {{activity.imgUrl}}
-        {{activity.fullName}}
-      </div>
+  <div class="preview-details">
+    <img :src="activity.imgUrls[0]"/>
+    <div class="preview-info">{{activity.title}}</div>
+    <div class="preview-desc">{{activity.description}}</div>
+    <div class="preview-creator">
+      <img :src="activity.createdBy.imgUrl" />
+      {{activity.createdBy.fullName}}
     </div>
-  </section>
+  </div>
 </template>
 
 <style>
@@ -18,6 +17,20 @@
 export default {
   props: {
     activity: Object
+  },
+  created() {
+    console.log(this.activity.id);
   }
 };
 </script>
+
+<style scoped>
+.preview-details {
+  border: 1px solid red;
+  flex: 0 0 25%;
+}
+
+img {
+  width: 50px;
+}
+</style>

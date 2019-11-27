@@ -5,8 +5,8 @@
     </div>
     <div class="activitity-preview-list-container">
       <ActivityPreviewList type="popular"></ActivityPreviewList>
-      <!-- <ActivityPreviewList type="recent"></ActivityPreviewList>
-      <ActivityPreviewList type="today"></ActivityPreviewList> -->
+      <ActivityPreviewList type="recent"></ActivityPreviewList>
+      <ActivityPreviewList type="today"></ActivityPreviewList>
     </div>
   </section>
 </template>
