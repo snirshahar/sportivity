@@ -1,8 +1,6 @@
 <template>
-  <section class="preview-container">
-      <img src="../img/soccer.jpg">
+  <section v-if="activity" class="preview-container">
       <div class="preview-details">
-    previewwwwwwwww
             <div class="preview-info">
               {{activity.title}}
             </div>
@@ -23,6 +21,9 @@
 
 <script>
 export default {
-  prop:['activity']
+  props:['activity'],
+  created(){
+    console.log('ACTIVITY', this.activity)
+  }
 };
 </script>
