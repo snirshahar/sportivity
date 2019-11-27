@@ -5,8 +5,8 @@
     </div>
     <div class="activitity-preview-list-container">
       <ActivityPreviewList type="popular"></ActivityPreviewList>
-      <ActivityPreviewList type="recent"></ActivityPreviewList>
-      <ActivityPreviewList type="today"></ActivityPreviewList>
+      <!-- <ActivityPreviewList type="recent"></ActivityPreviewList>
+      <ActivityPreviewList type="today"></ActivityPreviewList> -->
     </div>
   </section>
 </template>
@@ -22,7 +22,9 @@ export default {
     ActivityPreviewList
   },
   created(){
-    // this.$store.dispatch.loadActivities
+    console.log('hi');
+    
+    this.$store.dispatch('loadActivities')
   }
 };
 </script>

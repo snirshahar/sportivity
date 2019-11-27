@@ -19,11 +19,16 @@ export default {
   },
   computed:{
     activities(){
-      return this.$store.getters[this.type]
+      console.log('store');
+      
+      return this.$store.getters.all
     }
   },
   components:{
     activityPreview
+  },
+  created(){
+    this.$store.dispatch({type: 'loadActivities'})
   }
 };
 </script>
