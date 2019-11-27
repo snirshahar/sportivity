@@ -4,7 +4,9 @@
       <img alt="Vue logo" src="../assets/logo.png" />
     </div>
     <div class="activitity-preview-list-container">
-      <ActivityPreviewList></ActivityPreviewList>
+      <ActivityPreviewList type="popular"></ActivityPreviewList>
+      <ActivityPreviewList type="recent"></ActivityPreviewList>
+      <ActivityPreviewList type="today"></ActivityPreviewList>
     </div>
   </section>
 </template>
@@ -15,8 +17,12 @@ import ActivityPreviewList from "../components/ActivityPreviewList";
 
 export default {
   name: "home",
+
   components: {
     ActivityPreviewList
+  },
+  created(){
+    // this.$store.dispatch.loadActivities
   }
 };
 </script>

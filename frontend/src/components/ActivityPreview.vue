@@ -2,6 +2,7 @@
   <section class="preview-container">
       <img src="../img/soccer.jpg">
       <div class="preview-details">
+    previewwwwwwwww
             <div class="preview-info">
               {{activity.title}}
             </div>
