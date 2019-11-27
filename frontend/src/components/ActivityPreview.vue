@@ -1,5 +1,5 @@
 <template>
-  <div>
-    activity preview here
-  </div>
+  <section class="preview-container">
+      <img src="" alt="">!!
+  </section>
 </template>
