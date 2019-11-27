@@ -2,15 +2,17 @@
   <section class="activity-list">
     <h1>Most Activities in Tel Aviv</h1>
     <button>See All</button>
-    <activity-preview v-for="activity in activities" :key="activity._id" :activity="activity"></activity-preview>
+    <ActivityPreview v-for="activity in activities" :key="activity._id" :activity="activity"></ActivityPreview>
   </section>
 </template>
 
 <script>
-import activityPreview from './ActivityPreview'
+import ActivityPreview from './ActivityPreview'
 
 export default {
-  props: ['type'],
+  props: {
+    type: String
+  },
   data() {
     return {
     };
@@ -18,17 +20,12 @@ export default {
   methods: {
   },
   computed:{
-    activities(){
-      console.log('store');
-      
-      return this.$store.getters.all
+    activities(){      
+      return this.$store.getters[this.type];
     }
   },
   components:{
-    activityPreview
-  },
-  created(){
-    this.$store.dispatch({type: 'loadActivities'})
+    ActivityPreview
   }
 };
 </script>

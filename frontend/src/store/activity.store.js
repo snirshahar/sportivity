@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { activityService } from '@/services/ActivityService';
+import activityService from '../services/ActivityService';
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export default ({
   strict: true,
   state: {
     activities: {
@@ -15,18 +15,15 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    setActivities(state, type, activities) {
-      state.activities[type] = activities;
+    setActivities(state, { filter, activities }) {
+      state.activities[filter] = activities;
     },
   },
   actions: {
-    loadActivities(context) {
-      console.log('sdfsdfgsdf');
-      
-      return activityService.getActivities()
-          .then(activities => {
-        return context.commit({ type:"setActivities", activities })
-      });
+    async loadActivities(context) {
+      const activities = await activityService.getActivities();
+      context.commit({ type: "setActivities", filter: 'all', activities });
+      return activities;
     }
   },
   getters: {
