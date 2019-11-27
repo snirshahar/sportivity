@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { activityService } from '@/services/ActivityService';
 
 Vue.use(Vuex)
 
@@ -19,19 +20,23 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    
+    loadActivities(context) {
+      return activityService.getActivies().then(activities => {
+        return context.commit({ setActivities, activities })
+      });
+    }
   },
   getters: {
-    all(){
+    all() {
       return this.state.all;
     },
-    popular(){
+    popular() {
       return this.state.popular;
     },
-    recent(){
+    recent() {
       return this.state.recent;
     },
-    today(){
+    today() {
       return this.state.today;
     },
   },
