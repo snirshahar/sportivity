@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/create">Create Activity</router-link>
+      <nav-bar></nav-bar>
     </div>
     <router-view />
   </div>
@@ -30,3 +29,14 @@
   }
 }
 </style>
+
+<script>
+import navBar from './components/NavBar'
+
+export default {
+  components: {
+    navBar
+  },
+
+}
+</script>
