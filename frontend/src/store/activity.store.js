@@ -21,23 +21,26 @@ export default new Vuex.Store({
   },
   actions: {
     loadActivities(context) {
-      return activityService.getActivies().then(activities => {
-        return context.commit({ setActivities, activities })
+      console.log('sdfsdfgsdf');
+      
+      return activityService.getActivities()
+          .then(activities => {
+        return context.commit({ type:"setActivities", activities })
       });
     }
   },
   getters: {
-    all() {
-      return this.state.all;
+    all(state) {
+      return state.activities.all;
     },
-    popular() {
-      return this.state.popular;
+    popular(state) {
+      return state.activities.popular;
     },
-    recent() {
-      return this.state.recent;
+    recent(state) {
+      return state.activities.recent;
     },
-    today() {
-      return this.state.today;
+    today(state) {
+      return state.activities.today;
     },
   },
   modules: {
