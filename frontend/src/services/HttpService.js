@@ -1,4 +1,11 @@
 import axios from 'axios';
+
+export const httpService = {
+    get,
+    delete: remove,
+    post,
+    put
+}
  
 function _handleError(err) {
     console.log('Err:', err);
@@ -26,12 +33,4 @@ function post(url, data) {
 function put(url, data) {
     return axios.put(url, data)
         .catch(_handleError)
-}
- 
- 
-export const httpService = {
-    get,
-    delete: remove,
-    post,
-    put
 }
