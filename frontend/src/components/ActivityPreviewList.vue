@@ -12,6 +12,7 @@
 
 <script>
 import ActivityPreview from "./ActivityPreview";
+import AttendeeList from "./AttendeeList";
 
 export default {
   props: {
@@ -27,7 +28,8 @@ export default {
     }
   },
   components: {
-    ActivityPreview
+    ActivityPreview,
+    AttendeeList
   }
 };
 </script>
@@ -39,6 +41,7 @@ export default {
 }
 .activity-list{
   display: flex;
+  overflow: auto;
   flex-direction: row;
 }
 .activity-top{

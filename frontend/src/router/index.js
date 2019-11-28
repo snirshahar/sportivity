@@ -5,6 +5,7 @@ import ActivityDetails from '../views/ActivityDetails.vue'
 import EditActivity from '../views/EditActivity.vue'
 import Login from '../views/Login.vue'
 import UserProfile from '../views/UserProfile.vue'
+import ActivityList from '../views/ActivityList.vue'
 
 
 
@@ -17,6 +18,14 @@ const routes = [
     component: Home
   },
   {
+<<<<<<< HEAD
+=======
+    path: '/activity/:id',
+    name: 'activity',
+    component: ActivityDetails,
+  },
+  {
+>>>>>>> activity-details
     path: '/activity/add',
     name: 'activityEdit',
     component: EditActivity
@@ -41,6 +50,11 @@ const routes = [
     name: 'profile',
     component: UserProfile
   },
+  {
+    path: '/explore',
+    name: 'activityList',
+    component: ActivityList
+  }
 ]
 
 const router = new VueRouter({
