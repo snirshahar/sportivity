@@ -8,6 +8,10 @@ import UserProfile from '../views/UserProfile.vue'
 import ActivityList from '../views/ActivityList.vue'
 
 
+import ActivityAbout from "../components/ActivityAbout";
+import ActivityMembers from "../components/ActivityMembers";
+import ActivityDiscussions from "../components/ActivityDiscussions";
+import ActivityPhotos from "../components/ActivityPhotos";
 
 Vue.use(VueRouter)
 
@@ -18,14 +22,6 @@ const routes = [
     component: Home
   },
   {
-<<<<<<< HEAD
-=======
-    path: '/activity/:id',
-    name: 'activity',
-    component: ActivityDetails,
-  },
-  {
->>>>>>> activity-details
     path: '/activity/add',
     name: 'activityEdit',
     component: EditActivity
@@ -38,7 +34,29 @@ const routes = [
   {
     path: '/activity/:id',
     name: 'ActivityDetails',
-    component: ActivityDetails
+    component: ActivityDetails,
+    children: [
+      {
+        path: '/activity/:id/about',
+        name: 'activityAbout',
+        component: ActivityAbout
+      },
+      {
+        path: '/activity/:id/members',
+        name: 'Members',
+        component: ActivityMembers
+      },
+      {
+        path: '/activity/:id/discussions',
+        name: 'activityDiscussions',
+        component: ActivityDiscussions
+      },
+      {
+        path: '/activity/:id/photos',
+        name: 'activityPhotos',
+        component: ActivityPhotos
+      }
+    ]
   },
   {
     path: '/login',
