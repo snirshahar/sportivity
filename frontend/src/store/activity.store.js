@@ -18,7 +18,9 @@ export default ({
     setActivities(state, { filter, activities }) {
       state.activities[filter] = activities;
     },
-    saveActivity(state, {activity}){
+    saveActivity(state, { activity }) {
+      console.log('mutate', activity);
+
       state.activities.all.unshift(activity);
       state.activities.recent.unshift(activity);
       //maby need to check if add to activities.today
@@ -30,12 +32,10 @@ export default ({
       context.commit({ type: "setActivities", filter: 'all', activities });
       return activities;
     },
-    async saveActivity(context, {activity}){
-      console.log(activity);
-      const currActivity = await activityService.addActivity(activity);
-      console.log('currActivity', currActivity);
-      context.commit({ type: "saveActivity", currActivity});
-      return currActivity
+    async saveActivity(context, { activity }) {
+      activity = await activityService.addActivity(activity);
+      context.commit({ type: "saveActivity", activity });
+      return activity
     }
   },
   getters: {

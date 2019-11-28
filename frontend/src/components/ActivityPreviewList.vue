@@ -5,7 +5,7 @@
       <button>See All</button>
     </div>
     <div class="activity-list">
-      <ActivityPreview v-for="activity in activities" :key="activity._id" :activity="activity"></ActivityPreview>
+      <ActivityPreview v-for="activity in activities" :key="activity.id" :activity="activity"></ActivityPreview>
     </div>
   </section>
 </template>

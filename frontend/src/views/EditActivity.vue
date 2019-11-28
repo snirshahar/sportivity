@@ -1,41 +1,49 @@
 <template>
-
-<section class="edit-activity-container">
+  <section class="edit-activity-container">
     <form @submit.prevent="saveActivity" v-if="activity">
       <label>
         <p>Activity Title</p>
-        <input type="text" v-model="activity.title" required>
+        <input type="text" v-model="activity.title" required />
       </label>
       <label>
         <p>Activity Description</p>
-        <input type="text" v-model="activity.description" required>
+        <input type="text" v-model="activity.description" required />
       </label>
       <label>
         <p>Activity Category</p>
-        <input type="text" v-model="activity.category" required>
+         <select v-model="activity.category">
+          <option value="all">All</option>
+          <option value="soccer">Soccer</option>
+          <option value="basketball">Basketball</option>
+          <option value="workout">Workout</option>
+          <option value="yoga">Yoga</option>
+          <option value="pooldance">Pooldance</option>
+          <option value="swimming">Swimming</option>
+          <option value="other">Other</option>
+        </select>
       </label>
       <label>
         <p>Max Attendees</p>
-        <input type="text" v-model="activity.maxAttendees" required>
+        <input type="text" v-model="activity.maxAttendees" required />
       </label>
       <label>
         <p>City</p>
-        <input type="text" v-model="activity.location.city" >
-        </label>
+        <input type="text" v-model="activity.location.city" />
+      </label>
       <label>
         <p>Street</p>
-        <input type="text" v-model="activity.location.street" >
+        <input type="text" v-model="activity.location.street" />
       </label>
       <label>
         <p>Activity date and time</p>
-        <input type="date" v-model="activity.startsAt" required>
+        <input type="date" v-model="activity.startsAt" required />
       </label>
       <label v-if="!this.activityId">
         <p>Activity Created by</p>
         <!-- what happ when user choose the pics? will they shows? -->
-        <input type="text" :value="activity.createdBy.fullName" disabled>
-        <img :src="activity.createdBy.imgUrl" alt="">
-        <input type="text" :value="activity.createdBy.imgUrl" disabled>
+        <input type="text" :value="activity.createdBy.fullName" disabled />
+        <img :src="activity.createdBy.imgUrl" alt />
+        <input type="text" :value="activity.createdBy.imgUrl" disabled />
       </label>
       <label>
         <p>Activity Cycle</p>
@@ -47,18 +55,18 @@
       </label>
       <label>
         <p>Main activity image</p>
-        <input @change="uploadImg" type="file">
+        <input @change="uploadImg" type="file" />
       </label>
       <label>
         <p>another activity images</p>
-        <input @change="uploadImg" type="file" multiple>
+        <input @change="uploadImg" type="file" multiple />
       </label>
       <!-- <el-form-item>In Stock:
       <el-switch v-model="activity.inStock"></el-switch>
-      </el-form-item> -->
+      </el-form-item>-->
       <button>{{this.saveButton}}</button>
     </form>
-      <!-- <button @click="userCanceled()">Cancel</button> -->
+    <!-- <button @click="userCanceled()">Cancel</button> -->
   </section>
 </template>
 
@@ -66,83 +74,77 @@
 </style>
 
 <script>
-// import activityService from '../services/ActivityService'
+import activityService from "../services/ActivityService";
 // import MapActivity from '../components/MapActivity'
 
 export default {
-  data(){
-    return{
-      activity:{
-        title:'',
-        description:'',
-        category:'',
-        createdBy:{
-            fullName:'ofer',
-            imgUrl:'avatar',
+  data() {
+    return {
+      activity: {
+        title: "",
+        description: "",
+        category: "",
+        createdBy: {
+          fullName: "ofer",
+          imgUrl: "avatar"
         },
-        cycle:'Once',
-        startsAt:Date.now(),
-        maxAttendees:'',
-        location:{
-          city:'',
-          street:''
+        cycle: "Once",
+        startsAt: Date.now(),
+        maxAttendees: "",
+        location: {
+          city: "",
+          street: ""
         }
       },
       activityId: null
+    };
+  },
+  computed: {
+    saveButton() {
+      if (this.$route.params.id) return "Save";
+      else {
+        this.activity = {
+          title: "",
+          description: "",
+          category: "",
+          createdBy: {
+            fullName: "",
+            imgUrl: ""
+          },
+          startsAt: "",
+          location: {
+            city: "",
+            street: ""
+          },
+          maxAttendees: "",
+          cycle: "Once"
+        };
       }
-    },
-    computed:{
-      saveButton(){
-        if(this.$route.params.id) return 'Save';
-        else {
-          this.activity={
-            title:'',
-            description:'',
-            category:'',
-            createdBy:{
-              fullName:'',
-              imgUrl:'',
-            },
-            startsAt:'',
-            location:{
-              city:'',
-              street:''
-            },
-            maxAttendees:'',
-            cycle:'Once'
-          }
-        }
-        return 'Create an activity'
-      },
-    },
-    component:{
-      // MapActivity
-    },
-    methods:{
-    uploadImg(ev){
+      return "Create an activity";
+    }
+  },
+  component: {
+    // MapActivity
+  },
+  methods: {
+    uploadImg(ev) {
       // activityService.uploadImg(ev)
       //   .then(res => this.activity.img = res.url)
     },
-    async saveActivity(){
-      console.log('userSave', this.activity);
-      await this.$store.dispatch({type:'saveActivity', activity:{...this.activity}})
-      this.$router.push('/')         
+    async saveActivity() {
+      console.log("userSave", this.activity);
+      await this.$store.dispatch({ type: "saveActivity", activity: this.activity});
+      this.$router.push("/");
     },
-    userCanceled(){
-      this.$router.push('/')
-    },
+    userCanceled() {
+      this.$router.push("/");
+    }
   },
-  created(){
+  async created() {
     this.activityId = this.$route.params.id;
-    console.log(this.activity.createdBy);
-    
-    // if(!this.activityId) return
-    // activityService.query(this.activityId)
-    //   .then(activity=> {
-    //     if(activity){
-    //       this.activity = {...activity};
-    //     }
-      // })
+    if (!this.activityId) return;
+    const activity = await activityService.getActivity(this.activityId);
+    this.activity = { ...activity };
   }
-}
+};
 </script>

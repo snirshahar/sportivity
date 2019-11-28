@@ -19,7 +19,6 @@ export default {
     activity: Object
   },
   created() {
-    console.log(this.activity.id);
   }
 };
 </script>
