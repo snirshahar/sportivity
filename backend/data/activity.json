@@ -12,28 +12,28 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "103",
-        "user.fullName": "Snir Shahar",
-        "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        "id": "103",
+        "fullName": "Snir Shahar",
+        "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "come play with us on Monday"
         },
         "sentAt": 1574795500000
@@ -41,9 +41,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
         },
         "sentAt": 1574791800000
       }
@@ -51,10 +51,10 @@
     "cycle": "weekly",
     "isPublic": true,
     "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
-      "lng": 45.64,
-      "lon": 253.43,
+      "lng": 35.035850,
+      "lon": 31.848070,
       "city": "Haifa",
       "street": "Hagalil 45"
     },
@@ -73,23 +73,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "been there last week - was awesome!"
         },
         "sentAt": 1574795500000
@@ -97,9 +97,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "come and try to beat our invincible team!"
         },
         "sentAt": 1574791800000
@@ -108,7 +108,7 @@
     "cycle": "weekly",
     "isPublic": true,
     "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -130,23 +130,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "im about to come, see ya there guys!"
         },
         "sentAt": 1574795500000
@@ -154,9 +154,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "can't wait already!"
         },
         "sentAt": 1574791800000
@@ -167,7 +167,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -189,23 +189,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "come on! free Arak shots in the air"
         },
         "sentAt": 1574795500000
@@ -213,9 +213,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "awesome initiative folks!"
         },
         "sentAt": 1574791800000
@@ -226,7 +226,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -248,28 +248,28 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "103",
-        "user.fullName": "Snir Shahar",
-        "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        "id": "103",
+        "fullName": "Snir Shahar",
+        "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "come play with us on Monday"
         },
         "sentAt": 1574795500000
@@ -277,9 +277,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "a party including yoga? im curious to see the result!"
         },
         "sentAt": 1574791800000
@@ -290,7 +290,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -312,23 +312,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "so, who's gonna win this year?"
         },
         "sentAt": 1574795500000
@@ -336,9 +336,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "i want my hotdogs inside a pita!"
         },
         "sentAt": 1574791800000
@@ -349,7 +349,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -371,28 +371,28 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "103",
-        "user.fullName": "Snir Shahar",
-        "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        "id": "103",
+        "fullName": "Snir Shahar",
+        "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
       },
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "see you there sunshine!"
         },
         "sentAt": 1574795500000
@@ -400,9 +400,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "pool for swimming or table pool?"
         },
         "sentAt": 1574791800000
@@ -413,7 +413,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -435,23 +435,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "come on barca!"
         },
         "sentAt": 1574795500000
@@ -459,9 +459,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "visca barca!!!!!!"
         },
         "sentAt": 1574791800000
@@ -472,7 +472,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -494,23 +494,23 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "striker is my second name"
         },
         "sentAt": 1574795500000
@@ -518,9 +518,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "i want to be the goalkeeper!"
         },
         "sentAt": 1574791800000
@@ -531,7 +531,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 12,
+    "maxAttendees": 12,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -553,28 +553,28 @@
     "createdAt": 1574795100000,
     "attendees": [
       {
-        "user.id": "101",
-        "user.fullName": "Daniel Yona",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       {
-        "user.id": "103",
-        "user.fullName": "Snir Shahar",
-        "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        "id": "103",
+        "fullName": "Snir Shahar",
+        "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
       },
       {
-        "user.id": "102",
-        "user.fullName": "Ofer Baram",
-        "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "id": "102",
+        "fullName": "Ofer Baram",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       }
     ],
     "msgs": [
       {
         "id": "asd",
         "from": {
-          "user.id": "100",
-          "user.fullName": "Daniel Yona",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "100",
+          "fullName": "Daniel Yona",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "been there last week, now i have a headache but i love it!"
         },
         "sentAt": 1574795500000
@@ -582,9 +582,9 @@
       {
         "id": "asd",
         "from": {
-          "user.id": "101",
-          "user.fullName": "Ofer Baram",
-          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "id": "101",
+          "fullName": "Ofer Baram",
+          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
           "txt": "all who attend, think of an excuse for your lost from now"
         },
         "sentAt": 1574791800000
@@ -595,7 +595,7 @@
     "imgUrls": [
       "http://lorempixel.com/400/200/sports/"
     ],
-    "maxAttendees ": 20,
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,

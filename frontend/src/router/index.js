@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/activity/:id',
     name: 'activity',
-    component: ActivityDetails
+    component: ActivityDetails,
   },
   {
     path: '/activity/add',
