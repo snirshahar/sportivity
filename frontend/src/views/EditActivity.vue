@@ -14,6 +14,22 @@
         <p>Activity Category</p>
         <input type="text" v-model="activity.category" required>
       </label>
+      <label>
+        <p>Max Attendees</p>
+        <input type="text" v-model="activity.maxAttendees" required>
+      </label>
+      <label>
+        <p>City</p>
+        <input type="text" v-model="activity.location.city" >
+        </label>
+      <label>
+        <p>Street</p>
+        <input type="text" v-model="activity.location.street" >
+      </label>
+      <label>
+        <p>Activity date and time</p>
+        <input type="date" v-model="activity.startsAt" required>
+      </label>
       <label v-if="!this.activityId">
         <p>Activity Created by</p>
         <!-- what happ when user choose the pics? will they shows? -->
@@ -65,6 +81,12 @@ export default {
             imgUrl:'avatar',
         },
         cycle:'Once',
+        startsAt:Date.now(),
+        maxAttendees:'',
+        location:{
+          city:'',
+          street:''
+        }
       },
       activityId: null
       }
@@ -81,6 +103,12 @@ export default {
               fullName:'',
               imgUrl:'',
             },
+            startsAt:'',
+            location:{
+              city:'',
+              street:''
+            },
+            maxAttendees:'',
             cycle:'Once'
           }
         }

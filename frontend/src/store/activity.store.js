@@ -33,8 +33,9 @@ export default ({
     async saveActivity(context, {activity}){
       console.log(activity);
       const currActivity = await activityService.addActivity(activity);
-      console.log(currActivity);
+      console.log('currActivity', currActivity);
       context.commit({ type: "saveActivity", currActivity});
+      return currActivity
     }
   },
   getters: {
