@@ -39,6 +39,7 @@ export default {
 }
 .activity-list{
   display: flex;
+  overflow: auto;
   flex-direction: row;
 }
 .activity-top{

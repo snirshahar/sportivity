@@ -1,6 +1,11 @@
 <template>
+<<<<<<< HEAD
   <div class="preview-details" @click="$router.push(`/activity/details/${activity.id}`)">
     <img v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]"/>
+=======
+  <div class="preview-details" @click="$router.push(`/activity/${activity.id}`)">
+    <img :src="activity.imgUrls[0]"/>
+>>>>>>> activity-details
     <div class="preview-info">{{activity.title}}</div>
     <div class="preview-desc">{{activity.description}}</div>
     <div class="preview-creator">
