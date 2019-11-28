@@ -7,6 +7,7 @@
       <img :src="activity.createdBy.imgUrl"  />
       {{activity.createdBy.fullName}}
     </div>
+    <AttendeeList></AttendeeList>
   </div>
 </template>
 
@@ -14,6 +15,8 @@
 </style>
 
 <script>
+import AttendeeList from '../components/AttendeeList'
+
 export default {
   props: {
     activity: Object
@@ -30,7 +33,7 @@ export default {
   flex: 0 0 25%;
 }
 
-.preview-details:hover{
+.preview-details:hover {
   border: 1px solid blue;
 }
 
