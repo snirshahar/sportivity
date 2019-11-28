@@ -1,10 +1,10 @@
 <template>
   <div class="preview-details" @click="$router.push(`/activity/details/${activity.id}`)">
-    <img :src="activity.imgUrls[0]"/>
+    <img v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]"/>
     <div class="preview-info">{{activity.title}}</div>
     <div class="preview-desc">{{activity.description}}</div>
     <div class="preview-creator">
-      <img :src="activity.createdBy.imgUrl" />
+      <img :src="activity.createdBy.imgUrl"  />
       {{activity.createdBy.fullName}}
     </div>
   </div>

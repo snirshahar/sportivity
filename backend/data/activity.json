@@ -1,20 +1,42 @@
 [
   {
-    "title": "!!!!!!!!!!!!!!!!!!!!",
     "description": "sdf",
-    "category": "sdf",
+    "category": "basketball",
     "createdBy": {
       "fullName": "",
       "imgUrl": ""
     },
-    "startsAt": "2019-11-20",
+    "startsAt": {
+      "date": "2019-11-11",
+      "time": "01:01"
+    },
     "location": {
       "city": "sdf",
       "street": "sdf"
     },
-    "maxAttendees": "sdf",
+    "maxAttendees": "34",
     "cycle": "Once",
-    "id": "Ehg"
+    "mainImgUrl": "",
+    "imgUrls": ["https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"],
+    "title": "sdf",
+    "id": "fYn"
+  },
+  {
+    "title": "snir",
+    "description": "gogo",
+    "category": "pooldance",
+    "createdBy": {
+      "fullName": "",
+      "imgUrl": ""
+    },
+    "startsAt": "2019-11-13",
+    "location": {
+      "city": "haifa",
+      "street": "hagalil"
+    },
+    "maxAttendees": "20",
+    "cycle": "once",
+    "id": "Ytq"
   },
   {
     "title": "sdf",
@@ -49,23 +71,6 @@
     "maxAttendees": "ert",
     "cycle": "Once",
     "id": "JhX"
-  },
-  {
-    "title": "sdf",
-    "description": "fsd",
-    "category": "sfd",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-19",
-    "location": {
-      "city": "sfd",
-      "street": "sdf"
-    },
-    "maxAttendees": "sfd",
-    "cycle": "Once",
-    "id": "DfD"
   },
   {
     "title": "danialllllllllll",

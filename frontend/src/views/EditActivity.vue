@@ -17,18 +17,18 @@
           <option value="basketball">Basketball</option>
           <option value="workout">Workout</option>
           <option value="yoga">Yoga</option>
-          <option value="pooldance">Pooldance</option>
+          <option value="pooldance">Pole dance</option>
           <option value="swimming">Swimming</option>
           <option value="other">Other</option>
         </select>
       </label>
       <label>
         <p>Max Attendees</p>
-        <input type="text" v-model="activity.maxAttendees" required />
+        <input type="number" v-model="activity.maxAttendees" required />
       </label>
       <label>
         <p>City</p>
-        <input type="text" v-model="activity.location.city" />
+        <input type="text" v-model="activity.location.city" required/>
       </label>
       <label>
         <p>Street</p>
@@ -36,7 +36,8 @@
       </label>
       <label>
         <p>Activity date and time</p>
-        <input type="date" v-model="activity.startsAt" required />
+        <input type="date" v-model="activity.startsAt.date" required />
+        <input type="time" v-model="activity.startsAt.time" required />
       </label>
       <label v-if="!this.activityId">
         <p>Activity Created by</p>
@@ -75,7 +76,6 @@
 
 <script>
 import activityService from "../services/ActivityService";
-// import MapActivity from '../components/MapActivity'
 
 export default {
   data() {
@@ -89,12 +89,16 @@ export default {
           imgUrl: "avatar"
         },
         cycle: "Once",
-        startsAt: Date.now(),
+        startsAt: {
+          date:'',
+          time:''
+        },
         maxAttendees: "",
         location: {
           city: "",
           street: ""
-        }
+        },
+        imgUrls:''
       },
       activityId: null
     };
@@ -104,20 +108,19 @@ export default {
       if (this.$route.params.id) return "Save";
       else {
         this.activity = {
-          title: "",
-          description: "",
-          category: "",
           createdBy: {
             fullName: "",
             imgUrl: ""
           },
-          startsAt: "",
+          startsAt: {
+          date:'',
+          time:''
+          },
           location: {
             city: "",
             street: ""
           },
-          maxAttendees: "",
-          cycle: "Once"
+          imgUrls:''
         };
       }
       return "Create an activity";
@@ -132,7 +135,8 @@ export default {
       //   .then(res => this.activity.img = res.url)
     },
     async saveActivity() {
-      console.log("userSave", this.activity);
+      console.log('new activity', this.activity);
+      if(!this.activity.imgUrls[0]) this.activity.imgUrls[0]="https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
       await this.$store.dispatch({ type: "saveActivity", activity: this.activity});
       this.$router.push("/");
     },
