@@ -1,6 +1,6 @@
 import { httpService } from './HttpService.js';
 
-const BASE_URL = 'http://localhost:3000/api/activity'
+const BASE_URL = 'http://localhost:3000/api/activity/'
 
 function getActivities(){
     return httpService.get(BASE_URL).then(res => {

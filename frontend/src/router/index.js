@@ -5,7 +5,7 @@ import ActivityDetails from '../views/ActivityDetails.vue'
 import EditActivity from '../views/EditActivity.vue'
 import Login from '../views/Login.vue'
 import UserProfile from '../views/UserProfile.vue'
-import Explore from '../views/Explore.vue'
+import ActivityList from '../views/ActivityList.vue'
 
 
 
@@ -44,8 +44,8 @@ const routes = [
   },
   {
     path: '/explore',
-    name: 'explore',
-    component: Explore
+    name: 'activityList',
+    component: ActivityList
   }
 ]
 

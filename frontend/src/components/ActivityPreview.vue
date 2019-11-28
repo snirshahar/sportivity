@@ -1,12 +1,13 @@
 <template>
   <div class="preview-details" @click="$router.push(`/activity/details/${activity.id}`)">
-    <img :src="activity.imgUrls[0]"/>
+    <img :src="activity.imgUrls[0]" />
     <div class="preview-info">{{activity.title}}</div>
     <div class="preview-desc">{{activity.description}}</div>
     <div class="preview-creator">
       <img :src="activity.createdBy.imgUrl" />
       {{activity.createdBy.fullName}}
     </div>
+    <AttendeeList></AttendeeList>
   </div>
 </template>
 
@@ -14,12 +15,16 @@
 </style>
 
 <script>
+import AttendeeList from '../components/AttendeeList'
+
 export default {
   props: {
     activity: Object
   },
   created() {
-    console.log(this.activity.id);
+  },
+  components: {
+    AttendeeList
   }
 };
 </script>
@@ -31,7 +36,7 @@ export default {
   flex: 0 0 25%;
 }
 
-.preview-details:hover{
+.preview-details:hover {
   border: 1px solid blue;
 }
 

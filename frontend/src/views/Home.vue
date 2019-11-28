@@ -15,16 +15,15 @@
 
 <script>
 import ActivityPreviewList from "../components/ActivityPreviewList";
-import Explore from "../views/Explore";
+import ActivityList from "../views/ActivityList";
 
 export default {
   name: "home",
   components: {
     ActivityPreviewList,
-    Explore
+    ActivityList
   },
   created() {
-    console.log("hi");
     this.$store.dispatch("loadActivities");
   }
 };
