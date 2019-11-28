@@ -5,6 +5,7 @@ import ActivityDetails from '../views/ActivityDetails.vue'
 import EditActivity from '../views/EditActivity.vue'
 import Login from '../views/Login.vue'
 import UserProfile from '../views/UserProfile.vue'
+import Explore from '../views/Explore.vue'
 
 
 
@@ -41,6 +42,11 @@ const routes = [
     name: 'profile',
     component: UserProfile
   },
+  {
+    path: '/explore',
+    name: 'explore',
+    component: Explore
+  }
 ]
 
 const router = new VueRouter({

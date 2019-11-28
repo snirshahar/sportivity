@@ -6,8 +6,8 @@
     </span>
     </router-link>
     <div class="user-login-container">
-      <router-link to="/activity/add">Create a new activity</router-link>
-      <router-link to="/login">SignIn</router-link>
+      <router-link to="/activity/add">Create</router-link> |
+      <router-link to="/login">Sign In</router-link>
     </div>
   </nav>
 </template>

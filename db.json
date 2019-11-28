@@ -13,34 +13,34 @@
     },
     {
       "id": "101",
-      "fullName": "daniel",
+      "fullName": "Daniel Yona",
       "email": "daniel@gmail.com",
       "password": "123",
       "isAdmin": true,
       "inbox": "{}",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-14-256.png",
       "wishList": {},
       "createdAt": "1574745130000"
     },
     {
       "id": "102",
-      "fullName": "ofer",
+      "fullName": "Ofer Baram",
       "email": "ofer@gmail.com",
       "password": "123",
       "isAdmin": true,
       "inbox": "{}",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Magician-256.png",
       "wishList": {},
       "createdAt": "1574705190000"
     },
     {
-      "id": 103,
-      "fullName": "snir",
+      "id": "103",
+      "fullName": "Snir Shahar",
       "email": "snir@gmail.com",
       "password": "123",
       "isAdmin": true,
       "inbox": "{}",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+      "imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png",
       "wishList": {},
       "createdAt": "1574795100000"
     },
@@ -70,34 +70,40 @@
       "createdAt": 1574795100000,
       "attendees": [
         {
-          "id": "101",
-          "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
         },
         {
-          "id": "102",
-          "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "103",
+          "user.fullName": "Snir Shahar",
+          "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
         }
       ],
       "msgs": [
         {
           "id": "asd",
           "from": {
-            "id": "100",
-            "fullName": "Daniel Yona",
-            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "come play with us on Monday"
           },
-          "createdAt": 1574795500000
+          "sentAt": 1574795500000
         },
         {
           "id": "asd",
           "from": {
-            "id": "101",
-            "fullName": "Ofer Baram",
-            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
           },
-          "createdAt": 1574791800000
+          "sentAt": 1574791800000
         }
       ],
       "cycle": "weekly",
@@ -110,44 +116,51 @@
         "city": "Haifa",
         "street": "Hagalil 45"
       },
-      "startsAt": "22:00"
+      "startsAt": "Monday 2/12/19 20:00"
     },
     {
-      "id": "a039c",
-      "title": "Soccer on Mondays",
-      "description": "Come to meet and play soccer with amateur players",
+      "id": "10c9b",
+      "title": "Soccer on Friday",
+      "description": "Come to meet and play Soccer with professional players",
       "category": "Soccer",
       "createdBy": {
-        "id": "102",
-        "fullName": "Ofer Baram",
+        "id": "101",
+        "fullName": "Daniel Yona",
         "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
       },
       "createdAt": 1574795100000,
       "attendees": [
         {
-          "id": "101",
-          "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
         }
       ],
       "msgs": [
         {
           "id": "asd",
           "from": {
-            "id": "100",
-            "fullName": "Daniel Yona",
-            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "been there last week - was awesome!"
           },
-          "createdAt": 1574795500000
+          "sentAt": 1574795500000
         },
         {
           "id": "asd",
           "from": {
-            "id": "101",
-            "fullName": "Ofer Baram",
-            "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "come and try to beat our invincible team!"
           },
-          "createdAt": 1574791800000
+          "sentAt": 1574791800000
         }
       ],
       "cycle": "weekly",
@@ -160,7 +173,494 @@
         "city": "Haifa",
         "street": "Hagalil 45"
       },
-      "startsAt": "22:00"
+      "startsAt": "Friday 29/11/19 20:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Kite-Surfing for beginners",
+      "description": "Got a dream to surf? this place is for you",
+      "category": "Surfing",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "im about to come, see ya there guys!"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "can't wait already!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "monthly",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Sunday 1/12/19 11:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Watch Maccabi Tel Aviv match in Misterbit offices",
+      "description": "Watch Maccabi Tel Aviv on Euroleague with together with all the craziest fans",
+      "category": "Basketball",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "come on! free Arak shots in the air"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "awesome initiative folks!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "once",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Thursday 28/11/19 20:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Yoga Party in the Negev",
+      "description": "Like Parties? inlove with Yoga? this is your place!",
+      "category": "Yoga",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "103",
+          "user.fullName": "Snir Shahar",
+          "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "come play with us on Monday"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "a party including yoga? im curious to see the result!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "once",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Sunday 1/12/19 7:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Hotdog eating competition ",
+      "description": "C'mon, who doesn't like hotdogs? 1000$ prize for the winner",
+      "category": "Other",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "so, who's gonna win this year?"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "i want my hotdogs inside a pita!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "once",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Monday 2/12/19 20:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Pool for professionals",
+      "description": "Come to meet and play pool with professional players",
+      "category": "Pool",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "103",
+          "user.fullName": "Snir Shahar",
+          "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        },
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "see you there sunshine!"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "pool for swimming or table pool?"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "weekly",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Friday 29/11/19 20:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Watch Barcelona's game in champions league",
+      "description": "Watch the game vs Dortmund in the best bar in Mavo Horon",
+      "category": "Soccer",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "come on barca!"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "visca barca!!!!!!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "once",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Tuesday 3/12/19 22:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Katregel 6on6 teams",
+      "description": "Come to play katregel in the neighborhood",
+      "category": "Soccer",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "striker is my second name"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "i want to be the goalkeeper!"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "weekly",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 12,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Monday 2/12/19 20:00"
+    },
+    {
+      "id": "10c9b",
+      "title": "Running in the cycles inside the Metargelim's room",
+      "description": "Take the first step to achieve your medal in the programming olympics",
+      "category": "Workout",
+      "createdBy": {
+        "id": "101",
+        "fullName": "Daniel Yona",
+        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      },
+      "createdAt": 1574795100000,
+      "attendees": [
+        {
+          "user.id": "101",
+          "user.fullName": "Daniel Yona",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        },
+        {
+          "user.id": "103",
+          "user.fullName": "Snir Shahar",
+          "user.imgUrl": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Man-16-256.png"
+        },
+        {
+          "user.id": "102",
+          "user.fullName": "Ofer Baram",
+          "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        }
+      ],
+      "msgs": [
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "100",
+            "user.fullName": "Daniel Yona",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "been there last week, now i have a headache but i love it!"
+          },
+          "sentAt": 1574795500000
+        },
+        {
+          "id": "asd",
+          "from": {
+            "user.id": "101",
+            "user.fullName": "Ofer Baram",
+            "user.imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            "txt": "all who attend, think of an excuse for your lost from now"
+          },
+          "sentAt": 1574791800000
+        }
+      ],
+      "cycle": "weekly",
+      "isPublic": true,
+      "imgUrls": [
+        "http://lorempixel.com/400/200/sports/"
+      ],
+      "maxAttendees ": 20,
+      "location": {
+        "lng": 45.64,
+        "lon": 253.43,
+        "city": "Haifa",
+        "street": "Hagalil 45"
+      },
+      "startsAt": "Monday 2/12/19 18:00"
     }
   ]
 }
