@@ -18,12 +18,23 @@ export default ({
     setActivities(state, { filter, activities }) {
       state.activities[filter] = activities;
     },
+    saveActivity(state, {activity}){
+      state.activities.all.unshift(activity);
+      state.activities.recent.unshift(activity);
+      //maby need to check if add to activities.today
+    }
   },
   actions: {
     async loadActivities(context) {
       const activities = await activityService.getActivities();
       context.commit({ type: "setActivities", filter: 'all', activities });
       return activities;
+    },
+    async saveActivity(context, {activity}){
+      console.log(activity);
+      const currActivity = await activityService.addActivity(activity);
+      console.log(currActivity);
+      context.commit({ type: "saveActivity", currActivity});
     }
   },
   getters: {
