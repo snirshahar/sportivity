@@ -276,15 +276,10 @@
     ],
     "cycle": "weekly",
     "isPublic": true,
-<<<<<<< HEAD
     "imgUrls": [
       "https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"
     ],
     "maxAttendees ": 20,
-=======
-    "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
-    "maxAttendees": 20,
->>>>>>> activity-details
     "location": {
       "lng": 35.035850,
       "lon": 31.848070,
@@ -340,15 +335,10 @@
     ],
     "cycle": "weekly",
     "isPublic": true,
-<<<<<<< HEAD
     "imgUrls": [
       "https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"
     ],
     "maxAttendees ": 20,
-=======
-    "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
-    "maxAttendees": 20,
->>>>>>> activity-details
     "location": {
       "lng": 45.64,
       "lon": 253.43,
