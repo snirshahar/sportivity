@@ -4,7 +4,10 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store/store';
 import * as VueGoogleMaps from 'vue2-google-maps';
-import { GmapMarker } from 'vue2-google-maps/src/components/marker';
+import GmapMarker  from 'vue2-google-maps/src/components/marker';
+import 'vue-video-section/dist/vue-video-section.css';
+import VueVideoSection from 'vue-video-section'
+Vue.component('vue-video-section', VueVideoSection)
 
 Vue.component('GmapMarker', GmapMarker)
 Vue.use(VueGoogleMaps, {

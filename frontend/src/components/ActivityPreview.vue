@@ -3,6 +3,7 @@
     <div class="preview-image-container">
       <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
     </div>
+    <div class="wishlist-heart" @click.stop="test">❤</div>
     <div class="border">
       <div class="preview-top">
         <p class="preview-stars">{{activity.startsAt}}</p>
@@ -16,7 +17,10 @@
         <p>Hosted By</p>
         <div class="profile-card">
           <img :src="activity.createdBy.imgUrl" class="profile-image" />
-          <router-link @click.prevent="" :to="'/profile/' + activity.createdBy.id">{{activity.createdBy.fullName}}</router-link>
+          <router-link
+            @click.native="$event.stopImmediatePropagation()"
+            :to="'/profile/' + activity.createdBy.id"
+          >{{activity.createdBy.fullName}}</router-link>
         </div>
       </div>
     </div>
@@ -33,7 +37,11 @@ export default {
   props: {
     activity: Object
   },
-  created() {},
+  methods: {
+    test() {
+      console.log("test");
+    }
+  },
   components: {
     AttendeeList
   }
@@ -47,6 +55,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  position: relative;
   transition: all 0.2s;
   &:hover {
     box-shadow: 0 0 2px 2px rgb(223, 223, 223);
@@ -103,6 +112,19 @@ export default {
   p {
     margin: 5px 0;
     font-size: 0.8rem;
+  }
+}
+
+.wishlist-heart {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1.2rem;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  transition: all 0.2s;
+  &:hover {
+    color: red;
   }
 }
 </style>
