@@ -37,7 +37,7 @@ const routes = [
     component: ActivityDetails,
     children: [
       {
-        path: '/activity/:id/about',
+        path: '/activity/:id',
         name: 'activityAbout',
         component: ActivityAbout
       },

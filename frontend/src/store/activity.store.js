@@ -13,29 +13,38 @@ export default ({
       recent: [],
       today: [],
     },
+    currActivity: null
   },
   mutations: {
     setActivities(state, { filter, activities }) {
       state.activities[filter] = activities;
     },
     saveActivity(state, { activity }) {
-      console.log('mutate', activity);
-
       state.activities.all.unshift(activity);
       state.activities.recent.unshift(activity);
       //maby need to check if add to activities.today
+    },
+    setCurrActivity(state, { activity }) {
+      state.currActivity = activity;
     }
   },
   actions: {
     async loadActivities(context) {
       const activities = await activityService.getActivities();
-      context.commit({ type: "setActivities", filter: 'all', activities });
+      context.commit({ type: 'setActivities', filter: 'all', activities });
       return activities;
     },
     async saveActivity(context, { activity }) {
       activity = await activityService.addActivity(activity);
-      context.commit({ type: "saveActivity", activity });
+      context.commit({ type: 'saveActivity', activity });
       return activity
+    },
+    async loadCurrActivity(context, { id }) {
+      const currActivity = context.getters.currActivity;
+      if(currActivity && currActivity.id === id) return currActivity;
+      const activity = await activityService.getActivity(id);
+      context.commit({ type: 'setCurrActivity', activity })
+      return activity;
     }
   },
   getters: {
@@ -51,6 +60,9 @@ export default ({
     today(state) {
       return state.activities.today;
     },
+    currActivity(state) {
+      return state.currActivity;
+    }
   },
   modules: {
   }
