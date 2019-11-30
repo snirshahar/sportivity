@@ -7,6 +7,7 @@ function getActivities(){
 }
 
 function getActivity(id){
+    console.log(id);
     return httpService.get(BASE_URL + id).then(res => res.data)
 }
 
