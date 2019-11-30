@@ -3,13 +3,7 @@ import { httpService } from './HttpService.js';
 const BASE_URL = 'http://localhost:3000/api/activity/'
 
 function getActivities(){
-<<<<<<< HEAD
-    return httpService.get(BASE_URL).then(res => {
-        return res.data
-    })
-=======
     return httpService.get(BASE_URL).then(res => res.data)
->>>>>>> activity-details
 }
 
 function getActivity(id){

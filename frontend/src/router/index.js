@@ -18,14 +18,11 @@ const routes = [
     component: Home
   },
   {
-<<<<<<< HEAD
-=======
     path: '/activity/:id',
     name: 'activity',
     component: ActivityDetails,
   },
   {
->>>>>>> activity-details
     path: '/activity/add',
     name: 'activityEdit',
     component: EditActivity
