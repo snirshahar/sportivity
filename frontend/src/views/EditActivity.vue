@@ -62,12 +62,8 @@
         <p>another activity images</p>
         <input @change="uploadImg" type="file" multiple />
       </label>
-      <!-- <el-form-item>In Stock:
-      <el-switch v-model="activity.inStock"></el-switch>
-      </el-form-item>-->
       <button>{{this.saveButton}}</button>
     </form>
-    <!-- <button @click="userCanceled()">Cancel</button> -->
   </section>
 </template>
 
@@ -85,8 +81,8 @@ export default {
         description: "",
         category: "",
         createdBy: {
-          fullName: "ofer",
-          imgUrl: "avatar"
+          fullName: "",
+          imgUrl: ""
         },
         cycle: "Once",
         startsAt: {
@@ -98,7 +94,7 @@ export default {
           city: "",
           street: ""
         },
-        imgUrls:''
+        imgUrls:[]
       },
       activityId: null
     };
@@ -120,7 +116,7 @@ export default {
             city: "",
             street: ""
           },
-          imgUrls:''
+          imgUrls:[]
         };
       }
       return "Create an activity";
@@ -135,8 +131,8 @@ export default {
       //   .then(res => this.activity.img = res.url)
     },
     async saveActivity() {
-      console.log('new activity', this.activity);
       if(!this.activity.imgUrls[0]) this.activity.imgUrls[0]="https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      console.log('new activity', this.activity);
       await this.$store.dispatch({ type: "saveActivity", activity: this.activity});
       this.$router.push("/");
     },

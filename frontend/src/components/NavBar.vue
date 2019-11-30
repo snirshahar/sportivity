@@ -1,31 +1,60 @@
 <template>
   <nav class="main-nav">
-    <router-link to="/">
-    <span class="logo">
-      <img src="../img/logo.png">sportivity
-    </span>
-    </router-link>
-    <div class="user-login-container">
-      <router-link to="/activity/add">Create</router-link> |
-      <router-link to="/login">Sign In</router-link>
+    <div class="logo" @click="navToHome">
+      <img src="../img/logo.png" />
+      <p class="title">Sportivity</p>
+    </div>
+    <div class="nav-items">
+      <router-link to="/activity/add">Create an activity</router-link>
+      <router-link to="/login">Log in</router-link>
     </div>
   </nav>
 </template>
 
+<script>
+export default {
+  methods: {
+    navToHome() {
+      if (this.$route.path !== "/") this.$router.push("/");
+    }
+  }
+};
+</script>
 
-
-<style>
-.logo img{
-  height: 60px;
-  width: 60px;
+<style lang="scss">
+.logo {
+  cursor: pointer;
+  display: flex;
+  font-size: bold;
+  align-items: center;
+  img {
+    width: 50px;
+  }
+  .title {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
 }
-.main-nav{
+
+.main-nav {
+  padding: 5px 15px;
+  user-select: none;
+  border-bottom: 2px solid rgb(228, 228, 228);
   display: flex;
   align-items: center;
-  justify-content: space-between
-}
-.main-nav .logo{
-  display: flex;
-  align-items: center;
+  justify-content: space-between;
+  a {
+    font-size: 0.8rem;
+    color: #2c3e50;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: all 0.1s;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+    &:hover {
+      color: #42b983;
+    }
+  }
 }
 </style>

@@ -1,23 +1,19 @@
 <template>
   <section class="details-container" v-if="activity">
     <div class="groupHeader">
-      <div class="bound">
-        <div class="preview">
-          <div class="img">
-            <img :src="activity.imgUrls[0]" />
-          </div>
-          <div class="details">
+      <div class="preview">
+        <div class="img">
+          <img :src="activity.imgUrls[0]" />
+        </div>
+        <div class="details">
+          <div class="ml-50">
             <h1>{{activity.title}}</h1>
             <p>{{activity.location.city}}, Israel</p>
             <p>{{members}} members of {{maxAttendees}} - {{type}} group</p>
-            <p>
-              Organized by
-              <router-link :to="'/profle/' + activity.createdBy.id">{{activity.createdBy.fullName}}</router-link>
-            </p>
           </div>
         </div>
       </div>
-      <ActivityDetailsBar/>
+      <ActivityDetailsBar />
     </div>
   </section>
 </template>
@@ -33,8 +29,9 @@ export default {
     };
   },
   async created() {
-    const activityId = this.$route.params.id;
-    this.activity = await activityService.getActivity(activityId);
+    const id = this.$route.params.id;
+    await this.$store.dispatch({ type: "loadCurrActivity", id });
+    this.activity = this.$store.getters.currActivity;
   },
   computed: {
     createdAt() {
@@ -61,6 +58,16 @@ img {
   width: 100%;
   border-radius: 10px;
 }
+
+h1,
+p {
+  margin: 0;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}
+
 .groupHeader {
   width: 100%;
 }
@@ -71,12 +78,12 @@ img {
   max-width: 1100px;
   padding: 20px;
 }
-
-.bound {
-  border-bottom: 1px solid #bbb;
-}
 .img,
 .details {
   flex: 1;
+}
+
+.details {
+  text-align: left;
 }
 </style>

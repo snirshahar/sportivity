@@ -1,251 +1,25 @@
 [
   {
-    "description": "sdf",
-    "category": "basketball",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": {
-      "date": "2019-11-11",
-      "time": "01:01"
-    },
-    "location": {
-      "city": "sdf",
-      "street": "sdf"
-    },
-    "maxAttendees": "34",
-    "cycle": "Once",
-    "mainImgUrl": "",
-    "imgUrls": ["https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"],
-    "title": "sdf",
-    "id": "fYn"
-  },
-  {
-    "title": "snir",
-    "description": "gogo",
-    "category": "pooldance",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-13",
-    "location": {
-      "city": "haifa",
-      "street": "hagalil"
-    },
-    "maxAttendees": "20",
-    "cycle": "once",
-    "id": "Ytq"
-  },
-  {
-    "title": "sdf",
-    "description": "sdf",
-    "category": "sdf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-13",
-    "location": {
-      "city": "sdf",
-      "street": "sdf"
-    },
-    "maxAttendees": "sdf",
-    "cycle": "Once",
-    "id": "kW0"
-  },
-  {
-    "title": "ert",
-    "description": "ert",
-    "category": "ert",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-20",
-    "location": {
-      "city": "ert",
-      "street": "ert"
-    },
-    "maxAttendees": "ert",
-    "cycle": "Once",
-    "id": "JhX"
-  },
-  {
-    "title": "danialllllllllll",
-    "description": "dfg",
-    "category": "dfg",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-13",
-    "location": {
-      "city": "dgf",
-      "street": "dfg"
-    },
-    "maxAttendees": "dfg",
-    "cycle": "Once",
-    "id": "WxO"
-  },
-  {
-    "title": "fdgh",
-    "description": "dfh",
-    "category": "dfgh",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-12",
-    "location": {
-      "city": "dfh",
-      "street": "dfh"
-    },
-    "maxAttendees": "dfg",
-    "cycle": "Once",
-    "id": "qBG"
-  },
-  {
-    "title": "oferrrrrrrrrrrrrrrrrr",
-    "description": "sdrv",
-    "category": "dvf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-13",
-    "location": {
-      "city": "fdf",
-      "street": "sdf"
-    },
-    "maxAttendees": "fdvf",
-    "cycle": "Once",
-    "id": "MSM"
-  },
-  {
-    "title": "drt",
-    "description": "erty",
-    "category": "ery",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-20",
-    "location": {
-      "city": "ery",
-      "street": "ery"
-    },
-    "maxAttendees": "ery",
-    "cycle": "weekly",
-    "id": "Owe"
-  },
-  {
-    "title": "sdf",
-    "description": "sdf",
-    "category": "sdf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-14",
-    "location": {
-      "city": "sdf",
-      "street": "sdf"
-    },
-    "maxAttendees": "sdf",
-    "cycle": "Once",
-    "id": "u1x"
-  },
-  {
-    "title": "dsf",
-    "description": "asfd",
-    "category": "asdf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-20",
-    "location": {
-      "city": "asdf",
-      "street": "asdf"
-    },
-    "maxAttendees": "asdf",
-    "cycle": "weekly",
-    "id": "eDq"
-  },
-  {
-    "title": "sfdgsdfg",
-    "description": "sdfgsdfg",
-    "category": "erwtert",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-05",
-    "location": {
-      "city": "twertwe",
-      "street": "rtwert"
-    },
-    "maxAttendees": "ertwer",
-    "cycle": "once",
-    "id": "qMh"
-  },
-  {
-    "title": "sdf",
-    "description": "sdf",
-    "category": "sdf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-06",
-    "location": {
-      "city": "",
-      "street": ""
-    },
-    "maxAttendees": "sdf",
-    "cycle": "Once",
-    "id": "fHY"
-  },
-  {
-    "title": "sdf",
-    "description": "sdf",
-    "category": "sdf",
-    "createdBy": {
-      "fullName": "",
-      "imgUrl": ""
-    },
-    "startsAt": "2019-11-12",
-    "location": {
-      "city": "",
-      "street": ""
-    },
-    "maxAttendees": "drt",
-    "cycle": "Once",
-    "id": "r01"
-  },
-  {
-    "id": "10c92bb",
+    "id": "10c9ba",
     "title": "Basketball on Friday",
     "description": "Come to meet and play basketball with professional players",
     "category": "Basketball",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "103",
@@ -259,7 +33,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "come play with us on Monday"
         },
         "sentAt": 1574795500000
@@ -269,17 +43,15 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
         },
         "sentAt": 1574791800000
       }
     ],
     "cycle": "weekly",
     "isPublic": true,
-    "imgUrls": [
-      "https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"
-    ],
-    "maxAttendees ": 20,
+    "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
+    "maxAttendees": 20,
     "location": {
       "lng": 35.035850,
       "lon": 31.848070,
@@ -289,26 +61,26 @@
     "startsAt": "Monday 2/12/19 20:00"
   },
   {
-    "id": "12c9b",
+    "id": "10c9b1",
     "title": "Soccer on Friday",
     "description": "Come to meet and play Soccer with professional players",
     "category": "Soccer",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -317,7 +89,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "been there last week - was awesome!"
         },
         "sentAt": 1574795500000
@@ -327,7 +99,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "come and try to beat our invincible team!"
         },
         "sentAt": 1574791800000
@@ -335,10 +107,8 @@
     ],
     "cycle": "weekly",
     "isPublic": true,
-    "imgUrls": [
-      "https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"
-    ],
-    "maxAttendees ": 20,
+    "imgUrls": ["https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&w=1000&q=80"],
+    "maxAttendees": 20,
     "location": {
       "lng": 45.64,
       "lon": 253.43,
@@ -348,26 +118,26 @@
     "startsAt": "Friday 29/11/19 20:00"
   },
   {
-    "id": "10c92",
+    "id": "10c29b",
     "title": "Kite-Surfing for beginners",
     "description": "Got a dream to surf? this place is for you",
     "category": "Surfing",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -376,7 +146,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "im about to come, see ya there guys!"
         },
         "sentAt": 1574795500000
@@ -386,7 +156,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "can't wait already!"
         },
         "sentAt": 1574791800000
@@ -407,26 +177,26 @@
     "startsAt": "Sunday 1/12/19 11:00"
   },
   {
-    "id": "10ccb",
+    "id": "102c9b",
     "title": "Watch Maccabi Tel Aviv match in Misterbit offices",
     "description": "Watch Maccabi Tel Aviv on Euroleague with together with all the craziest fans",
     "category": "Basketball",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -435,7 +205,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "come on! free Arak shots in the air"
         },
         "sentAt": 1574795500000
@@ -445,7 +215,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "awesome initiative folks!"
         },
         "sentAt": 1574791800000
@@ -466,21 +236,21 @@
     "startsAt": "Thursday 28/11/19 20:00"
   },
   {
-    "id": "19c9b",
+    "id": "10c19b",
     "title": "Yoga Party in the Negev",
     "description": "Like Parties? inlove with Yoga? this is your place!",
     "category": "Yoga",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "103",
@@ -490,7 +260,7 @@
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -499,7 +269,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "come play with us on Monday"
         },
         "sentAt": 1574795500000
@@ -509,7 +279,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "a party including yoga? im curious to see the result!"
         },
         "sentAt": 1574791800000
@@ -530,26 +300,26 @@
     "startsAt": "Sunday 1/12/19 7:00"
   },
   {
-    "id": "10c9ba",
+    "id": "10c95b",
     "title": "Hotdog eating competition ",
     "description": "C'mon, who doesn't like hotdogs? 1000$ prize for the winner",
     "category": "Other",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -558,7 +328,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "so, who's gonna win this year?"
         },
         "sentAt": 1574795500000
@@ -568,7 +338,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "i want my hotdogs inside a pita!"
         },
         "sentAt": 1574791800000
@@ -589,14 +359,14 @@
     "startsAt": "Monday 2/12/19 20:00"
   },
   {
-    "id": "10c9bb",
+    "id": "10c89b",
     "title": "Pool for professionals",
     "description": "Come to meet and play pool with professional players",
     "category": "Pool",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
@@ -608,12 +378,12 @@
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -622,7 +392,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "see you there sunshine!"
         },
         "sentAt": 1574795500000
@@ -632,7 +402,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "pool for swimming or table pool?"
         },
         "sentAt": 1574791800000
@@ -653,26 +423,26 @@
     "startsAt": "Friday 29/11/19 20:00"
   },
   {
-    "id": "10c29b",
+    "id": "10c92b",
     "title": "Watch Barcelona's game in champions league",
     "description": "Watch the game vs Dortmund in the best bar in Mavo Horon",
     "category": "Soccer",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -681,7 +451,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "come on barca!"
         },
         "sentAt": 1574795500000
@@ -691,7 +461,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "visca barca!!!!!!"
         },
         "sentAt": 1574791800000
@@ -712,26 +482,26 @@
     "startsAt": "Tuesday 3/12/19 22:00"
   },
   {
-    "id": "10c2c9b",
+    "id": "10c9bb",
     "title": "Katregel 6on6 teams",
     "description": "Come to play katregel in the neighborhood",
     "category": "Soccer",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -740,7 +510,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "striker is my second name"
         },
         "sentAt": 1574795500000
@@ -750,7 +520,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "i want to be the goalkeeper!"
         },
         "sentAt": 1574791800000
@@ -771,21 +541,21 @@
     "startsAt": "Monday 2/12/19 20:00"
   },
   {
-    "id": "10c9b9",
+    "id": "10ac9b",
     "title": "Running in the cycles inside the Metargelim's room",
     "description": "Take the first step to achieve your medal in the programming olympics",
     "category": "Workout",
     "createdBy": {
       "id": "101",
       "fullName": "Daniel Yona",
-      "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+      "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
     },
     "createdAt": 1574795100000,
     "attendees": [
       {
         "id": "101",
         "fullName": "Daniel Yona",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       },
       {
         "id": "103",
@@ -795,7 +565,7 @@
       {
         "id": "102",
         "fullName": "Ofer Baram",
-        "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+        "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg"
       }
     ],
     "msgs": [
@@ -804,7 +574,7 @@
         "from": {
           "id": "100",
           "fullName": "Daniel Yona",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "been there last week, now i have a headache but i love it!"
         },
         "sentAt": 1574795500000
@@ -814,7 +584,7 @@
         "from": {
           "id": "101",
           "fullName": "Ofer Baram",
-          "imgUrl": "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+          "imgUrl": "https://secure.meetupstatic.com/photos/member/a/1/8/6/thumb_281081350.jpeg",
           "txt": "all who attend, think of an excuse for your lost from now"
         },
         "sentAt": 1574791800000
