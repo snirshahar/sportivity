@@ -17,7 +17,7 @@
       <div class="ml-50">
         <div class="created-by">
           <h3>Organizer</h3>
-          <router-link :to="this.activity.id" class="created-by-card">
+          <router-link :to="this.activity._id" class="created-by-card">
             <img :src="this.activity.createdBy.imgUrl" />
             <div class="created-by-card-name">{{this.activity.createdBy.fullName}}</div>
           </router-link>

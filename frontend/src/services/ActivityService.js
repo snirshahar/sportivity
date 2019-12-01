@@ -1,34 +1,34 @@
-import { httpService } from './HttpService.js';
+import HttpService from './HttpService.js';
 
-const BASE_URL = 'http://localhost:3000/api/activity/'
+const BASE_URL = 'activity/'
 
 function getActivities(){
-    return httpService.get(BASE_URL).then(res => res.data)
+    return HttpService.get(BASE_URL)
 }
 
 function getActivity(id){
     console.log(id);
-    return httpService.get(BASE_URL + id).then(res => res.data)
+    return HttpService.get(BASE_URL + id)
 }
 
 function addActivity(activity){
     if(!activity.id){ // Needs to be removed when backend is alive
         activity.id = Math.floor(Math.random() * 1000 + 5000);
-        return httpService.post(BASE_URL, activity).then(res => res.data);
+        return HttpService.post(BASE_URL, activity).then(res => res.data);
     }
-    return httpService.put(BASE_URL + activity.id, activity).then(res => res.data);
+    return HttpService.put(BASE_URL + activity.id, activity).then(res => res.data);
 }
 
 function removeActivity(id){
-    return httpService.delete(BASE_URL + id)
+    return HttpService.delete(BASE_URL + id)
 }
 
 function addAttendee(activityId, attendeeId){
-    return httpService.post(BASE_URL + `${activityId}/attendees/${attendeeId}`)
+    return HttpService.post(BASE_URL + `${activityId}/attendees/${attendeeId}`)
 }
 
 function removeAttendee(activityId, attendeeId){
-    return httpService.delete(BASE_URL + `${activityId}/attendees/${attendeeId}`)
+    return HttpService.delete(BASE_URL + `${activityId}/attendees/${attendeeId}`)
 }
 
 export default {

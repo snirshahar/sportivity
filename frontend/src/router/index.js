@@ -23,7 +23,7 @@ const routes = [
   },
   {
     path: '/activity/add',
-    name: 'activityEdit',
+    name: 'activityAdd',
     component: EditActivity
   },
   {

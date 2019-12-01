@@ -43,7 +43,8 @@ export default ({
       const currActivity = context.getters.currActivity;
       if(currActivity && currActivity.id === id) return currActivity;
       const activity = await activityService.getActivity(id);
-      context.commit({ type: 'setCurrActivity', activity })
+      console.log('ACTIVITY', activity);
+      context.commit({ type: 'setCurrActivity', activity: activity[0] })
       return activity;
     }
   },

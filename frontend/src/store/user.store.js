@@ -1,41 +1,40 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import userService from '../services/UserService.js'
 
-Vue.use(Vuex)
+var localLoggedinUser = null;
+if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user);
 
 export default ({
   strict: true,
   state: {
-    loggedInUser:null,
+    loggedInUser: localLoggedinUser,
   },
-  getters:{
-    loggedinUser(state){
+  getters: {
+    loggedinUser(state) {
       return state.user;
     }
   },
   mutations: {
-    userLoggedIn(state, {user}){
+    setUser(state, { user }) {
       state.loggedInUser = user;
     },
-    userLoggedOut(state){
+    removeUser(state) {
       state.loggedInUser = null;
     },
   },
   actions: {
-    async userLogin(context, {userCred}) {
-      const user = await userService.login(userCred)
-      context.commit({ type: "userLoggedIn", user });
+    async login(context, { cred }) {
+      const user = await userService.login(cred)
+      context.commit({ type: "setUser", user });
       return user;
     },
-    async userSignup(context, {userCred}){
-      const user = await userService.signup(userCred)
-      context.commit({ type: "userLoggedIn", user })
+    async register(context, { cred }) {
+      const user = await userService.register(cred)
+      context.commit({ type: "removeUser", user })
       return user;
     },
-    async userLogout(context){
+    async userLogout(context) {
       await userService.logout()
-      context.commit({type: "userLoggedOut"})
+      context.commit({ type: "userLoggedOut" })
       return user;
     }
   }

@@ -1,25 +1,53 @@
-import { httpService } from './HttpService.js'
-
-const BASE_URL = 'http://localhost:3000/'
+import HttpService from './HttpService'
 
 export default {
     login,
     logout,
-    signup,
+    register,
+    getUsers,
+    getById,
+    remove,
+    update
 }
-const signup = async (userCred) => {
-    return await httpService.post(BASE_URL + 'signup', userCred)
+
+function getById(userId) {
+    return HttpService.get(`user/${userId}`)
 }
-const login = async (userCred) => {
-    return await httpService.post(BASE_URL + 'login', userCred)
+function remove(userId) {
+    return HttpService.delete(`user/${userId}`)
 }
-const logout = async () => {
-    await httpService.post(BASE_URL + 'logout')
+
+function update(user) {
+    return HttpService.put(`user/${user._id}`, user)
+}
+
+async function login(userCred) {
+    try {
+        const user = await HttpService.post('auth/login', userCred)
+        return _handleLogin(user)
+    } catch (err) {
+        return err;
+    }
+}
+async function register(userCred) {
+    try {
+        console.log('UserService', userCred)
+        const user = await HttpService.post('auth/register', userCred)
+        return _handleLogin(user)
+    } catch (err) {
+        sessionStorage.removeItem('user-cookie');
+        return err;
+    }
+}
+async function logout() {
+    await HttpService.post('auth/logout');
     sessionStorage.clear();
-    return console.log('user logout successfully');
-
+}
+function getUsers() {
+    return HttpService.get('user')
 }
 
-
-
-
+function _handleLogin(user) {
+    sessionStorage.setItem('user', JSON.stringify(user))
+    return user;
+}

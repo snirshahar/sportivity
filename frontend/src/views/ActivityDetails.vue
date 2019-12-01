@@ -38,7 +38,7 @@ export default {
       return new Date(this.activity.createdAt).toLocaleString("en-us");
     },
     members() {
-      return this.activity.attendees.length;
+      return this.activity.attendees ? this.activity.attendees.length : 0;
     },
     maxAttendees() {
       return this.activity.maxAttendees;
@@ -56,6 +56,7 @@ export default {
 <style scoped>
 img {
   width: 100%;
+  height: 300px;
   border-radius: 10px;
 }
 

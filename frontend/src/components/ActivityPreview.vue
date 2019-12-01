@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-details" @click="$router.push(`/activity/${activity.id}`)">
+  <div class="preview-details" @click="$router.push(`/activity/${activity._id}`)">
     <div class="preview-image-container">
       <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
     </div>
@@ -7,7 +7,7 @@
     <div class="border">
       <div class="preview-top">
         <p class="preview-stars">{{activity.startsAt}}</p>
-        <p class="preview-attendees">{{activity.attendees.length}}/{{activity.maxAttendees}}</p>
+        <p class="preview-attendees">{{activity.attendees}}/{{activity.maxAttendees}}</p>
       </div>
       <div class="preview-desc">
         <p class="preview-title">{{activity.title}}</p>

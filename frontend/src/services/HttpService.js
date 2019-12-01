@@ -1,36 +1,41 @@
-import axios from 'axios';
+import Axios from 'axios';
 
-export const httpService = {
-    get,
-    delete: remove,
-    post,
-    put
+const BASE_URL = process.env.NODE_ENV === 'production'
+    ? '/api/'
+    : '//localhost:3000/api/'
+
+
+var axios = Axios.create({
+    withCredentials: true
+});
+
+export default {
+    get(endpoint, data) {
+        return ajax(endpoint, 'GET', data)
+    },
+    post(endpoint, data) {
+        return ajax(endpoint, 'POST', data)
+    },
+    put(endpoint, data) {
+        return ajax(endpoint, 'PUT', data)
+    },
+    delete(endpoint, data) {
+        return ajax(endpoint, 'DELETE', data)
+    }
 }
- 
-function _handleError(err) {
-    console.log('Err:', err);
-    // if (err.response.status === 401) {
-    //     sessionStorage.clear();
-    //     router.push('/');
-    // }
-    throw err;
-}
- 
-function get(url) {
-    return axios.get(url)
-        .catch(_handleError)
-}
- 
-function remove(url) {
-    return axios.delete(url)
-        .catch(_handleError)
-}
- 
-function post(url, data) {
-    return axios.post(url, data)
-        .catch(_handleError)
-}
-function put(url, data) {
-    return axios.put(url, data)
-        .catch(_handleError)
+
+async function ajax(endpoint, method = 'get', data = null) {
+    try {
+        const res = await axios({
+            url: `${BASE_URL}${endpoint}`,
+            method,
+            data
+        })
+        return res.data;
+    } catch (err) {
+        if (err.response.status === 401) {
+            // router.push('/');
+        }
+        throw err;
+    }
 }

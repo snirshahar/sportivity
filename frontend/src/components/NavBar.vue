@@ -6,7 +6,8 @@
     </div>
     <div class="nav-items">
       <router-link to="/activity/add">Create an activity</router-link>
-      <router-link to="/login">Log in</router-link>
+      <router-link v-if="!user" to="/login">Login</router-link>
+      <router-link v-else to="/logout" @click="doLogout">Logout</router-link>
     </div>
   </nav>
 </template>
@@ -16,6 +17,15 @@ export default {
   methods: {
     navToHome() {
       if (this.$route.path !== "/") this.$router.push("/");
+    },   
+    doLogout() {
+      this.$store.dispatch({type: 'logout'})
+      this.$router.push("/login");
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.getters.loggedinUser;
     }
   }
 };
