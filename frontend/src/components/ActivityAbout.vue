@@ -1,16 +1,16 @@
 <template>
   <div class="about-page" v-if="activity">
     <GmapMap
-      :center="{lat:activity.location.lon, lng:activity.location.lng}"
+      :center="{lat:activity.location.lat, lng:activity.location.lng}"
       :zoom="16"
       map-type-id="satellite"
       class="google-map"
     >
       <GmapMarker
-        :position="{lat:activity.location.lon, lng:activity.location.lng}"
+        :position="{lat:activity.location.lat, lng:activity.location.lng}"
         :clickable="true"
         :draggable="false"
-        @click="center={lat:activity.location.lon, lng:activity.location.lng}"
+        @click="center={lat:activity.location.lat, lng:activity.location.lng}"
       />
     </GmapMap>
     <div class="details">

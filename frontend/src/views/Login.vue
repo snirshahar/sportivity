@@ -133,7 +133,6 @@ export default {
   methods: {
     async submit() {
       const res = await this.$store.dispatch({ type: this.type.toLowerCase(), cred: this.cred});
-      console.log(res)
       if (!res._id) {
         return this.msg = 'Email or password is incorrect';
       }

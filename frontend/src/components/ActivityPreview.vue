@@ -7,7 +7,7 @@
     <div class="border">
       <div class="preview-top">
         <p class="preview-stars">{{activity.startsAt}}</p>
-        <p class="preview-attendees">{{activity.attendees}}/{{activity.maxAttendees}}</p>
+        <p class="preview-attendees">{{attendees}}/{{activity.maxAttendees}}</p>
       </div>
       <div class="preview-desc">
         <p class="preview-title">{{activity.title}}</p>
@@ -40,6 +40,11 @@ export default {
   methods: {
     test() {
       console.log("test");
+    }
+  },
+  computed:{
+    attendees(){
+      return this.activity.attendees ? this.activity.attendees.length : 0;
     }
   },
   components: {

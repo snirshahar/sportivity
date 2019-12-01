@@ -5,7 +5,7 @@ async function getActivities(req, res) {
     res.send(activities)
 }
 
-async function getActivity(req, res){
+async function getActivity(req, res) {
     const activity = await activityService.getActivity(req.params.id)
     res.send(activity)
 }
@@ -17,23 +17,27 @@ async function deleteActivity(req, res) {
 
 async function addActivity(req, res) {
     var activity = req.body;
+    const owner = { _id: req.session.user._id, fullName: req.session.user.fullName, imgUrl: req.session.user.imgUrl };
+    if (!activity.imgUrls || !activity.imgUrls.length) {
+        activity.imgUrls = ['https://www.subaruhawaii.com/sites/default/files/styles/subaru_step2_accessory/public/model/model_management/1422065168_54c2fe103503d.jpg?itok=f7LACBG8']
+    }
+
     activity.createdAt = Date.now();
     activity.msgs = [];
-    activity.createdBy = { _id: req.session.user._id, fullName: req.session.user.fullName, imgUrl: req.session.user.imgUrl };
+    activity.createdBy = owner;
+    activity.attendees = [owner];
     activity = await activityService.add(activity)
     res.send(activity)
 }
 
 async function addAttendee(req, res) {
-
+    const { attendee, activity } = req.body;
+    res.send(await activityService.addAttendee(activity, attendee))
 }
 
 async function deleteAttendee(req, res) {
-
-}
-
-async function getAttendees(req, res) {
-
+    const { attendeeId, activity } = req.body;
+    res.send(await activityService.deleteAttendee(activity, attendeeId))
 }
 
 module.exports = {
@@ -42,6 +46,5 @@ module.exports = {
     deleteActivity,
     addActivity,
     addAttendee,
-    deleteAttendee,
-    getAttendees
+    deleteAttendee
 }

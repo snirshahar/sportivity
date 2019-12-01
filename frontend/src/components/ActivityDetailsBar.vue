@@ -9,7 +9,8 @@
           <router-link :to="`/activity/${$route.params.id}/photos`">Photos</router-link>
         </div>
         <div class="attend">
-          <button class="ml-50">Join this group</button>
+          <button v-if="!joined" class="ml-50" @click="join" :class="{ disabled: isFull }">Join this group</button>
+          <button v-else class="ml-50" @click="unjoin">Leave this group</button>
         </div>
       </div>
       <div class="bg-lightgray">
@@ -22,29 +23,59 @@
 </template>
 
 <script>
+import ActivityService from "../services/ActivityService";
+
 export default {
   data() {
     return {
-      topNavBar: false
+      topNavBar: false,
+      activity: null,
+      user: this.$store.getters.loggedinUser,
+      joined: false
     };
+  },
+  computed: {
+    isFull() {
+      return this.activity.attendees.length === this.activity.maxAttendees;
+    },
+    isJoined() {
+      const searchedUser = this.activity.attendees.find(
+        att => att._id === this.user._id
+      );
+      console.log('isJoined',  searchedUser ? 'true' : 'false')
+      return searchedUser ? true : false;
+    }
   },
   methods: {
     handleScroll(event) {
       window.pageYOffset > 540
         ? (this.topNavBar = true)
         : (this.topNavBar = false);
+    },
+    async join() {
+      if (this.isFull || this.isJoined) return;
+      const shortUser = {
+        _id: this.user._id,
+        fullName: this.user.fullName,
+        imgUrl: this.user.imgUrl
+      };
+      this.activity.attendees.push(shortUser);
+      const res = await ActivityService.addAttendee(this.activity, shortUser);
+      this.joined = true;
+    },
+    async unjoin() {
+      const res = await ActivityService.deleteAttendee(this.activity, this.user._id);
+      this.activity.attendees = this.activity.attendees.filter(att => att._id !== this.user._id)
+      this.joined = false;
     }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    this.activity = this.$store.getters.currActivity;
+    this.joined = this.isJoined;
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-  },
-  watch: {
-    showNavbar() {
-      console.log(this.showNavbar);
-    }
   }
 };
 </script>
@@ -112,5 +143,9 @@ a:hover {
 
 .attend button:hover {
   background: rgba(246, 88, 88, 0.9);
+}
+
+.disabled {
+  background: gray;
 }
 </style>

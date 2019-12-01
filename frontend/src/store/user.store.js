@@ -10,7 +10,7 @@ export default ({
   },
   getters: {
     loggedinUser(state) {
-      return state.user;
+      return state.loggedInUser;
     }
   },
   mutations: {

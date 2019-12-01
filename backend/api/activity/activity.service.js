@@ -6,6 +6,8 @@ module.exports = {
     query,
     remove,
     getActivity,
+    addAttendee,
+    deleteAttendee,
     add
 }
 
@@ -13,7 +15,7 @@ async function getActivity(id) {
     // const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('activity')
     const activity = await collection.find({ '_id': ObjectId(id) }).toArray();
-    return activity;
+    return activity[0];
 }
 
 async function query(filterBy = {}) {
@@ -92,6 +94,26 @@ async function add(activity) {
         console.log(`ERROR: cannot insert activity, ${err}`)
         throw err;
     }
+}
+
+async function addAttendee(activity, attendee) {
+    activity = await getActivity(activity._id);
+    if (activity.attendees.length === activity.maxAttendees) return;
+    const collection = await dbService.getCollection('activity');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(activity._id) },
+        { $push: { "attendees": attendee } }
+    )
+}
+
+async function deleteAttendee(activity, attendeeId) {
+    // activity = await getActivity(activity._id);
+    const currAttendees = activity.attendees.filter(att => att._id !== attendeeId);
+    const collection = await dbService.getCollection('activity');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(activity._id) },
+        { $set: { "attendees": currAttendees } }
+    )
 }
 
 function _buildCriteria(filterBy) {

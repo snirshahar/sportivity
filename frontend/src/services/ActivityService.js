@@ -2,33 +2,31 @@ import HttpService from './HttpService.js';
 
 const BASE_URL = 'activity/'
 
-function getActivities(){
+function getActivities() {
     return HttpService.get(BASE_URL)
 }
 
-function getActivity(id){
-    console.log(id);
+function getActivity(id) {
     return HttpService.get(BASE_URL + id)
 }
 
-function addActivity(activity){
-    if(!activity.id){ // Needs to be removed when backend is alive
-        activity.id = Math.floor(Math.random() * 1000 + 5000);
-        return HttpService.post(BASE_URL, activity).then(res => res.data);
+function addActivity(activity) {
+    if (!activity._id) { // Needs to be removed when backend is alive
+        return HttpService.post(BASE_URL, activity);
     }
-    return HttpService.put(BASE_URL + activity.id, activity).then(res => res.data);
+    return HttpService.put(BASE_URL + activity._id, activity);
 }
 
-function removeActivity(id){
+function removeActivity(id) {
     return HttpService.delete(BASE_URL + id)
 }
 
-function addAttendee(activityId, attendeeId){
-    return HttpService.post(BASE_URL + `${activityId}/attendees/${attendeeId}`)
+function addAttendee(activity, attendee) {
+    return HttpService.put(BASE_URL + `${activity._id}/attendee/${attendee._id}`, { activity, attendee });
 }
 
-function removeAttendee(activityId, attendeeId){
-    return HttpService.delete(BASE_URL + `${activityId}/attendees/${attendeeId}`)
+function deleteAttendee(activity, attendeeId){
+    return HttpService.delete(BASE_URL + `${activity._id}/attendee/${attendeeId}`, { activity, attendeeId });
 }
 
 export default {
@@ -37,5 +35,5 @@ export default {
     addActivity,
     removeActivity,
     addAttendee,
-    removeAttendee
+    deleteAttendee
 }

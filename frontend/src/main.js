@@ -4,9 +4,13 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store/store';
 import * as VueGoogleMaps from 'vue2-google-maps';
-import GmapMarker  from 'vue2-google-maps/src/components/marker';
+import GmapMarker from 'vue2-google-maps/src/components/marker';
 import 'vue-video-section/dist/vue-video-section.css';
-import VueVideoSection from 'vue-video-section'
+import VueVideoSection from 'vue-video-section';
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+
+Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
 Vue.component('vue-video-section', VueVideoSection)
 
 Vue.component('GmapMarker', GmapMarker)

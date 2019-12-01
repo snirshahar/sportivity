@@ -18,11 +18,6 @@ export default {
   data() {
     return {};
   },
-  created() {
-    console.log("explore created and toys loaded!");
-    // this.$store.dispatch("loadActivities");
-    // write what happens if user linked to /explore route (dispatch!)
-  },
   components: {
     ActivityPreview
   },
