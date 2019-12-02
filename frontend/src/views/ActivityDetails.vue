@@ -32,6 +32,7 @@ export default {
     const id = this.$route.params.id;
     await this.$store.dispatch({ type: "loadCurrActivity", id });
     this.activity = this.$store.getters.currActivity;
+    console.log(this.activity)
   },
   computed: {
     createdAt() {

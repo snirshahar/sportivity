@@ -1,8 +1,4 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import activityService from '../services/ActivityService';
-
-Vue.use(Vuex)
 
 export default ({
   strict: true,
@@ -41,6 +37,9 @@ export default ({
   getters: {
     activities(state) {
       return state.activities;
+    },
+    currActivity(state){
+      return state.currActivity;
     }
   },
   modules: {
