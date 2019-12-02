@@ -2,26 +2,28 @@
   <div class="preview-details" @click="$router.push(`/activity/${activity._id}`)">
     <div class="preview-image-container">
       <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
+      <div class="wrap">
+        <router-link
+          @click.native="$event.stopImmediatePropagation()"
+          :to="'/profile/' + activity.createdBy._id"
+        >
+          <img :src="activity.createdBy.imgUrl" class="profile-image" />
+        </router-link>
+      </div>
+      <div class="wishlist-heart" @click.stop="test">❤</div>
+      <div class="ribbon">
+        <p class="preview-attendees">{{attendees}}/{{activity.maxAttendees}}</p>
+      </div>
+      <div></div>
     </div>
-    <div class="wishlist-heart" @click.stop="test">❤</div>
     <div class="border">
       <div class="preview-top">
-        <p class="preview-stars">{{activity.startsAt}}</p>
-        <p class="preview-attendees">{{attendees}}/{{activity.maxAttendees}}</p>
+        <p class="preview-created-by-name">{{shortName}}</p>
+        <p class="preview-starts">{{starts}}</p>
       </div>
       <div class="preview-desc">
         <p class="preview-title">{{activity.title}}</p>
         <p class="preview-desc-text">{{activity.description}}</p>
-      </div>
-      <div class="preview-creator">
-        <p>Hosted By</p>
-        <div class="profile-card">
-          <img :src="activity.createdBy.imgUrl" class="profile-image" />
-          <router-link
-            @click.native="$event.stopImmediatePropagation()"
-            :to="'/profile/' + activity.createdBy.id"
-          >{{activity.createdBy.fullName}}</router-link>
-        </div>
       </div>
     </div>
   </div>
@@ -32,6 +34,7 @@
 
 <script>
 import AttendeeList from "../components/AttendeeList";
+import moment from "moment";
 
 export default {
   props: {
@@ -42,9 +45,31 @@ export default {
       console.log("test");
     }
   },
-  computed:{
-    attendees(){
+  computed: {
+    attendees() {
       return this.activity.attendees ? this.activity.attendees.length : 0;
+    },
+    starts() {
+      const startsAt = moment(this.activity.startsAt);
+      var day = startsAt
+        .format("dddd")
+        .substring(0, 3)
+        .toUpperCase();
+      var month = startsAt
+        .format("MMMM")
+        .substring(0, 3)
+        .toUpperCase();
+      return `${day}, ${month} ${startsAt.format("DD")}, ${startsAt.format(
+        "hh:mm"
+      )}`;
+    },
+    shortName() {
+      return (
+        this.activity.createdBy.fullName.substring(
+          0,
+          this.activity.createdBy.fullName.indexOf(" ") + 2
+        ) + "."
+      );
     }
   },
   components: {
@@ -56,10 +81,11 @@ export default {
 <style scoped lang="scss">
 .preview-details {
   cursor: pointer;
-  flex: 0 0 278px;
+  flex: 0 0 320px;
   display: flex;
   flex-direction: column;
   margin: 10px;
+  text-align: left;
   position: relative;
   transition: all 0.2s;
   &:hover {
@@ -67,14 +93,22 @@ export default {
   }
 }
 
-.preview-attendees,
-.preview-stars {
-  font-size: 0.8rem;
-  margin: auto 0;
+.ribbon {
+  top: 10px;
+  left: 0;
+  background: #2c3e50;
+  position: absolute;
+  p{
+    margin: 0;
+    color: white;
+    padding: 4px 10px;
+  }
 }
 
-.preview-stars {
+.preview-starts {
   color: green;
+  margin: auto;
+  font-size: 0.8rem;
 }
 
 .preview-title {
@@ -92,6 +126,12 @@ export default {
 .preview-top {
   display: flex;
   justify-content: space-between;
+  .preview-created-by-name {
+    margin-left: 60px;
+  }
+  p {
+    margin: 0;
+  }
 }
 
 .preview-image {
@@ -101,29 +141,24 @@ export default {
 
 .profile-image {
   border-radius: 50%;
-  width: 40px;
+  width: 65px;
+  box-shadow: 0px 0px 0px 4px white;
 }
 
-.preview-creator {
-  text-align: left;
-  .profile-card {
-    display: flex;
-    a {
-      text-decoration: none;
-      color: rgb(71, 71, 71);
-      margin: auto 10px;
-    }
-  }
-  p {
-    margin: 5px 0;
-    font-size: 0.8rem;
-  }
+.left {
+  left: 50%;
+}
+
+.wrap {
+  position: absolute;
+  top: 166px;
+  left: 5px;
 }
 
 .wishlist-heart {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 15px;
+  top: 10px;
   font-size: 1.2rem;
   color: white;
   -webkit-text-stroke: 2px black;
