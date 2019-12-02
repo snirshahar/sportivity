@@ -7,22 +7,15 @@ Vue.use(Vuex)
 export default ({
   strict: true,
   state: {
-    activities: {
-      all: [],
-      popular: [],
-      recent: [],
-      today: [],
-    },
+    activities: [],
     currActivity: null
   },
   mutations: {
-    setActivities(state, { filter, activities }) {
-      state.activities[filter] = activities;
+    setActivities(state, { activities }) {
+      state.activities = activities;
     },
     saveActivity(state, { activity }) {
-      state.activities.all.unshift(activity);
-      state.activities.recent.unshift(activity);
-      //maby need to check if add to activities.today
+      state.activities.unshift(activity);
     },
     setCurrActivity(state, { activity }) {
       state.currActivity = activity;
@@ -31,7 +24,7 @@ export default ({
   actions: {
     async loadActivities(context) {
       const activities = await activityService.getActivities();
-      context.commit({ type: 'setActivities', filter: 'all', activities });
+      context.commit({ type: 'setActivities', activities });
     },
     async saveActivity(context, { activity }) {
       activity = await activityService.addActivity(activity);
@@ -46,20 +39,8 @@ export default ({
     }
   },
   getters: {
-    all(state) {
-      return state.activities.all;
-    },
-    popular(state) {
-      return state.activities.popular;
-    },
-    recent(state) {
-      return state.activities.recent;
-    },
-    today(state) {
-      return state.activities.today;
-    },
-    currActivity(state) {
-      return state.currActivity;
+    activities(state) {
+      return state.activities;
     }
   },
   modules: {

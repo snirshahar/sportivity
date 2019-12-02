@@ -98,7 +98,7 @@ async function add(activity) {
 
 async function addAttendee(activity, attendee) {
     activity = await getActivity(activity._id);
-    if (activity.attendees.length === activity.maxAttendees) return;
+    if (activity.attendees.length === activity.maxAttendees) return; // Add a message
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
         { '_id': ObjectId(activity._id) },

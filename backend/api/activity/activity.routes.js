@@ -8,8 +8,9 @@ const router = express.Router();
 
 router.get('/', getActivities);
 router.get('/:id', getActivity);
-router.put('/:activityId/attendee/:attendeeId', addAttendee);
-router.delete('/:activityId/attendee/:attendeeId', deleteAttendee);
+// router.use(requireAuth);
+router.put('/:activityId/attendee/:attendeeId', requireAuth, addAttendee);
+router.delete('/:activityId/attendee/:attendeeId', requireAuth, deleteAttendee);
 router.post('/', requireAuth, addActivity);
 router.delete('/:id', requireAuth, deleteActivity);
 

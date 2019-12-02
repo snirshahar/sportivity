@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     activities() {
-      return this.$store.getters.all;
+      return this.$store.getters.activities;
     }
   }
 };
