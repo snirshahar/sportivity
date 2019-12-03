@@ -24,21 +24,26 @@
 
 <script>
 import ActivityService from "../services/ActivityService";
+import SocketService from '../services/SocketService';
 
 export default {
   data() {
     return {
       topNavBar: false,
       activity: null,
-      user: this.$store.getters.loggedinUser,
+      user: this.getUser,
       joined: false
     };
   },
   computed: {
+    getUser(){
+      return this.$store.getters.loggedinUser;
+    },
     isFull() {
       return this.activity.attendees.length === this.activity.maxAttendees;
     },
     isJoined() {
+      if(!this.user) return false;
       const searchedUser = this.activity.attendees.find(
         att => att._id === this.user._id
       );
@@ -60,22 +65,30 @@ export default {
         imgUrl: this.user.imgUrl
       };
       this.activity.attendees.push(shortUser);
-      const res = await ActivityService.addAttendee(this.activity, shortUser);
+      const res = await ActivityService.addAttendee(this.activity, user);
       this.joined = true;
+      SocketService.emit('user joined', {activityId:this.activity._id, user:this.user})
+
     },
     async unjoin() {
       const res = await ActivityService.deleteAttendee(this.activity, this.user._id);
       this.activity.attendees = this.activity.attendees.filter(att => att._id !== this.user._id)
       this.joined = false;
+      SocketService.emit('user left', {activityId:this.activity._id, user:this.user})
     }
   },
   created() {
+    this.user = this.getUser
     window.addEventListener("scroll", this.handleScroll);
     this.activity = this.$store.getters.currActivity;
     this.joined = this.isJoined;
+    console.log(this.activity._id,'activityId:this.activity._id');
+    SocketService.emit('user listen', {activityId:this.activity._id})
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+      //is it correct?
+    // socket.destroy()
   }
 };
 </script>

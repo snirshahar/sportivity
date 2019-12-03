@@ -8,7 +8,8 @@ module.exports = {
     getActivity,
     addAttendee,
     deleteAttendee,
-    add
+    add,
+    addMsg
 }
 
 async function getActivity(id) {
@@ -116,9 +117,20 @@ async function deleteAttendee(activity, attendeeId) {
     )
 }
 
+async function addMsg(activityId, msg) {
+    msg.sentAt = Date.now()
+    const collection = await dbService.getCollection('activity');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(activityId) },
+        { $push: { "msgs": msg } },
+        // (err, doc) => {
+            // console.log(doc.value.msgs);
+        // }
+    )
+    return msg;
+}
+
 function _buildCriteria(filterBy) {
     const criteria = {};
     return criteria;
 }
-
-
