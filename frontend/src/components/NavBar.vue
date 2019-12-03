@@ -6,8 +6,9 @@
     </div>
     <div class="nav-items">
       <router-link to="/activity/add">Create an activity</router-link>
+      <span style="margin: 10px">|</span>
       <router-link v-if="!user" to="/login">Login</router-link>
-      <router-link v-else to="/logout" @click="doLogout">Logout</router-link>
+      <div class="logout" v-else @click="doLogout">{{logout}}</div>
     </div>
   </nav>
 </template>
@@ -18,14 +19,18 @@ export default {
     navToHome() {
       if (this.$route.path !== "/") this.$router.push("/");
     },   
-    doLogout() {
-      this.$store.dispatch({type: 'logout'})
-      this.$router.push("/login");
+    async doLogout() {
+      await this.$store.dispatch({type: 'logout'})
+      this.$router.push('/login');
     }
   },
   computed: {
     user() {
       return this.$store.getters.loggedinUser;
+    },
+    logout(){
+      const user = this.$store.getters.loggedinUser
+      return `${user.fullName}, Logout`
     }
   }
 };
@@ -45,7 +50,6 @@ export default {
     margin-left: 10px;
   }
 }
-
 .main-nav {
   padding: 5px 15px;
   user-select: none;
@@ -53,11 +57,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  a {
+  .nav-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 150px
+  }
+  a, .logout {
+    cursor: pointer;
     font-size: 0.8rem;
     color: #2c3e50;
     text-decoration: none;
-    margin-left: 30px;
     transition: all 0.1s;
     &.router-link-exact-active {
       color: #42b983;
