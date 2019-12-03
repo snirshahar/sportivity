@@ -265,3 +265,24 @@ Mon, 02 Dec 2019 09:01:19 GMT - Info - Server is running on port: 3000
 Mon, 02 Dec 2019 11:01:57 GMT - Debug - daniel@daniel.com, 123123, Daniel Yona
 Mon, 02 Dec 2019 11:01:57 GMT - Debug - auth.route - new account created: {"email":"daniel@daniel.com","password":"$2a$10$J2WXpytrhw2bfc3/6yuuVOnilgrGT6xw5bSFXqIMOgmF9EHv9dJku","fullName":"Daniel Yona","isAdmin":false,"inbox":{},"imgUrl":"https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png","wishlist":{},"createdAt":1575284517246,"_id":"5de4ef250ed4a61428404464"}
 Mon, 02 Dec 2019 13:22:48 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 14:16:22 GMT - Debug - daniel@daniel.com, 123123, Daniel Yona
+Mon, 02 Dec 2019 14:16:22 GMT - Debug - auth.route - new account created: {"email":"daniel@daniel.com","password":"$2a$10$y5XdbYJNXSKSWsI7Wu7cW.3EaQ9S/X2ITphxFbQ2GcsHk.a.RXukq","fullName":"Daniel Yona","isAdmin":false,"inbox":{},"imgUrl":"https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png","wishlist":{},"createdAt":1575296182676,"_id":"5de51cb6f1e3282ca4ecad2e"}
+Mon, 02 Dec 2019 18:29:37 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:03:00 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:09:55 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:11:11 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:13:23 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:16:50 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:18:58 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:19:39 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:24:43 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 21:27:03 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:09:18 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:10:41 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:11:36 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:14:54 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:15:52 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:16:42 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:16:56 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:25:03 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 22:25:12 GMT - Info - Server is running on port: 3000

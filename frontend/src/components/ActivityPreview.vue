@@ -1,7 +1,7 @@
 <template>
   <div class="preview-details" @click="$router.push(`/activity/${activity._id}`)">
     <div class="preview-image-container">
-      <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
+        <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
       <div class="wrap">
         <router-link
           @click.native="$event.stopImmediatePropagation()"
@@ -12,7 +12,10 @@
       </div>
       <div class="wishlist-heart" @click.stop="test">❤</div>
       <div class="ribbon">
-        <p class="preview-attendees">{{attendees}}/{{activity.maxAttendees}}</p>
+        <p class="preview-attendees">
+          <font-awesome-icon :icon="['fa', 'user']" size="xs" />
+          {{attendees}}/{{activity.maxAttendees}}
+        </p>
       </div>
       <div></div>
     </div>
@@ -26,6 +29,7 @@
         <p class="preview-desc-text">{{activity.description}}</p>
       </div>
     </div>
+    <AttendeeList :attendees="activity.attendees" />
   </div>
 </template>
 
@@ -80,6 +84,7 @@ export default {
 
 <style scoped lang="scss">
 .preview-details {
+  outline: 1px;
   cursor: pointer;
   flex: 0 0 320px;
   display: flex;
@@ -98,11 +103,15 @@ export default {
   left: 0;
   background: #2c3e50;
   position: absolute;
-  p{
+  p {
     margin: 0;
     color: white;
     padding: 4px 10px;
   }
+}
+
+.preview-desc {
+  padding: 10px;
 }
 
 .preview-starts {
@@ -117,7 +126,6 @@ export default {
 }
 
 .border {
-  padding: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -127,7 +135,8 @@ export default {
   display: flex;
   justify-content: space-between;
   .preview-created-by-name {
-    margin-left: 60px;
+    margin-left: 63px;
+    font-weight: bold;
   }
   p {
     margin: 0;
@@ -141,7 +150,7 @@ export default {
 
 .profile-image {
   border-radius: 50%;
-  width: 65px;
+  width: 50px;
   box-shadow: 0px 0px 0px 4px white;
 }
 
@@ -151,8 +160,8 @@ export default {
 
 .wrap {
   position: absolute;
-  top: 166px;
-  left: 5px;
+  top: 170px;
+  left: 10px;
 }
 
 .wishlist-heart {
@@ -166,5 +175,13 @@ export default {
   &:hover {
     color: red;
   }
+}
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
 }
 </style>

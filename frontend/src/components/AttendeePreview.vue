@@ -1,20 +1,7 @@
 <template>
-  <section>
-    <h1>User</h1>
-    <!-- <div>
-      <div v-model="attendee.id"></div>
-      <div v-model="attendee.fullName"></div>
-      <div v-model="attendee.imgUrl"></div>
-    </div>-->
-    <div class="attendees-container">
-      <div class="attendee-id">{{attendee.id}}</div>
-      <div class="attendee-fullName">{{attendee.fullName}}</div>
-      <div class="attendee-imgUrl">
-        <img :src="attendee.imgUrl" />
-        {{attendee.fullName}}
-      </div>
-    </div>
-  </section>
+  <div class="image-cropper">
+    <img :src="attendee.imgUrl" class="activity-attendee" />
+  </div>
 </template>
 
 <script>
@@ -23,12 +10,22 @@ export default {
     attendee: Object
   },
   data() {
-    return {
-      attendee: {}
-    };
+    return {};
   }
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.activity-attendee {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 5px;
+  img {
+    display: inline;
+    margin: 0 auto;
+  }
+}
 </style>

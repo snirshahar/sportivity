@@ -1,13 +1,13 @@
 <template>
   <section>
     <div class="attendee-list-container">
-      <AttendeePreview v-for="attendee in attendees" :key="attendee._id" :attendee="attendees"></AttendeePreview>
+      <AttendeePreview v-for="attendee in attendees" :attendee="attendee" :key="attendee._id"></AttendeePreview>
     </div>
   </section>
 </template>
 
 <script>
-import AttendeePreview from "../components/AttendeePreview";
+import AttendeePreview from "./AttendeePreview";
 
 export default {
   name: "attendeeList",
@@ -23,5 +23,9 @@ export default {
 };
 </script>
 
-<style >
-</style>
+<style lang="scss" scoped>
+.attendee-list-container {
+  display: flex;
+  background: rgb(245, 245, 245);
+}
+</style>>
