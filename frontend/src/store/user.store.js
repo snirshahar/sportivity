@@ -32,10 +32,10 @@ export default ({
       context.commit({ type: "removeUser", user })
       return user;
     },
-    async userLogout(context) {
+    async logout(context) {
       await userService.logout()
-      context.commit({ type: "userLoggedOut" })
-      return user;
+      context.commit({ type: "removeUser" })
+      return console.log('user signout successfully');
     }
   }
 })

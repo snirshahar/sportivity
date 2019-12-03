@@ -41,7 +41,7 @@ async function register(userCred) {
 }
 async function logout() {
     await HttpService.post('auth/logout');
-    sessionStorage.clear();
+    sessionStorage.clear();   
 }
 function getUsers() {
     return HttpService.get('user')
