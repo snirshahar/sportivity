@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <span class="wall-title">Activity Wall</span>
+  <div class="wall-container">
     <form @submit.prevent="sendMsg" v-if="user">
       <input type="text" v-model="msg.txt" placeholder="Write your message here" />
       <button>Send</button>

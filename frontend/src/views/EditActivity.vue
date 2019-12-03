@@ -36,11 +36,19 @@
         <option value="other">Other</option>
       </select>
 
-      <label for="city">City:</label>
-      <input class="input" type="text" id="city" name="city" v-model="activity.location.city" ref="autocomplete" onfocus="value = ''" />
-
-      <label for="street">Street:</label>
-      <input class="input" type="text" id="street" name="street" v-model="activity.location.street" />
+      <label for="place">Place</label>
+      <template>
+        <input
+          class="input"
+          type="text"
+          id="place"
+          name="place"
+          v-model="place"
+          ref="autocomplete"
+          @input="onInput"
+          @blur="setMarker"
+        />
+      </template>
 
       <label for="occurrence">Occurrence:</label>
       <select class="input" id="cycle" name="cycle" v-model="activity.cycle">
@@ -55,18 +63,23 @@
         id="description"
         name="description"
         rows="4"
-        v-model="activity.location.description"
+        v-model="activity.description"
       />
 
       <input class="button" type="submit" value="Submit" />
     </form>
 
-    <GmapMap :center="{lat:10, lng:10}" :zoom="16" map-type-id="terrain" class="google-map">
+    <GmapMap
+      :center="{lat:activity.location.lat, lng:activity.location.lng}"
+      :zoom="16"
+      map-type-id="terrain"
+      class="google-map"
+    >
       <GmapMarker
-        :position="{lat:10, lng:10}"
+        :position="{lat:activity.location.lat, lng:activity.location.lng}"
         :clickable="true"
         :draggable="false"
-        @click="center={lat:10, lng:10}"
+        @click="center={lat:activity.location.lat, lng:activity.location.lng}"
       />
     </GmapMap>
   </section>
@@ -77,6 +90,7 @@
 
 <script>
 import activityService from "../services/ActivityService";
+import locationService from "../services/LocationService";
 
 export default {
   data() {
@@ -89,8 +103,6 @@ export default {
         startsAt: null,
         maxAttendees: 10,
         location: {
-          city: "",
-          street: "",
           lng: 10,
           lat: 10
         },
@@ -98,33 +110,24 @@ export default {
         startsAt: null
       },
       activityId: null,
-      autocomplete: null
+      autocomplete: null,
+      placeChanged: false,
+      place: null
     };
   },
-  computed: {
-    saveButton() {
-      if (this.$route.params.id) return "Save";
-      else {
-        this.activity = {
-          createdBy: {
-            fullName: "",
-            imgUrl: ""
-          },
-          startsAt: {
-            date: "",
-            time: ""
-          },
-          location: {
-            city: "",
-            street: ""
-          },
-          imgUrls: []
-        };
-      }
-      return "Create an activity";
-    }
-  },
   methods: {
+    onInput() {
+      this.placeChanged = true;
+    },
+    setMarker(ev) {
+      if (this.placeChanged) {
+        setTimeout(async () => {
+          const res = await locationService.getCoors(ev.target.value);
+          this.activity.location = res.data.results[0].geometry.location;
+        }, 100);
+        this.placeChanged = false;
+      }
+    },
     uploadImg(ev) {
       // activityService.uploadImg(ev)
       //   .then(res => this.activity.img = res.url)
@@ -149,10 +152,12 @@ export default {
     this.activity = { ...activity };
   },
   mounted() {
-    this.autocomplete = new google.maps.places.Autocomplete(
-      this.$refs.autocomplete,
-      { types: ["geocode"] }
-    );
+    setTimeout(() => {
+      this.autocomplete = new google.maps.places.Autocomplete(
+        this.$refs.autocomplete,
+        { types: ["address"] }
+      );
+    }, 500);
   }
 };
 </script>

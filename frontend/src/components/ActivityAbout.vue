@@ -8,10 +8,6 @@
           <div class="created-by-card-name">{{this.activity.createdBy.fullName}}</div>
         </router-link>
       </div>
-      <div>
-        <h3>Location</h3>
-        <p>{{this.activity.location.street}}, {{this.activity.location.city}}</p>
-      </div>
       <div class="description">
         <h3>Description</h3>
         <p class="text">{{this.activity.description}}</p>

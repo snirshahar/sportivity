@@ -34,29 +34,7 @@ const routes = [
   {
     path: '/activity/:id',
     name: 'ActivityDetails',
-    component: ActivityDetails,
-    children: [
-      {
-        path: '/activity/:id',
-        name: 'activityAbout',
-        component: ActivityAbout
-      },
-      {
-        path: '/activity/:id/members',
-        name: 'Members',
-        component: ActivityMembers
-      },
-      {
-        path: '/activity/:id/discussions',
-        name: 'activityDiscussions',
-        component: ActivityDiscussions
-      },
-      {
-        path: '/activity/:id/photos',
-        name: 'activityPhotos',
-        component: ActivityPhotos
-      }
-    ]
+    component: ActivityDetails
   },
   {
     path: '/login',
