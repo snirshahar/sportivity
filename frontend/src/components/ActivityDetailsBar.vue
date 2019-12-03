@@ -9,8 +9,14 @@
           <router-link :to="`/activity/${$route.params.id}/photos`">Photos</router-link>
         </div>
         <div class="attend">
-          <button v-if="!joined" class="ml-50" @click="join" :class="{ disabled: isFull }">Join this group</button>
-          <button v-else class="ml-50" @click="unjoin">Leave this group</button>
+          <button v-if="isOwner" class="btn-delete" @click="join">Delete this group</button>
+          <button
+            v-else-if="!joined"
+            class="btn-join"
+            @click="join"
+            :class="{ disabled: isFull }"
+          >Join this group</button>
+          <button v-else class="btn-unjoin" @click="unjoin">Leave this group</button>
         </div>
       </div>
       <div class="bg-lightgray">
@@ -47,8 +53,11 @@ export default {
       const searchedUser = this.activity.attendees.find(
         att => att._id === this.user._id
       );
-      console.log('isJoined',  searchedUser ? 'true' : 'false')
+      console.log("isJoined", searchedUser ? "true" : "false");
       return searchedUser ? true : false;
+    },
+    isOwner() {
+      return this.activity.createdBy._id === this.user._id;
     }
   },
   methods: {
@@ -65,14 +74,23 @@ export default {
         imgUrl: this.user.imgUrl
       };
       this.activity.attendees.push(shortUser);
-      const res = await ActivityService.addAttendee(this.activity, user);
+      const res = await ActivityService.addAttendee(this.activity, shortUser);
+
+      console.log("join", res);
+
       this.joined = true;
       SocketService.emit('user joined', {activityId:this.activity._id, user:this.user})
 
     },
     async unjoin() {
-      const res = await ActivityService.deleteAttendee(this.activity, this.user._id);
-      this.activity.attendees = this.activity.attendees.filter(att => att._id !== this.user._id)
+      const res = await ActivityService.deleteAttendee(
+        this.activity,
+        this.user._id
+      );
+      console.log("unjoin", res);
+      this.activity.attendees = this.activity.attendees.filter(
+        att => att._id !== this.user._id
+      );
       this.joined = false;
       SocketService.emit('user left', {activityId:this.activity._id, user:this.user})
     }
@@ -142,7 +160,9 @@ a:hover {
   color: lightskyblue;
 }
 
-.attend button {
+.btn-join,
+.btn-unjoin,
+.btn-delete {
   border: none;
   outline: none;
   background: #f65858;
@@ -152,9 +172,26 @@ a:hover {
   cursor: pointer;
   transition: all 0.2s;
   border-radius: 4px;
+  margin-left: 50px;
 }
 
-.attend button:hover {
+.btn-join {
+  background: rgb(29, 160, 40);
+}
+
+.btn-join:hover {
+  background: rgba(29, 160, 40, 0.75);
+}
+
+.btn-delete {
+  background: red;
+}
+
+.btn-delete:hover {
+  background: rgb(255, 0, 0, 0.75);
+}
+
+.btn-unjoin:hover {
   background: rgba(246, 88, 88, 0.9);
 }
 

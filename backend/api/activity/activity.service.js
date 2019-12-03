@@ -99,12 +99,16 @@ async function add(activity) {
 
 async function addAttendee(activity, attendee) {
     activity = await getActivity(activity._id);
-    if (activity.attendees.length === activity.maxAttendees) return; // Add a message
+    if (activity.attendees.length === activity.maxAttendees) return 'The activity is full'; // Add a message
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
         { '_id': ObjectId(activity._id) },
-        { $push: { "attendees": attendee } }
-    )
+        { $push: { "attendees": attendee } },
+        { new: true },
+        (err, doc) => {
+            return err ? 'An error has occured' : `${attendee.fullName} has been added to ${activity.title}`
+        }
+    ) 
 }
 
 async function deleteAttendee(activity, attendeeId) {
@@ -113,8 +117,13 @@ async function deleteAttendee(activity, attendeeId) {
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
         { '_id': ObjectId(activity._id) },
-        { $set: { "attendees": currAttendees } }
+        { $set: { "attendees": currAttendees } },
+        { new: true },
+        (err, doc) => {
+            return err ? 'An error has occured' : `Member has been removed from ${activity.title}`
+        }
     )
+    
 }
 
 async function addMsg(activityId, msg) {

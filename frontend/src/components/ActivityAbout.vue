@@ -1,39 +1,41 @@
 <template>
   <div class="about-page" v-if="activity">
-    <GmapMap
-      :center="{lat:activity.location.lat, lng:activity.location.lng}"
-      :zoom="16"
-      map-type-id="satellite"
-      class="google-map"
-    >
-      <GmapMarker
-        :position="{lat:activity.location.lat, lng:activity.location.lng}"
-        :clickable="true"
-        :draggable="false"
-        @click="center={lat:activity.location.lat, lng:activity.location.lng}"
-      />
-    </GmapMap>
     <div class="details">
+      <div class="created-by">
+        <h3>Organizer</h3>
+        <router-link :to="this.activity._id" class="created-by-card">
+          <img :src="this.activity.createdBy.imgUrl" />
+          <div class="created-by-card-name">{{this.activity.createdBy.fullName}}</div>
+        </router-link>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>{{this.activity.location.street}}, {{this.activity.location.city}}</p>
+      </div>
+      <div class="description">
+        <h3>Description</h3>
+        <p class="text">{{this.activity.description}}</p>
+      </div>
+      <div>
+        <h3>Occurrence</h3>
+        <p>{{this.activity.cycle}}</p>
+      </div>
+    </div>
+    <div class="google-map">
       <div class="ml-50">
-        <div class="created-by">
-          <h3>Organizer</h3>
-          <router-link :to="this.activity._id" class="created-by-card">
-            <img :src="this.activity.createdBy.imgUrl" />
-            <div class="created-by-card-name">{{this.activity.createdBy.fullName}}</div>
-          </router-link>
-        </div>
-        <div>
-          <h3>Location</h3>
-          <p>{{this.activity.location.street}}, {{this.activity.location.city}}</p>
-        </div>
-        <div class="description">
-          <h3>Description</h3>
-          <p class="text">{{this.activity.description}}</p>
-        </div>
-        <div>
-          <h3>Occurrence</h3>
-          <p>{{this.activity.cycle}}</p>
-        </div>
+        <GmapMap
+          :center="{lat:activity.location.lat, lng:activity.location.lng}"
+          :zoom="16"
+          map-type-id="satellite"
+          class="google-map"
+        >
+          <GmapMarker
+            :position="{lat:activity.location.lat, lng:activity.location.lng}"
+            :clickable="true"
+            :draggable="false"
+            @click="center={lat:activity.location.lat, lng:activity.location.lng}"
+          />
+        </GmapMap>
       </div>
     </div>
   </div>
@@ -70,12 +72,19 @@ img {
   width: 50px;
 }
 
-.ml-50 {
-  margin-left: 50px;
+.details {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.details div {
+  flex-basis: 100px;
+}
+
+.ml-50 {
+  margin-left: 50px;
 }
 
 .about-page {
@@ -111,6 +120,6 @@ img {
 
 .google-map {
   width: 100%;
-  height: 400px;
+  height: 200px;
 }
 </style>

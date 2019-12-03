@@ -123,6 +123,7 @@ export default {
       //   .then(res => this.activity.img = res.url)
     },
     async saveActivity() {
+      this.activity.startsAt = new Date(this.activity.startsAt).getTime();
       console.log("new activity", this.activity);
       await this.$store.dispatch({
         type: "saveActivity",
