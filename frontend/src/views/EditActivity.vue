@@ -1,6 +1,8 @@
 <template>
   <section class="edit-activity-container">
     <form class="form" @submit.prevent="saveActivity">
+    <div class="field-container">
+    <section class="main-details">
       <label for="title">Title:</label>
       <input
         class="input"
@@ -9,20 +11,8 @@
         name="title"
         placeholder="Activity title..."
         v-model="activity.title"
+        required
       />
-
-      <label for="attendees">Number of Attendees:</label>
-      <input
-        class="input"
-        type="number"
-        id="attendees"
-        name="attendees"
-        value="10"
-        v-model="activity.maxAttendees"
-      />
-
-      <label for="starts-at">Beginning Time:</label>
-      <VueCtkDateTimePicker id="starts-at" v-model="activity.startsAt" />
 
       <label for="category">Category</label>
       <select class="input" id="category" name="category" v-model="activity.category">
@@ -36,18 +26,16 @@
         <option value="other">Other</option>
       </select>
 
-      <label for="city">City:</label>
-      <input class="input" type="text" id="city" name="city" v-model="activity.location.city" />
 
-      <label for="street">Street:</label>
-      <input class="input" type="text" id="street" name="street" v-model="activity.location.street" />
-
-      <label for="occurrence">Occurrence:</label>
-      <select class="input" id="cycle" name="cycle" v-model="activity.cycle">
-        <option value="once">Once</option>
-        <option value="weekly">Weekly</option>
-        <option value="monthly">Monthly</option>
-      </select>
+      <label for="attendees">Number of Attendees:</label>
+      <input
+        class="input"
+        type="number"
+        id="attendees"
+        name="attendees"
+        value="10"
+        v-model="activity.maxAttendees"
+      />
 
       <label for="description">Description:</label>
       <textarea
@@ -56,15 +44,37 @@
         name="description"
         rows="4"
         v-model="activity.location.description"
+        required
       />
+      </section>
+      <section class="info-details">
+      <label for="starts-at">Beginning Time:
+      <VueCtkDateTimePicker id="starts-at" v-model="activity.startsAt"
+       style="margin: 8px 0"
+       required/>
+      </label>
 
+      <label for="occurrence">Occurrence:</label>
+      <select class="input" id="cycle" name="cycle" v-model="activity.cycle">
+        <option value="once">Once</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+      <label for="city">City:</label>
+      <input class="input" type="text" id="city" name="city" 
+      v-model="activity.location.city" required />
+
+
+      <label for="street">Street:</label>
+      <input class="input" type="text" id="street" name="street"
+       v-model="activity.location.street" required />
+
+      </section>
+      </div>
       <input class="button" type="submit" value="Submit" />
     </form>
   </section>
 </template>
-
-<style>
-</style>
 
 <script>
 import activityService from "../services/ActivityService";
@@ -145,11 +155,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.field-container{
+  display: flex
+}
+.main-details{
+  margin: 20px;
+  width: 50%;
+}
+.info-details{
+  margin: 20px;
+  width: 50%;
+}
 .form {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   padding: 15px;
   border-radius: 3px;
-  width: 400px;
+  width: 60%;
   text-align: left;
   margin: 20px auto;
   display: flex;

@@ -75,9 +75,7 @@ export default {
       };
       this.activity.attendees.push(shortUser);
       const res = await ActivityService.addAttendee(this.activity, shortUser);
-
       console.log("join", res);
-
       this.joined = true;
       SocketService.emit('user joined', {activityId:this.activity._id, user:this.user})
 

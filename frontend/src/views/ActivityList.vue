@@ -2,24 +2,25 @@
   <section>
     <h1>Explore Your New Activities Here!</h1>
     <div class="activity-list">
+      {{activities}}
       <ActivityPreview v-for="activity in activities" :key="activity._id" :activity="activity"></ActivityPreview>
-
-      <!-- <ActivityPreviewList type="all"></ActivityPreviewList> -->
+      <ActivityFilter></ActivityFilter>
     </div>
   </section>
 </template>
 
 <script>
-// import ActivityPreview from "../components/ActivityPreview";
 import ActivityPreview from "../components/ActivityPreview";
+import ActivityFilter from "../components/ActivityFilter";
 
 export default {
-  name:"activityList",
+  name: "activityList",
   data() {
     return {};
   },
   components: {
-    ActivityPreview
+    ActivityPreview,
+    ActivityFilter
   },
   computed: {
     activities() {

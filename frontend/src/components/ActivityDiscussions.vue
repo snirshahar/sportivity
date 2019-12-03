@@ -6,9 +6,9 @@
       <button>Send</button>
     </form>
     <div v-else>
-      <p>Please <router-link to="/login">Login</router-link> to chat</p>
+      <p>Please <router-link to="/login">login</router-link> to chat</p>
     </div>
-      <chat-msg v-for="msg in msgs" :msg="msg"></chat-msg>
+      <chat-msg v-for="(msg,idx) in msgs" :key="idx" :msg="msg"></chat-msg>
   </div>  
 </template>
 
@@ -41,7 +41,6 @@ export default {
     this.user = this.$store.getters.loggedinUser
     this.msg = (!this.user)? null : {from: this.user, txt: ''}
     const activity = await ActivityService.getActivity(this.activityId)
-    console.log(activity.msgs);
     this.msgs = activity.msgs
     SocketService.on('msg recieved', msg=>{
       console.log('msg recieved',msg);

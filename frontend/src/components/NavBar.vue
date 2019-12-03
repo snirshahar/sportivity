@@ -2,7 +2,6 @@
   <nav class="main-nav">
     <div class="logo" @click="navToHome">
       <img src="../img/logo.png" />
-      <p class="title">Sportivity</p>
     </div>
     <div class="nav-items">
       <router-link to="/activity/add">Create an activity</router-link>
@@ -18,19 +17,19 @@ export default {
   methods: {
     navToHome() {
       if (this.$route.path !== "/") this.$router.push("/");
-    },   
+    },
     async doLogout() {
-      await this.$store.dispatch({type: 'logout'})
-      this.$router.push('/login');
+      await this.$store.dispatch({ type: "logout" });
+       if (this.$route.path !== "/") this.$router.push("/");
     }
   },
   computed: {
     user() {
       return this.$store.getters.loggedinUser;
     },
-    logout(){
-      const user = this.$store.getters.loggedinUser
-      return `${user.fullName}, Logout`
+    logout() {
+      const user = this.$store.getters.loggedinUser;
+      return `${user.fullName}, Logout`;
     }
   }
 };
@@ -43,7 +42,7 @@ export default {
   font-size: bold;
   align-items: center;
   img {
-    width: 50px;
+    width: 190px;
   }
   .title {
     font-size: 1.3rem;
@@ -57,13 +56,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .nav-items{
+  .nav-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 150px
+    min-width: 150px;
   }
-  a, .logout {
+  a,
+  .logout {
     cursor: pointer;
     font-size: 0.8rem;
     color: #2c3e50;

@@ -7,11 +7,14 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
 body {
   margin: 0;
 }
 #app {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Bebas Neue','Roboto', sans-serif;
+  letter-spacing: 2px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
