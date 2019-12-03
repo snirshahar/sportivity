@@ -92,9 +92,6 @@ export default {
   components: {
     CategoryItem,
     Video
-  },
-  created() {
-    this.$store.dispatch("loadActivities");
   }
 };
 </script>

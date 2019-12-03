@@ -1,29 +1,46 @@
 <template>
   <section>
-    <h1>Explore Your New Activities Here!</h1>
-    <div class="activity-list">
-      <ActivityPreview v-for="activity in activities" :key="activity._id" :activity="activity"></ActivityPreview>
-
-      <!-- <ActivityPreviewList type="all"></ActivityPreviewList> -->
-    </div>
+    <ActivityFilter></ActivityFilter>
+    <transition-group class="activity-list" name="fade">
+      <ActivityPreview
+        v-for="activity in filterActivities"
+        :key="activity._id"
+        :activity="activity"
+      ></ActivityPreview>
+    </transition-group>
   </section>
 </template>
 
 <script>
-// import ActivityPreview from "../components/ActivityPreview";
 import ActivityPreview from "../components/ActivityPreview";
+import ActivityFilter from "../components/ActivityFilter";
 
 export default {
-  name:"activityList",
+  name: "activityList",
   data() {
-    return {};
+    return {
+      filterBy: null
+    };
   },
   components: {
-    ActivityPreview
+    ActivityPreview,
+    ActivityFilter
   },
   computed: {
-    activities() {
-      return this.$store.getters.activities;
+    filterActivities() {
+      const activities = this.$store.getters.activities;
+      return !this.filterBy
+        ? activities
+        : activities.filter(activity => activity.category === this.filterBy);
+    }
+  },
+  async created() {
+    this.filterBy = this.$route.params.category;
+    console.log(this.activities);
+  },
+  watch: {
+    "$route.params.category"() {
+      this.filterBy = this.$route.params.category;
     }
   }
 };
@@ -37,5 +54,14 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.fade-enter-active {
+  transition: all 0.75s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
