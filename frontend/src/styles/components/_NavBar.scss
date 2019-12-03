@@ -1,0 +1,44 @@
+.main-nav{
+    background-image: linear-gradient(to left bottom, #00355c, #002e4c, #00273c, #001f2d, #00171f);
+  color: white;
+  padding: 5px 15px;
+  user-select: none;
+  border-bottom: 1px solid #00171F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 150px;
+  }
+  a,
+  .logout {
+  color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.1s;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+    &:hover {
+      color: #42b983;
+    }
+  }
+  .logo {
+    cursor: pointer;
+    display: flex;
+    font-size: bold;
+    align-items: center;
+    img {
+      width: 190px;
+    }
+    .title {
+      font-size: 1.3rem;
+      margin-left: 10px;
+      
+    }
+  }
+}

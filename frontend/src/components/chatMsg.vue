@@ -13,31 +13,6 @@
   </div>
 </template>
 
-<style scoped>
-p{
-  margin: 0;
-  text-align: left;
-}
-.msg-fullname{
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-}
-.msg-txt{
-  font-size: 16px
-}
-img{
-  height: 30px;
-  margin: 5px;
-}
-.chat-message{
-  width: 400px;
-  display: flex;
-  align-items: center;
-  margin: 5px 20px;
-}
-</style>
-
 <script>
 import moment from 'moment'
 

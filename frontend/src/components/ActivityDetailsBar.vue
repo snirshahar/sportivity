@@ -30,7 +30,7 @@
 
 <script>
 import ActivityService from "../services/ActivityService";
-import SocketService from '../services/SocketService';
+import SocketService from "../services/SocketService";
 
 export default {
   data() {
@@ -42,14 +42,15 @@ export default {
     };
   },
   computed: {
-    getUser(){
+    getUser() {
       return this.$store.getters.loggedinUser;
     },
     isFull() {
+      if (this.activity) return false;
       return this.activity.attendees.length === this.activity.maxAttendees;
     },
     isJoined() {
-      if(!this.user) return false;
+      if (!this.user) return false;
       const searchedUser = this.activity.attendees.find(
         att => att._id === this.user._id
       );
@@ -57,6 +58,7 @@ export default {
       return searchedUser ? true : false;
     },
     isOwner() {
+      if (!this.user) return false;
       return this.activity.createdBy._id === this.user._id;
     }
   },
@@ -67,6 +69,7 @@ export default {
         : (this.topNavBar = false);
     },
     async join() {
+      if (!this.user) return this.$router.push("/login");
       if (this.isFull || this.isJoined) return;
       const shortUser = {
         _id: this.user._id,
@@ -77,8 +80,10 @@ export default {
       const res = await ActivityService.addAttendee(this.activity, shortUser);
       console.log("join", res);
       this.joined = true;
-      SocketService.emit('user joined', {activityId:this.activity._id, user:this.user})
-
+      SocketService.emit("user joined", {
+        activityId: this.activity._id,
+        user: this.user
+      });
     },
     async unjoin() {
       const res = await ActivityService.deleteAttendee(
@@ -90,20 +95,23 @@ export default {
         att => att._id !== this.user._id
       );
       this.joined = false;
-      SocketService.emit('user left', {activityId:this.activity._id, user:this.user})
+      SocketService.emit("user left", {
+        activityId: this.activity._id,
+        user: this.user
+      });
     }
   },
   created() {
-    this.user = this.getUser
+    this.user = this.getUser;
     window.addEventListener("scroll", this.handleScroll);
     this.activity = this.$store.getters.currActivity;
     this.joined = this.isJoined;
-    console.log(this.activity._id,'activityId:this.activity._id');
-    SocketService.emit('user listen', {activityId:this.activity._id})
+    console.log(this.activity._id, "activityId:this.activity._id");
+    SocketService.emit("user listen", { activityId: this.activity._id });
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-      //is it correct?
+    //is it correct?
     // socket.destroy()
   }
 };

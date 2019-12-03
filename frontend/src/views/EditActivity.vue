@@ -73,6 +73,15 @@
       </div>
       <input class="button" type="submit" value="Submit" />
     </form>
+
+    <GmapMap :center="{lat:10, lng:10}" :zoom="16" map-type-id="terrain" class="google-map">
+      <GmapMarker
+        :position="{lat:10, lng:10}"
+        :clickable="true"
+        :draggable="false"
+        @click="center={lat:10, lng:10}"
+      />
+    </GmapMap>
   </section>
 </template>
 
@@ -98,7 +107,8 @@ export default {
         imgUrls: [],
         startsAt: null
       },
-      activityId: null
+      activityId: null,
+      autocomplete: null
     };
   },
   computed: {
@@ -124,9 +134,6 @@ export default {
       return "Create an activity";
     }
   },
-  component: {
-    // MapActivity
-  },
   methods: {
     uploadImg(ev) {
       // activityService.uploadImg(ev)
@@ -150,6 +157,12 @@ export default {
     if (!this.activityId) return;
     const activity = await activityService.getActivity(this.activityId);
     this.activity = { ...activity };
+  },
+  mounted() {
+    this.autocomplete = new google.maps.places.Autocomplete(
+      this.$refs.autocomplete,
+      { types: ["geocode"] }
+    );
   }
 };
 </script>
@@ -165,17 +178,21 @@ export default {
 .info-details{
   margin: 20px;
   width: 50%;
+.edit-activity-container {
+  display: flex;
+  margin: 50px;
 }
 .form {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   padding: 15px;
   border-radius: 3px;
   width: 60%;
+  flex-basis: 400px;
   text-align: left;
-  margin: 20px auto;
   display: flex;
   flex-direction: column;
-  .input, #starts-at-input {
+  .input,
+  #starts-at-input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -198,5 +215,11 @@ export default {
       background-color: #1b2631;
     }
   }
+}
+
+.google-map {
+  width: 400px;
+  height: 400px;
+}
 }
 </style>

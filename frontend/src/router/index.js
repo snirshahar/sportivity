@@ -69,10 +69,10 @@ const routes = [
     component: UserProfile
   },
   {
-    path: '/explore',
+    path: '/explore/:category?',
     name: 'activityList',
     component: ActivityList
-  }
+  },
 ]
 
 const router = new VueRouter({

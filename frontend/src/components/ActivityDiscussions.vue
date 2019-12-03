@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="discussions-container">
     <span class="wall-title">Activity Wall</span>
     <form @submit.prevent="sendMsg" v-if="user">
       <input type="text" v-model="msg.txt" placeholder="Write your message here" />
@@ -11,15 +11,6 @@
       <chat-msg v-for="(msg,idx) in msgs" :key="idx" :msg="msg"></chat-msg>
   </div>  
 </template>
-
-<style scoped>
-li{
-  list-style-type: none;
-}
-.wall-title{
-  font-size: 26px;
-}
-</style>
 
 <script>
 import SocketService from '../services/SocketService';

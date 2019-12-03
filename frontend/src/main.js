@@ -12,7 +12,7 @@ import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-
+import scss from './styles/global.scss'
 
 library.add(faUser);  
  
@@ -25,6 +25,7 @@ Vue.component('GmapMarker', GmapMarker)
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyAsh26jhkU5wtp6r_IcqAnuuuLrulpFl6Q',
+    libraries: 'places'
     // libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'

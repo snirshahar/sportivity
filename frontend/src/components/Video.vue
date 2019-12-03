@@ -5,7 +5,7 @@
     :mp4Source="require('../assets/videos/home.mp4')"
     :posterSource="require('../assets/logo.png')"
     :mobileBreakpoint="992"
-    :desktopHeight="550"
+    :desktopHeight="500"
     :mobileHeight="450"
     :playsinline="true"
     :loop="true"
@@ -14,9 +14,3 @@
     :muted="true"
   ></vue-video-section>
 </template>
-
-<style>
-.vue-video-section-wrapper {
-  z-index: -1;
-}
-</style>

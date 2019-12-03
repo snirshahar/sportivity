@@ -39,13 +39,13 @@ export default {
       return new Date(this.activity.createdAt).toLocaleString("en-us");
     },
     members() {
-      return this.activity.attendees ? this.activity.attendees.length : 0;
+      return this.activity && this.activity.attendees ? this.activity.attendees.length : 0;
     },
     maxAttendees() {
-      return this.activity.maxAttendees;
+      return this.activity && this.activity.maxAttendees;
     },
     type() {
-      return this.activity.isPublic ? "Public" : "Private";
+      return this.activity && this.activity.isPublic ? "Public" : "Private";
     }
   },
   components: {
