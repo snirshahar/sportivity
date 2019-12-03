@@ -26,7 +26,7 @@
         <GmapMap
           :center="{lat:activity.location.lat, lng:activity.location.lng}"
           :zoom="16"
-          map-type-id="satellite"
+          map-type-id="terrain"
           class="google-map"
         >
           <GmapMarker

@@ -25,6 +25,7 @@ Vue.component('GmapMarker', GmapMarker)
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyAsh26jhkU5wtp6r_IcqAnuuuLrulpFl6Q',
+    libraries: 'places'
     // libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
