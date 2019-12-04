@@ -100,6 +100,7 @@ export default {
   flex-direction: column;
   padding: 20px;
   position: relative;
+  border-radius: 6px;
 }
 .activity-list {
   display: flex;

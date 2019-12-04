@@ -25,7 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 .attendee-list-container {
+  margin:3px;
   display: flex;
-  background: rgb(245, 245, 245);
+  background: rgb(243, 243, 243);
 }
 </style>>

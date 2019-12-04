@@ -1,14 +1,12 @@
 <template>
   <div class="preview-details" @click="$router.push(`/activity/${activity._id}`)">
     <div class="preview-image-container">
-        <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
+      <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
       <div class="wrap">
         <router-link
           @click.native="$event.stopImmediatePropagation()"
           :to="'/profile/' + activity.createdBy._id"
-        >
-          <img :src="activity.createdBy.imgUrl" class="profile-image" />
-        </router-link>
+        ></router-link>
       </div>
       <div class="wishlist-heart" @click.stop="test">❤</div>
       <div class="ribbon">
@@ -21,7 +19,6 @@
     </div>
     <div class="border">
       <div class="preview-top">
-        <p class="preview-created-by-name">{{shortName}}</p>
         <p class="preview-starts">{{starts}}</p>
       </div>
       <div class="preview-desc">
@@ -66,14 +63,6 @@ export default {
       return `${day}, ${month} ${startsAt.format("DD")}, ${startsAt.format(
         "hh:mm"
       )}`;
-    },
-    shortName() {
-      return (
-        this.activity.createdBy.fullName.substring(
-          0,
-          this.activity.createdBy.fullName.indexOf(" ") + 2
-        ) + "."
-      );
     }
   },
   components: {
@@ -84,9 +73,11 @@ export default {
 
 <style scoped lang="scss">
 .preview-details {
+  border-radius: 7px;
+  background-color: #f5f5f5;
   outline: 1px;
   cursor: pointer;
-  flex: 0 0 320px;
+  flex: 0 0 260px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -99,6 +90,8 @@ export default {
 }
 
 .ribbon {
+  margin-left: 4px;
+  border-radius: 5px;
   top: 10px;
   left: 0;
   background: #2c3e50;
@@ -112,12 +105,6 @@ export default {
 
 .preview-desc {
   padding: 10px;
-}
-
-.preview-starts {
-  color: green;
-  margin: auto;
-  font-size: 0.8rem;
 }
 
 .preview-title {
@@ -139,19 +126,19 @@ export default {
     font-weight: bold;
   }
   p {
-    margin: 0;
+    margin: auto;
   }
+}
+.preview-starts {
+  color: green;
+  font-size: 0.8rem;
 }
 
 .preview-image {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
   width: 100%;
   height: 200px;
-}
-
-.profile-image {
-  border-radius: 50%;
-  width: 50px;
-  box-shadow: 0px 0px 0px 4px white;
 }
 
 .left {
