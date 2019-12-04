@@ -11,7 +11,11 @@
             </p>
             <p>
               <font-awesome-icon :icon="['fa', 'user']" />
-              {{activity.attendees.length}}/{{activity.maxAttendees}}
+              {{activity.attendees.length}}/{{activity.maxAttendees}} Members
+            </p>
+            <p>
+              <font-awesome-icon :icon="['fa', 'calendar-plus']" />
+              {{this.activity.cycle}}
             </p>
           </div>
         </div>
@@ -60,8 +64,8 @@ export default {
     const id = this.$route.params.id;
     await this.$store.dispatch({ type: "loadCurrActivity", id });
     this.activity = this.$store.getters.currActivity;
-    this.joined = this.isJoined;
     this.user = this.getUser;
+    this.joined = this.isJoined;
   },
   methods: {
     async join() {
@@ -73,18 +77,14 @@ export default {
         imgUrl: this.user.imgUrl
       };
       this.activity.attendees.push(shortUser);
-      const res = await ActivityService.addAttendee(this.activity, shortUser);
+      const res = await activityService.addAttendee(this.activity, shortUser);
 
       console.log("join", res);
 
       this.joined = true;
-      SocketService.emit("user joined", {
-        activityId: this.activity._id,
-        user: this.user
-      });
     },
     async unjoin() {
-      const res = await ActivityService.deleteAttendee(
+      const res = await activityService.deleteAttendee(
         this.activity,
         this.user._id
       );
@@ -93,10 +93,6 @@ export default {
         att => att._id !== this.user._id
       );
       this.joined = false;
-      SocketService.emit("user left", {
-        activityId: this.activity._id,
-        user: this.user
-      });
     }
   },
   computed: {
@@ -143,10 +139,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.group-container{
+.group-container {
   display: flex;
   flex-direction: column;
-  .social{
+  .social {
     display: flex;
   }
 }
@@ -176,9 +172,9 @@ p {
   margin: auto 10px;
   .deep-details {
     display: flex;
+    flex-direction: column;
     p {
       color: white;
-      margin: auto;
     }
   }
 }
@@ -190,7 +186,7 @@ p {
   background-position: 50% 50%;
   position: relative;
   overflow: hidden;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
 }
@@ -205,6 +201,9 @@ p {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  p{
+    padding: 3px 0;
+  }
 }
 .img > .img-blur-line::before {
   content: "";

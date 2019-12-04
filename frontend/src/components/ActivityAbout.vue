@@ -12,10 +12,6 @@
         <h3>Description</h3>
         <p class="text">{{this.activity.description}}</p>
       </div>
-      <div>
-        <h3>Occurrence</h3>
-        <p>{{this.activity.cycle}}</p>
-      </div>
     </div>
     <div class="google-map">
       <div class="ml-50">

@@ -65,6 +65,7 @@
   flex-direction: column;
   .form-type {
     display: flex;
+    text-align: center;
     div {
       font-weight: bold;
       font-size: 1.2rem;
