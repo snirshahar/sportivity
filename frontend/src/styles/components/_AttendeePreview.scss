@@ -1,11 +1,27 @@
-.activity-attendee {
-    position: relative;
-    overflow: hidden;
-    margin: 2px;
-    border-radius: 50%;
-    cursor: pointer;
-    img {
-      display: inline;
-      margin: 0 auto;
-    }
+.attendee-image {
+  position: relative;
+  overflow: hidden;
+  margin: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  img {
+    display: inline;
+    margin: 0 auto;
   }
+}
+
+.preview-card {
+  text-align: center;
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+a{
+  text-decoration: none;
+  color:darkgray;
+  &:hover p{
+    color: gray;
+  }
+}

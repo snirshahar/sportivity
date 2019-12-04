@@ -1,6 +1,7 @@
 <template>
   <div class="about-page-container" v-if="activity">
     <div class="details">
+    <h1>About</h1>
       <div class="created-by">
         <h3>Organizer</h3>
         <router-link :to="this.activity._id" class="created-by-card">

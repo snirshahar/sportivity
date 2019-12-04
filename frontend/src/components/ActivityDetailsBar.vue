@@ -35,11 +35,11 @@ export default {
     
   },
   created() {
-    window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("scroll", this.handleScroll);
     // SocketService.emit("user listen", { activityId: this.activity._id });
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>

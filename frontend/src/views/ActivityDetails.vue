@@ -31,10 +31,12 @@
         </div>
       </div>
     </div>
-    <ActivityDetailsBar />
+    <div class="container">
+      <ActivityDetailsBar />
+    </div>
     <div class="group-container">
       <ActivityAbout />
-      <ActivityMembers :attendees="activity.attendees"/>
+      <ActivityMembers :attendees="activity.attendees" />
       <ActivityDiscussions />
       <ActivityPhotos />
     </div>
@@ -137,9 +139,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  background: #f7f7f7;
+}
 .group-container {
   display: flex;
   flex-direction: column;
+  max-width: 1140px;
+  margin: 0 auto;
   .social {
     display: flex;
   }
@@ -158,8 +165,6 @@ p {
   margin-left: 50px;
 }
 .details-container {
-  max-width: 1140px;
-  margin: 0 auto;
 }
 
 .details {
@@ -187,6 +192,7 @@ p {
   height: 70vh;
   display: flex;
   justify-content: space-between;
+  background-size: cover;
 }
 .img > .img-blur-line {
   position: absolute;

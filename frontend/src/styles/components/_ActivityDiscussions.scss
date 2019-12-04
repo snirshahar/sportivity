@@ -1,8 +1,39 @@
-.discussions-container{
-    li{
-        list-style-type: none;
+.wall-container {
+  height: 50vh;
+  background: #f7f7f7;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .wall {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .msgs {
+      height: calc(100% - 43px);
+      overflow-y: scroll;
     }
-      .wall-title{
-        font-size: 26px;
+    .form {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      width: 100%;
+      .msg-input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .btn-send {
+        color: white;
+        background: #f13a59;
+        border: none;
+        color: white;
+        padding: 14px 20px;
+        margin: 0;
+        cursor: pointer;
+      }
     }
+  }
 }

@@ -3,10 +3,10 @@
   <div class="chat-message">
     <img :src="msg.from.imgUrl" alt="">
     <div class="content">
-      <p class="msg-fullname">
-        <span style="font-weight: 1000">{{msg.from.fullName}}</span>
-        <span style="color:grey">{{sentAt}}</span>
-      </p>
+      <div class="msg-info">
+        <p class="fullname">{{msg.from.fullName}}</p>
+        <p>{{sentAt}}</p>
+      </div>
       <p class="msg-txt">{{txtMsg}}</p>
     </div>
     

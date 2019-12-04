@@ -49,21 +49,19 @@
           <label for="starts-at">Beginning Time:</label>
           <VueCtkDateTimePicker id="starts-at" v-model="activity.startsAt" style="margin: 8px 0;" />
 
-
           <label for="place">Place</label>
-        <template>
-          <input
-            class="input"
-            type="text"
-            id="place"
-            name="place"
-            v-model="place"
-            ref="autocomplete"
-            @input="onInput"
-            @blur="setMarker"
-          />
-        </template>
-
+          <template>
+            <input
+              class="input"
+              type="text"
+              id="place"
+              name="place"
+              v-model="place"
+              ref="autocomplete"
+              @input="onInput"
+              @blur="setMarker"
+            />
+          </template>
 
           <label for="occurrence">Occurrence:</label>
           <select class="input" id="cycle" name="cycle" v-model="activity.cycle">
@@ -74,21 +72,21 @@
         </section>
 
         <div class="google-map-container">
-          <span>map</span> 
+          <span>map</span>
           <GmapMap
-      :center="{lat:10, lng:10}"
-      :zoom="16"
-      map-type-id="terrain"
-      class="google-map"
-      width="200px"
-    >
-      <GmapMarker
-        :position="{lat:10, lng:10}"
-        :clickable="true"
-        :draggable="false"
-        @click="center={lat:10, lng:10}"
-      />
-    </GmapMap>
+            :center="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+            :zoom="16"
+            map-type-id="terrain"
+            class="google-map"
+            width="200px"
+          >
+            <GmapMarker
+              :position="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+              :clickable="true"
+              :draggable="false"
+              @click="center={lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+            />
+          </GmapMap>
         </div>
       </div>
       <input class="button" type="submit" value="Submit" />
@@ -100,7 +98,7 @@
 .edit-activity-container {
   color: white;
 }
-.google-map-container{
+.google-map-container {
   text-align: center;
   margin: 8px;
 }
@@ -108,7 +106,7 @@
   width: 300px;
   height: 300px;
   margin: 10px;
-  flex:1;
+  flex: 1;
   border-radius: 5px;
   border: 5px white solid;
   outline: 1px solid black;
@@ -117,9 +115,9 @@
   display: flex;
 }
 .main-details,
-.info-details{
+.info-details {
   margin: 10px;
-  flex:1
+  flex: 1;
 }
 .form {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
@@ -160,10 +158,10 @@
     display: block;
   }
   .google-map {
-  width: 98%;
-  height: 300px;
-  margin: 5px;
-}
+    width: 98%;
+    height: 300px;
+    margin: 5px;
+  }
 }
 </style>
 
@@ -205,9 +203,13 @@ export default {
       if (this.placeChanged) {
         setTimeout(async () => {
           var res = await locationService.getCoors(ev.target.value);
+          console.log(res);
           const result = res.data.results[0];
           this.activity.location._id = result.place_id;
-          this.activity.location.coords = { lat: result.geometry.location.lat, lng: result.geometry.location.lng}
+          this.activity.location.coords = {
+            lat: result.geometry.location.lat,
+            lng: result.geometry.location.lng
+          };
           this.activity.location.address = result.formatted_address;
           console.log(this.activity.location);
           // res = await locationService.getLocation({});

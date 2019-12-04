@@ -1,7 +1,9 @@
 <template>
-  <div class="attendess-container" v-if="attendees">
+  <div class="attendees-container" v-if="attendees">
     <h1>Attendees</h1>
-    <ActivityPreview v-for="attendee in attendees" :key="attendee._uid" :attendee="attendee" :size="'50px'" :showName="true"></ActivityPreview>
+    <div class="attendees">
+      <ActivityPreview v-for="attendee in attendees" :key="attendee._uid" :attendee="attendee" :size="'50px'" :showName="true"></ActivityPreview>
+    </div>
   </div>
 </template>
 
