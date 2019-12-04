@@ -13,12 +13,3 @@
     <router-link to="/explore/dance">Dance</router-link>
   </div>
 </template>
-
-<style scoped>
-.explore-categories a {
-  font-size: 1.2rem;
-  margin: 10px;
-  padding: 10px;
-  text-decoration: none;
-}
-</style>

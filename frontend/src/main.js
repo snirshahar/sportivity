@@ -13,6 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons';
+import scss from  './styles/global.scss'
 
 library.add([faUser, faMapMarker]);  
  

@@ -2,7 +2,6 @@
   <nav class="main-nav">
     <div class="logo" @click="navToHome">
       <img src="../img/logo.png" />
-      <p class="title">Sportivity</p>
     </div>
     <div class="nav-items">
       <router-link to="/activity/add">Create an activity</router-link>
