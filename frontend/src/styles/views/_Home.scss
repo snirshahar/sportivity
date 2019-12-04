@@ -1,6 +1,9 @@
 .home-main-container{
+  background-image: linear-gradient(to bottom, whitesmoke, #ffffff);
+  background-color: whitesmoke;
     .home {
       position: relative;
+      z-index: 1;
       img {
         width: 100%;
         height: 500px;
@@ -39,15 +42,15 @@
         }
       }
     }
-  
     .categories-container {
       max-width: 1140px;
       margin: 50px auto;
       .categories {
         margin: 50px;
-        display: flex;
-        flex-wrap: wrap;
         position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
       }
     }
 }

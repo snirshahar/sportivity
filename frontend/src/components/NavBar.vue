@@ -4,10 +4,10 @@
       <img src="../img/logo.png" />
     </div>
     <div class="nav-items">
-      <router-link to="/activity/add"><font-awesome-icon :icon="['fa', 'plus']" /> Create an activity</router-link>
+      <router-link to="/activity/add"><font-awesome-icon :icon="['fa', 'plus']" /><span style="margin-left:7px">Create an activity</span></router-link>
       <div class="seprator"></div>
-      <router-link v-if="!user" to="/login"><font-awesome-icon :icon="['fa', 'sign-in-alt']" /> Login</router-link>
-      <div class="logout" v-else @click="doLogout"><font-awesome-icon :icon="['fa', 'sign-out-alt']" /> Logout</div>
+      <router-link v-if="!user" to="/login"><font-awesome-icon :icon="['fa', 'sign-in-alt']" /><span style="margin-left:7px">Login</span></router-link>
+      <div class="logout" v-else @click="doLogout"><font-awesome-icon :icon="['fa', 'sign-out-alt']" /><span style="margin-left:7px">Logout</span></div>
     </div>
   </nav>
 </template>
