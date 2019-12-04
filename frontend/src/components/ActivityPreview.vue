@@ -19,14 +19,16 @@
     </div>
     <div class="border">
       <div class="preview-top">
-        <p class="preview-starts">{{starts}}</p>
+        <p class="preview-title">{{activity.title}}</p>
       </div>
       <div class="preview-desc">
-        <p class="preview-title">{{activity.title}}</p>
+        <div class="flex">
+          <p class="preview-location">{{activity.location.address}}</p>
+        <p class="preview-starts">{{starts}}</p>
+        </div>
         <p class="preview-desc-text">{{activity.description}}</p>
       </div>
     </div>
-    <AttendeeList :attendees="activity.attendees" />
   </div>
 </template>
 
@@ -64,6 +66,12 @@ export default {
         "hh:mm"
       )}`;
     }
+    // location() {
+    //   const loc = this.activity.location.address
+    //   console.log('loc:',loc);
+    //   return loc
+
+    // }
   },
   components: {
     AttendeeList
