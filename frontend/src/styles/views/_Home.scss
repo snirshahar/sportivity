@@ -1,13 +1,15 @@
 .home-main-container{
+  background-image: linear-gradient(to bottom, whitesmoke, #ffffff);
+  background-color: whitesmoke;
     .home {
       position: relative;
+      z-index: 1;
       img {
         width: 100%;
         height: 500px;
       }
-  
       .btn-explore {
-        background: rgb(241, 58, 89);
+        background: $clr6;
         color: white;
         text-decoration: none;
         margin: 15px; 
@@ -16,7 +18,7 @@
         transition: all 0.1s;
         font-weight: bold;
         &:hover {
-          background: rgb(232, 16, 53);
+          background: #E81035;
         }
       }
   
@@ -40,15 +42,15 @@
         }
       }
     }
-  
     .categories-container {
       max-width: 1140px;
       margin: 50px auto;
       .categories {
         margin: 50px;
-        display: flex;
-        flex-wrap: wrap;
         position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
       }
     }
 }

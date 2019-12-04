@@ -4,7 +4,7 @@
     :ref="'header-background-video'"
     :mp4Source="require('../assets/videos/home.mp4')"
     :mobileBreakpoint="992"
-    :desktopHeight="500"
+    :desktopHeight="480"
     :mobileHeight="450"
     :playsinline="true"
     :loop="true"

@@ -39,7 +39,7 @@ app.use('/api/activity', activityRoutes)
 connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve(__dirname, 'public')));
+    app.use(express.static('public'));
 }
 
 const logger = require('./services/logger.service')

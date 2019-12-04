@@ -1,8 +1,25 @@
-.explore-categories{
- a {
-    font-size: 1.2rem;
+.explore-filter-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+
+  a {
+    font-size: 1.1rem;
     margin: 10px;
-    padding: 10px;
     text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  a:active {
+    font-weight: bold;
+    color: unset;
+  }
+
+  a:focus {
+    font-weight: bold;
   }
 }
