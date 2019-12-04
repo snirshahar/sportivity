@@ -1,30 +1,35 @@
 .main-nav{
-    background-image: linear-gradient(to left bottom, #00355c, #002e4c, #00273c, #001f2d, #00171f);
-  color: white;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
   padding: 20px 15px;
   user-select: none;
-  border-bottom: 1px solid #00171F;
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-image: linear-gradient(to bottom, #000000, #0000006e, #00000000);
   .nav-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-width: 150px;
+    padding-right: 12px;
   }
   a,
   .logout {
-  color: white;
+    color: $clr5;
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.1s;
+    display: flex;
+    align-items: center;
     &.router-link-exact-active {
-      color: #42b983;
+      color: $clr6;
     }
     &:hover {
-      color: #42b983;
+      color: $clr6;
     }
   }
   .logo {

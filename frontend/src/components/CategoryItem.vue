@@ -1,5 +1,5 @@
 <template>
-  <div class="category-item" @click="$router.push(`/explore/${category.name}`)">
+  <div class="category-item ratio-square" @click="$router.push(`/explore/${category.name}`)">
     <img :src="category.imgUrl" />
     <div class="wrapper">
       <p class="category-name">{{name}}</p>
