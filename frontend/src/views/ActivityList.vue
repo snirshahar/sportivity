@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="activity-list-container">
     <ActivityFilter></ActivityFilter>
     <transition-group class="activity-list" name="fade">
       <ActivityPreview
@@ -45,23 +45,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-h1 {
-  text-decoration: underline lightblue;
-}
-.activity-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.fade-enter-active {
-  transition: all 0.75s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
