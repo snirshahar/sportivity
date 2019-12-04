@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-details-bar">
     <div :class="{'nav-bar': true, sticky: topNavBar}">
       <div class="buttons">
         <router-link :to="`/activity/${$route.params.id}`">About</router-link>
@@ -43,51 +43,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.container {
-  background: #f7f7f7;
-}
-.fade-enter-active {
-  transition: all 0.75s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.sticky {
-  position: fixed;
-  top: 0;
-  background: white;
-  z-index: 1;
-  width: 100%;
-  margin: 0 auto;
-}
-.ml-50 {
-  margin-left: 50px;
-}
-.nav-bar {
-  padding: 20px;
-  display: flex;
-}
-
-.buttons,
-.attend {
-  margin: auto;
-  flex: 1;
-  text-align: left;
-}
-a {
-  text-decoration: none;
-  color: gray;
-  margin-right: 30px;
-  font-weight: bold;
-  transition: all 0.2s;
-}
-a:hover {
-  color: lightskyblue;
-}
-
-
-</style>

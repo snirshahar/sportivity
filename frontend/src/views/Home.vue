@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="home-main-container">
     <div class="home">
       <Video />
       <div class="center-text">
@@ -95,57 +95,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.home {
-  position: relative;
-  img {
-    width: 100%;
-    height: 500px;
-  }
-
-  .btn-explore {
-    background: rgb(241, 58, 89);
-    color: white;
-    text-decoration: none;
-    margin: 15px; 
-    padding: 10px 36px;
-    border-radius: 6px;
-    transition: all 0.1s;
-    font-weight: bold;
-    &:hover {
-      background: rgb(232, 16, 53);
-    }
-  }
-
-  .center-text {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 100%;
-    color: white;
-    width: 100%;
-    padding: 0 100px;
-    h2 {
-      font-size: 4.5rem;
-      margin: 5px;
-    }
-    h3{
-      font-size: 1.5rem;
-
-    }
-  }
-}
-
-.categories-container {
-  max-width: 1140px;
-  margin: 50px auto;
-  .categories {
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-  }
-}
-</style>

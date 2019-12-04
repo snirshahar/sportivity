@@ -189,58 +189,60 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.field-container {
-  display: flex;
-}
-.main-details {
-  margin: 20px;
-  width: 50%;
-}
-.info-details {
-  margin: 20px;
-  width: 50%;
-  .edit-activity-container {
+.edit-activity-container{
+  .field-container {
     display: flex;
-    margin: 50px;
   }
-  .form {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    padding: 15px;
-    border-radius: 3px;
-    width: 60%;
-    flex-basis: 400px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    .input,
-    #starts-at-input {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
+  .main-details {
+    margin: 20px;
+    width: 50%;
+  }
+  .info-details {
+    margin: 20px;
+    width: 50%;
+    .edit-activity-container {
+      display: flex;
+      margin: 50px;
     }
-    .button {
-      width: 100%;
-      background-color: #2c3e50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s;
-      &:hover {
-        background-color: #1b2631;
+    .form {
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      padding: 15px;
+      border-radius: 3px;
+      width: 60%;
+      flex-basis: 400px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      .input,
+      #starts-at-input {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .button {
+        width: 100%;
+        background-color: #2c3e50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          background-color: #1b2631;
+        }
       }
     }
-  }
 
-  .google-map {
-    width: 400px;
-    height: 400px;
+    .google-map {
+      width: 400px;
+      height: 400px;
+    }
   }
 }
 </style>
