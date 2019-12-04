@@ -1,7 +1,7 @@
 .main-nav{
     background-image: linear-gradient(to left bottom, #00355c, #002e4c, #00273c, #001f2d, #00171f);
   color: white;
-  padding: 5px 15px;
+  padding: 20px 15px;
   user-select: none;
   border-bottom: 1px solid #00171F;
   display: flex;
@@ -17,7 +17,7 @@
   .logout {
   color: white;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.1s;
     &.router-link-exact-active {

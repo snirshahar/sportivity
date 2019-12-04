@@ -75,40 +75,22 @@
           <option value="weekly">Weekly</option>
           <option value="monthly">Monthly</option>
         </select>
-        <label for="city">City:</label>
-        <input
-          class="input"
-          type="text"
-          id="city"
-          name="city"
-          v-model="activity.location.city"
-          required
-        />
-
-        <label for="street">Street:</label>
-        <input
-          class="input"
-          type="text"
-          id="street"
-          name="street"
-          v-model="activity.location.street"
-          required
-        />
       </section>
       <input class="button" type="submit" value="Submit" />
     </form>
 
     <GmapMap
-      :center="{lat:activity.location.lat, lng:activity.location.lng}"
+      :center="{lat:10, lng:10}"
       :zoom="16"
       map-type-id="terrain"
       class="google-map"
+      width="200px"
     >
       <GmapMarker
-        :position="{lat:activity.location.lat, lng:activity.location.lng}"
+        :position="{lat:10, lng:10}"
         :clickable="true"
         :draggable="false"
-        @click="center={lat:activity.location.lat, lng:activity.location.lng}"
+        @click="center={lat:10, lng:10}"
       />
     </GmapMap>
   </section>
@@ -129,8 +111,12 @@ export default {
         startsAt: null,
         maxAttendees: 10,
         location: {
-          lng: 10,
-          lat: 10
+          _id: null,
+          address: null,
+          coords: {
+            lat: 0,
+            lng: 0
+          }
         },
         imgUrls: [],
         startsAt: null
@@ -148,8 +134,17 @@ export default {
     setMarker(ev) {
       if (this.placeChanged) {
         setTimeout(async () => {
-          const res = await locationService.getCoors(ev.target.value);
-          this.activity.location = res.data.results[0].geometry.location;
+          var res = await locationService.getCoors(ev.target.value);
+          const result = res.data.results[0];
+          this.activity.location._id = result.place_id;
+          this.activity.location.coords = { lat: result.geometry.location.lat, lng: result.geometry.location.lng}
+          this.activity.location.address = result.formatted_address;
+          console.log(this.activity.location);
+          // res = await locationService.getLocation({});
+          // const str = res.data.plus_code.compound_code;
+          // this.activity.location.city = str.substring(str.indexOf(" ") + 1, str.indexOf(","));
+          // this.activity.location.country = str.substring(str.indexOf(",") + 2);
+          // this.locationStr = `${city}, ${country}`;
         }, 100);
         this.placeChanged = false;
       }
