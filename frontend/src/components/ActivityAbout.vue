@@ -1,7 +1,7 @@
 <template>
-  <div class="about-page-container" v-if="activity">
+  <div class="activity-details-section about-page-container" v-if="activity" id="about">
     <div class="details">
-    <h1>About</h1>
+      <h1>About</h1>
       <div class="created-by">
         <h3>Organizer</h3>
         <router-link :to="this.activity._id" class="created-by-card">
@@ -15,21 +15,19 @@
       </div>
     </div>
     <div class="google-map">
-      <div class="ml-50">
-        <GmapMap
-          :center="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
-          :zoom="16"
-          map-type-id="terrain"
-          class="google-map"
-        >
-          <GmapMarker
-            :position="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
-            :clickable="true"
-            :draggable="false"
-            @click="center={lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
-          />
-        </GmapMap>
-      </div>
+      <GmapMap
+        :center="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+        :zoom="16"
+        map-type-id="terrain"
+        class="google-map"
+      >
+        <GmapMarker
+          :position="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+          :clickable="true"
+          :draggable="false"
+          @click="center={lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
+        />
+      </GmapMap>
     </div>
   </div>
 </template>

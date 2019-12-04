@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-color: whitesmoke;
 
   a {
     font-size: 1.1rem;
@@ -14,12 +13,7 @@
     letter-spacing: 0.3px;
   }
 
-  a:active {
-    font-weight: bold;
-    color: unset;
-  }
-
-  a:focus {
-    font-weight: bold;
+  .router-link-exact-active {
+    color: #00171F;
   }
 }

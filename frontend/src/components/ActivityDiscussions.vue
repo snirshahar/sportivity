@@ -1,5 +1,5 @@
 <template>
-  <div class="wall-container">
+  <div class="activity-details-section wall-container">
     <h1>Discussions</h1>
     <div class="wall">
       <div class="msgs">
@@ -16,8 +16,8 @@
       </form>
       <div v-else>
         <p>
-          Please
-          <router-link to="/login">login</router-link>to chat
+          Please 
+          <router-link to="/login">login</router-link> to chat
         </p>
       </div>
     </div>

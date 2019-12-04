@@ -1,5 +1,5 @@
 <template>
-  <div class="explore-filter-container">
+  <div class="container explore-filter-container">
     <router-link to="/explore">All</router-link>
     <router-link to="/explore/soccer">Soccer</router-link>
     <router-link to="/explore/basketball">Basketball</router-link>

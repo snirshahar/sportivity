@@ -1,60 +1,56 @@
 <template>
   <div class="form-container">
-    <div class="form-type">
-      <div @click="type='Login'; msg=''" :class="{active: type === 'Login'}">
-        <font-awesome-icon :icon="['fa', 'sign-in-alt']" size="xs" /> Login
+      <div class="form-type">
+        <div @click="type='Login'; msg=''" :class="{active: type === 'Login'}">Login</div>
+        <div @click="type='Register'; msg=''" :class="{active: type === 'Register'}">Register</div>
       </div>
-      <div @click="type='Register'; msg=''" :class="{active: type === 'Register'}">
-        <font-awesome-icon :icon="['fa', 'user-plus']" size="xs" /> Register
-      </div>
-    </div>
-    <form class="form" @submit.prevent.stop="submit">
-      <template v-if="type === 'Register'">
-        <label for="fullname">Full Name</label>
+      <form class="form" @submit.prevent.stop="submit">
+        <template v-if="type === 'Register'">
+          <label for="fullname">Full Name</label>
+          <input
+            class="input"
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name..."
+            v-model="cred.fullName"
+          />
+        </template>
+
+        <label for="email">Email Address</label>
         <input
           class="input"
-          type="text"
-          id="fullname"
-          name="fullname"
-          placeholder="Enter your full name..."
-          v-model="cred.fullName"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email address..."
+          v-model="cred.email"
         />
-      </template>
 
-      <label for="email">Email Address</label>
-      <input
-        class="input"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter your email address..."
-        v-model="cred.email"
-      />
-
-      <label for="password">Password</label>
-      <input
-        class="input"
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Enter your password..."
-        v-model="cred.password"
-      />
-
-      <template v-if="type === 'Register'">
-        <label for="confirm">Confirm Password</label>
+        <label for="password">Password</label>
         <input
           class="input"
           type="password"
-          id="confirm"
-          name="confirm"
-          placeholder="Confirm your password..."
-          v-model="cred.confirm"
+          id="password"
+          name="password"
+          placeholder="Enter your password..."
+          v-model="cred.password"
         />
-      </template>
-      <input class="button" type="submit" v-model="type" />
-      <p class="msg" v-if="msg">{{msg}}</p>
-    </form>
+
+        <template v-if="type === 'Register'">
+          <label for="confirm">Confirm Password</label>
+          <input
+            class="input"
+            type="password"
+            id="confirm"
+            name="confirm"
+            placeholder="Confirm your password..."
+            v-model="cred.confirm"
+          />
+        </template>
+        <input class="button" type="submit" v-model="type" />
+        <p class="msg" v-if="msg">{{msg}}</p>
+      </form>
   </div>
 </template>
 

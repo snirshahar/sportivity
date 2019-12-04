@@ -1,6 +1,5 @@
 .wall-container {
   height: 50vh;
-  background: #f7f7f7;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,6 +10,7 @@
     .msgs {
       height: calc(100% - 43px);
       overflow-y: scroll;
+      background: #f9f9f9;
     }
     .form {
       position: absolute;

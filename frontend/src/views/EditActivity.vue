@@ -105,11 +105,9 @@
 .google-map {
   width: 300px;
   height: 300px;
-  margin: 10px;
   flex: 1;
   border-radius: 5px;
   border: 5px white solid;
-  outline: 1px solid black;
 }
 .right-left-divided {
   display: flex;

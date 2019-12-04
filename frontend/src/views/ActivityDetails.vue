@@ -31,14 +31,14 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div :class="{'container-details-bar': true, sticky: topNavBar}">
       <ActivityDetailsBar />
     </div>
     <div class="group-container">
-      <ActivityAbout />
+      <ActivityAbout ref="about"/>
       <ActivityMembers :attendees="activity.attendees" />
       <ActivityDiscussions />
-      <ActivityPhotos />
+      <ActivityPhotos :images="activity.imgUrls" />
     </div>
   </section>
 </template>
@@ -57,6 +57,7 @@ export default {
     return {
       activity: null,
       user: null,
+      topNavBar: false,
       joined: false
     };
   },
@@ -66,6 +67,7 @@ export default {
     this.activity = this.$store.getters.currActivity;
     this.user = this.getUser;
     this.joined = this.isJoined;
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     async join() {
@@ -93,6 +95,11 @@ export default {
         att => att._id !== this.user._id
       );
       this.joined = false;
+    },
+    handleScroll(event) {
+      window.pageYOffset > 663
+        ? (this.topNavBar = true)
+        : (this.topNavBar = false);
     }
   },
   computed: {
@@ -134,14 +141,14 @@ export default {
     ActivityMembers,
     ActivityDiscussions,
     ActivityPhotos
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  background: #f7f7f7;
-}
 .group-container {
   display: flex;
   flex-direction: column;
@@ -172,7 +179,7 @@ p {
   color: white;
   position: relative;
   z-index: 1;
-  margin: auto 10px;
+  margin: auto 28px;
   .deep-details {
     display: flex;
     flex-direction: column;
@@ -232,7 +239,7 @@ p {
 }
 
 .attend {
-  margin: auto 10px;
+  margin: auto 28px;
 }
 
 .btn-join,

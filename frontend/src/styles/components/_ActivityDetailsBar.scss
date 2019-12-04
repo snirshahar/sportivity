@@ -1,4 +1,5 @@
 .container-details-bar {
+  background: #e0e0e0;
   .fade-enter-active {
     transition: all 0.75s;
   }
@@ -21,10 +22,8 @@
     margin: 0 auto;
   }
   .nav-bar {
-    padding: 20px 10px;
+    padding: 20px 0;
     display: flex;
-    max-width: 1140px;
-    margin: 0 auto;
   }
 
   .buttons,
@@ -33,14 +32,26 @@
     flex: 1;
     text-align: left;
   }
-  a {
+  .nav-button {
     text-decoration: none;
     color: gray;
     margin-right: 30px;
     font-weight: bold;
-    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    &:hover {
+      color: #F13A59;
+    }
   }
-  a:hover {
-    color: lightskyblue;
-  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
 }

@@ -1,6 +1,5 @@
 .main-nav{
   z-index: 2;
-  position: absolute;
   width: 100%;
   padding: 20px 15px;
   user-select: none;
@@ -8,7 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: linear-gradient(to bottom, #000000, #0000006e, #00000000);
+  // background-image: linear-gradient(to bottom, #000000, #0000006e, #00000000);
+  background: #00171F;
   .nav-items {
     display: flex;
     justify-content: space-around;

@@ -27,16 +27,6 @@ export default {
     return {
       categories: [
         {
-          name: "pool",
-          imgUrl:
-            "https://images2.minutemediacdn.com/image/upload/c_crop,h_1125,w_2000,x_0,y_29/f_auto,q_auto,w_1100/v1557336494/shape/mentalfloss/582807-steevy84-istock-456906257.jpg"
-        },
-        {
-          name: "poker",
-          imgUrl:
-            "https://www.sciencenews.org/wp-content/uploads/2019/07/071019_MT_poker-ai_feat.jpg"
-        },
-        {
           name: "soccer",
           imgUrl:
             "https://upload.wikimedia.org/wikipedia/commons/b/b9/Football_iu_1996.jpg"
@@ -85,6 +75,16 @@ export default {
           name: "yoga",
           imgUrl:
             "http://www.iyengar-yoga.co.il/dyncontent/UserContent/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9C%D7%9B%D7%AA%D7%91%D7%94%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%94%D7%A8%D7%90%D7%A9%D7%99.jpg"
+        },
+        {
+          name: "pool",
+          imgUrl:
+            "https://images2.minutemediacdn.com/image/upload/c_crop,h_1125,w_2000,x_0,y_29/f_auto,q_auto,w_1100/v1557336494/shape/mentalfloss/582807-steevy84-istock-456906257.jpg"
+        },
+        {
+          name: "poker",
+          imgUrl:
+            "https://www.sciencenews.org/wp-content/uploads/2019/07/071019_MT_poker-ai_feat.jpg"
         }
       ]
     };
