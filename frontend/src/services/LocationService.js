@@ -10,7 +10,13 @@ function getCoors(address) {
         .catch(err => { throw err })
 }
 
+function getDetails(placeId) {
+    return axios.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=AIzaSyAsh26jhkU5wtp6r_IcqAnuuuLrulpFl6Q`)
+        .catch(err => { throw err })
+}
+
 export default {
     getLocation,
-    getCoors
+    getCoors,
+    getDetails
 }

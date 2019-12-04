@@ -20,16 +20,16 @@
     <div class="google-map">
       <div class="ml-50">
         <GmapMap
-          :center="{lat:activity.location.lat, lng:activity.location.lng}"
+          :center="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
           :zoom="16"
           map-type-id="terrain"
           class="google-map"
         >
           <GmapMarker
-            :position="{lat:activity.location.lat, lng:activity.location.lng}"
+            :position="{lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
             :clickable="true"
             :draggable="false"
-            @click="center={lat:activity.location.lat, lng:activity.location.lng}"
+            @click="center={lat:activity.location.coords.lat, lng:activity.location.coords.lng}"
           />
         </GmapMap>
       </div>

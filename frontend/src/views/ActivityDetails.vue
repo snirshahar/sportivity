@@ -7,7 +7,7 @@
           <div class="deep-details">
             <p>
               <font-awesome-icon :icon="['fa', 'map-marker']" />
-              {{locationStr}}
+              {{activity.location.address}}
             </p>
             <p>
               <font-awesome-icon :icon="['fa', 'user']" />
@@ -53,8 +53,7 @@ export default {
     return {
       activity: null,
       user: null,
-      joined: false,
-      locationStr: null
+      joined: false
     };
   },
   async created() {
@@ -63,17 +62,6 @@ export default {
     this.activity = this.$store.getters.currActivity;
     this.joined = this.isJoined;
     this.user = this.getUser;
-    // Location
-    const loc = {
-      latitude: this.activity.location.lat,
-      longitude: this.activity.location.lng
-    };
-    const res = await locationService.getLocation(loc);
-    const str = res.data.plus_code.compound_code;
-    const city = str.substring(str.indexOf(" ") + 1, str.indexOf(","));
-    const country = str.substring(str.indexOf(",") + 2);
-    this.locationStr = `${city}, ${country}`;
-    console.log(this.locationStr);
   },
   methods: {
     async join() {
@@ -109,12 +97,6 @@ export default {
         activityId: this.activity._id,
         user: this.user
       });
-    },
-    async country() {
-      const res = await locationService.getLocation(pos.coords);
-      console.log(res);
-      const str = res.data.plus_code.compound_code;
-      return str.substring(str.indexOf(",") + 1);
     }
   },
   computed: {
