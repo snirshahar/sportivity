@@ -1,11 +1,11 @@
 <template>
   <nav class="main-nav">
     <div class="logo" @click="navToHome">
-      <p class="title">Sportivity</p>
+      <img src="../img/logo.png" />
     </div>
     <div class="nav-items">
       <router-link to="/activity/add">Create an activity</router-link>
-      <span style="margin: 10px">|</span>
+      <div class="seprator"></div>
       <router-link v-if="!user" to="/login">Login</router-link>
       <div class="logout" v-else @click="doLogout">{{logout}}</div>
     </div>
@@ -17,25 +17,33 @@ export default {
   methods: {
     navToHome() {
       if (this.$route.path !== "/") this.$router.push("/");
-    },   
+    },
     async doLogout() {
-      await this.$store.dispatch({type: 'logout'})
-      this.$router.push('/login');
+      await this.$store.dispatch({ type: "logout" });
+      this.$router.push("/login");
     }
   },
   computed: {
     user() {
       return this.$store.getters.loggedinUser;
     },
-    logout(){
-      const user = this.$store.getters.loggedinUser
-      return `${user.fullName}, Logout`
+    logout() {
+      const user = this.$store.getters.loggedinUser;
+      return `${user.fullName}, Logout`;
     }
   }
 };
 </script>
 
 <style lang="scss">
+.seprator {
+  border-left: 1px solid gray;
+  display: block;
+  height: 15px;
+  margin: 0.75rem;
+  padding: 0;
+}
+
 .logo {
   cursor: pointer;
   display: flex;
@@ -56,13 +64,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .nav-items{
+  .nav-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 150px
+    min-width: 150px;
   }
-  a, .logout {
+  a,
+  .logout {
     cursor: pointer;
     font-size: 0.8rem;
     color: #2c3e50;

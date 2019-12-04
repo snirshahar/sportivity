@@ -4,7 +4,7 @@
     :ref="'header-background-video'"
     :mp4Source="require('../assets/videos/home.mp4')"
     :mobileBreakpoint="992"
-    :desktopHeight="550"
+    :desktopHeight="500"
     :mobileHeight="450"
     :playsinline="true"
     :loop="true"
@@ -13,10 +13,3 @@
     :muted="true"
   ></vue-video-section>
 </template>
-
-<style>
-    /* :posterSource="require('../assets/logo.png')" */
-.vue-video-section-wrapper {
-  z-index: -1;
-}
-</style>
