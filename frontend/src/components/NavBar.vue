@@ -4,10 +4,10 @@
       <img src="../img/logo.png" />
     </div>
     <div class="nav-items">
-      <router-link to="/activity/add">Create an activity</router-link>
+      <router-link to="/activity/add"><font-awesome-icon :icon="['fa', 'plus']" /> Create an activity</router-link>
       <div class="seprator"></div>
-      <router-link v-if="!user" to="/login">Login</router-link>
-      <div class="logout" v-else @click="doLogout">{{logout}}</div>
+      <router-link v-if="!user" to="/login"><font-awesome-icon :icon="['fa', 'sign-in-alt']" /> Login</router-link>
+      <div class="logout" v-else @click="doLogout"><font-awesome-icon :icon="['fa', 'sign-out-alt']" /> Logout</div>
     </div>
   </nav>
 </template>
@@ -20,16 +20,12 @@ export default {
     },
     async doLogout() {
       await this.$store.dispatch({ type: "logout" });
-      this.$router.push("/login");
+      this.$router.push("/");
     }
   },
   computed: {
     user() {
       return this.$store.getters.loggedinUser;
-    },
-    logout() {
-      const user = this.$store.getters.loggedinUser;
-      return `${user.fullName}, Logout`;
     }
   }
 };

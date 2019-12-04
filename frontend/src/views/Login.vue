@@ -1,8 +1,12 @@
 <template>
   <div class="form-container">
     <div class="form-type">
-      <div @click="type='Login'; msg=''" :class="{active: type === 'Login'}">Login</div>
-      <div @click="type='Register'; msg=''" :class="{active: type === 'Register'}">Register</div>
+      <div @click="type='Login'; msg=''" :class="{active: type === 'Login'}">
+        <font-awesome-icon :icon="['fa', 'sign-in-alt']" size="xs" /> Login
+      </div>
+      <div @click="type='Register'; msg=''" :class="{active: type === 'Register'}">
+        <font-awesome-icon :icon="['fa', 'user-plus']" size="xs" /> Register
+      </div>
     </div>
     <form class="form" @submit.prevent.stop="submit">
       <template v-if="type === 'Register'">
@@ -59,12 +63,13 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   padding: 15px;
   border-radius: 3px;
-  width: 400px;
+  width: 500px;
   margin: 100px auto;
   display: flex;
   flex-direction: column;
   .form-type {
     display: flex;
+    text-align: center;
     div {
       font-weight: bold;
       font-size: 1.2rem;
@@ -102,7 +107,7 @@
       background-color: #1b2631;
     }
   }
-  .msg{
+  .msg {
     font-size: 0.8rem;
     color: red;
   }
@@ -114,29 +119,32 @@
 </style>
 
 <script>
-import ActivityPreview from '../components/ActivityPreview';
+import ActivityPreview from "../components/ActivityPreview";
 // import UserService from '../services/UserService';
 
 export default {
   data() {
     return {
       cred: {
-        email: '',
-        password: '',
-        confirm: '',
-        fullName: ''
+        email: "",
+        password: "",
+        confirm: "",
+        fullName: ""
       },
-      type: 'Login',
-      msg: ''
+      type: "Login",
+      msg: ""
     };
   },
   methods: {
     async submit() {
-      const res = await this.$store.dispatch({ type: this.type.toLowerCase(), cred: this.cred});
+      const res = await this.$store.dispatch({
+        type: this.type.toLowerCase(),
+        cred: this.cred
+      });
       if (!res._id) {
-        return this.msg = 'Email or password is incorrect';
+        return (this.msg = "Email or password is incorrect");
       }
-      this.$router.push('/');
+      this.$router.push("/");
     }
   }
 };

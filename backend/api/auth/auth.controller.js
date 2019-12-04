@@ -16,10 +16,12 @@ async function register(req, res) {
     try {
         const { email, password, fullName } = req.body
         // logger.debug(email + ", " + password + ', ' + fullName)
-        const account = await authService.register(email, password, fullName)
+        const account = await authService.register(email, password, fullName);
         // logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
-        const user = await authService.login(email, password)
+        const user = await authService.login(email, password);
+
         req.session.user = user
+        console.log(req.session.user);
         res.json(user)
     } catch (err) {
         // logger.error('[REGISTER] ' + err)
@@ -27,7 +29,7 @@ async function register(req, res) {
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ message: 'logged out successfully' })
