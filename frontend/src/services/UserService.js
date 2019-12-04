@@ -31,7 +31,6 @@ async function login(userCred) {
 }
 async function register(userCred) {
     try {
-        console.log('UserService', userCred)
         const user = await HttpService.post('auth/register', userCred)
         return _handleLogin(user)
     } catch (err) {
@@ -41,7 +40,7 @@ async function register(userCred) {
 }
 async function logout() {
     await HttpService.post('auth/logout');
-    sessionStorage.clear();   
+    sessionStorage.clear();
 }
 function getUsers() {
     return HttpService.get('user')

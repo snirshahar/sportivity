@@ -7,12 +7,6 @@ import Login from '../views/Login.vue'
 import UserProfile from '../views/UserProfile.vue'
 import ActivityList from '../views/ActivityList.vue'
 
-
-import ActivityAbout from "../components/ActivityAbout";
-import ActivityMembers from "../components/ActivityMembers";
-import ActivityDiscussions from "../components/ActivityDiscussions";
-import ActivityPhotos from "../components/ActivityPhotos";
-
 Vue.use(VueRouter)
 
 const routes = [

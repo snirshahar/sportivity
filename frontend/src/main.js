@@ -11,10 +11,10 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faUser, faMapMarker, faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import scss from './styles/global.scss'
 
-library.add([faUser, faMapMarker, faCalendarPlus]);
+library.add([faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch]);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

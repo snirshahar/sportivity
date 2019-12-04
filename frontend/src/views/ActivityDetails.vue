@@ -34,10 +34,8 @@
     <ActivityDetailsBar />
     <div class="group-container">
       <ActivityAbout />
-      <div class="social">
-        <ActivityMembers />
-        <ActivityDiscussions />
-      </div>
+      <ActivityMembers :attendees="activity.attendees"/>
+      <ActivityDiscussions />
       <ActivityPhotos />
     </div>
   </section>
@@ -201,7 +199,7 @@ p {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  p{
+  p {
     padding: 3px 0;
   }
 }

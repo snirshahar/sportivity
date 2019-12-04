@@ -5,7 +5,7 @@
       <div class="center-text">
         <h2>WHAT GETS YOU MOVING?</h2>
         <h3>Sportivity is the easiest way to find activities and people nearby.</h3>
-        <router-link class="btn-explore" to="/explore">Explore</router-link>
+        <router-link class="btn-explore" to="/explore"><font-awesome-icon :icon="['fa', 'search']" /> Explore</router-link>
       </div>
     </div>
     <div class="categories-container">
