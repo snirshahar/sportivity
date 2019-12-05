@@ -23,7 +23,7 @@ async function register(req, res) {
         res.json(account)
     } catch (err) {
         // logger.error('[REGISTER] ' + err)
-        res.status(500).send({ error: 'could not register, please try later' })
+        res.status(500).send({ error: `could not register, please try later` })
     }
 }
 
