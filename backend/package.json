@@ -1,6 +1,9 @@
 {
     "name": "server",
     "version": "1.0.0",
+    "engines": {
+      "node": "12.9.0"
+    },
     "description": "production ready server",
     "main": "server.js",
     "scripts": {
