@@ -83,7 +83,7 @@ async function add(user) {
     user.inbox = {};
     if (!user.imgUrl) user.imgUrl = "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png";
     user.wishlist = {};
-    user.createdAt = Date.now();
+    user.createdAt = Date.now()
     const collection = await dbService.getCollection('user')
     try {
         await collection.insertOne(user)
