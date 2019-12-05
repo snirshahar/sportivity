@@ -12,7 +12,7 @@ export default {
 }
 
 function on(eventName, cb) {
-    console.log(`SocketService, emit ${eventName}, ${data}`)
+    console.log(`SocketService, emit ${eventName}, ${cb}`)
     socket.on(eventName, cb)
 }
 
