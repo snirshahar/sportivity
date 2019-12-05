@@ -1,11 +1,11 @@
 <template>
   <div class="activity-details-section photos-container">
     <h1>Photos</h1>
-    <carousel :per-page="1" :mouse-drag="false">
-      <slide v-for="image in images" :key="image">
+    <CarouselCard :interval="7000" height="300px" type="card" arrow="always">
+      <CarouselCardItem v-for="image in images" :key="image">
         <img :src="image" width="100%" />
-      </slide>
-    </carousel>
+      </CarouselCardItem>
+    </CarouselCard>
   </div>
 </template>
 <style lang="scss">
@@ -15,14 +15,16 @@
 </style>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
+import { CarouselCard, CarouselCardItem } from 'vue-carousel-card'
+import 'vue-carousel-card/styles/index.css'
+
 export default {
   props: {
     images: Array
   },
   components: {
-    Carousel,
-    Slide
+    CarouselCard,
+    CarouselCardItem
   },
   created() {
     console.log(this.images);

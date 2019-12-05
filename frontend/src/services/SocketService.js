@@ -1,8 +1,11 @@
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000')
+const BASE_URL = process.env.NODE_ENV !== 'development'
+    ? '/api/'
+    : '//localhost:3000/api/'
+const socket = io(BASE_URL)
 
-export default{
+export default {
     on,
     emit
 }

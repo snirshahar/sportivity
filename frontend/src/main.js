@@ -13,14 +13,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import scss from './styles/global.scss';
-import VueCarousel from 'vue-carousel';
-
-Vue.use(VueCarousel);
+import { CarouselCard, CarouselCardItem } from 'vue-carousel-card'
+import 'vue-carousel-card/styles/index.css';
 
 library.add([faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch]);
 
+Vue.component(CarouselCard.name, CarouselCard)
+Vue.component(CarouselCardItem.name, CarouselCardItem)
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
 Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
 Vue.component('vue-video-section', VueVideoSection)
 

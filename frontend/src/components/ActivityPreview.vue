@@ -2,16 +2,10 @@
   <div class="preview-details-container" @click="$router.push(`/activity/${activity._id}`)">
     <div class="preview-image-container">
       <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
-      <div class="wrap">
-        <router-link
-          @click.native="$event.stopImmediatePropagation()"
-          :to="'/profile/' + activity.createdBy._id"
-        ></router-link>
-      </div>
       <div class="wishlist-heart" @click.stop="test">❤</div>
       <div class="ribbon">
         <p class="preview-attendees">
-          <font-awesome-icon :icon="['fa', 'user']" size="xs" />
+          <font-awesome-icon :icon="['fa', 'user']" size="l" />
           {{attendees}}/{{activity.maxAttendees}}
         </p>
       </div>
