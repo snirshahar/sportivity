@@ -11,17 +11,13 @@
       </div>
       <div></div>
     </div>
-    <div class="border">
-      <div class="preview-top">
-        <p class="preview-title">{{activity.title}}</p>
+    <div class="preview-desc">
+      <p class="preview-title">{{activity.title}}</p>
+      <div class="preview-info">
+        <p class="preview-starts">{{starts}}, </p>
+        <p class="preview-location">{{city}}</p>
       </div>
-      <div class="preview-desc">
-        <div class="flex">
-          <p class="preview-location">{{activity.location.address}}</p>
-        <p class="preview-starts">{{starts}}</p>
-        </div>
-        <p class="preview-desc-text">{{activity.description}}</p>
-      </div>
+      <p class="preview-desc-text">{{activity.description}}</p>
     </div>
   </div>
 </template>
@@ -48,24 +44,15 @@ export default {
     },
     starts() {
       const startsAt = moment(this.activity.startsAt);
-      var day = startsAt
-        .format("dddd")
-        .substring(0, 3)
-        .toUpperCase();
-      var month = startsAt
-        .format("MMMM")
-        .substring(0, 3)
-        .toUpperCase();
-      return `${day}, ${month} ${startsAt.format("DD")}, ${startsAt.format(
-        "hh:mm"
-      )}`;
+      return moment(startsAt).fromNow();
+    },
+    city(){
+      const address = this.activity.location.address;
+      return address.substring(address.indexOf(',') + 2);
     }
-    // location() {
-    //   const loc = this.activity.location.address
-    //   console.log('loc:',loc);
-    //   return loc
-
-    // }
+  },
+  created(){
+    console.log(this.activity)
   },
   components: {
     AttendeeList
