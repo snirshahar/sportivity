@@ -16,8 +16,8 @@
       </form>
       <div v-else>
         <p>
-          Please 
-          <router-link to="/login">login</router-link> to chat
+          Please
+          <router-link to="/login">login</router-link>to chat
         </p>
       </div>
     </div>
@@ -56,7 +56,9 @@ export default {
   },
   methods: {
     sendMsg() {
+      console.log("before");
       if (!this.msg.txt || !this.user) return;
+      console.log("after");
       this.msg.activityId = this.activityId;
       SocketService.emit("chat addMsg", this.msg);
       this.msg.txt = "";
