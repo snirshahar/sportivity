@@ -107,13 +107,17 @@
     }
   }
 
-  .preview-desc-text{
+  .preview-desc-text {
     color: gray;
     margin: 10px 0;
     font-size: 1rem;
+    height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .preview-info {
     display: flex;
+    margin: 4px 0px;
   }
 }
