@@ -14,18 +14,16 @@ async function login(req, res) {
 
 async function register(req, res) {
     try {
-        const { email, password, fullName } = req.body
+        const { email, password, fullName, imgUrl } = req.body
         // logger.debug(email + ", " + password + ', ' + fullName)
-        const account = await authService.register(email, password, fullName);
+        const account = await authService.register(email, password, fullName, imgUrl);
         // logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
-        const user = await authService.login(email, password);
-
-        req.session.user = user
+        req.session.user = account
         console.log(req.session.user);
-        res.json(user)
+        res.json(account)
     } catch (err) {
         // logger.error('[REGISTER] ' + err)
-        res.status(500).send({ error: 'could not register, please try later' })
+        res.status(500).send({ error: `could not register, please try later` })
     }
 }
 

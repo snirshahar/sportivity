@@ -56,6 +56,7 @@
 
 <style lang="scss">
 .form-container {
+  flex: 1;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   padding: 15px;
   border-radius: 3px;

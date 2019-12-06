@@ -17,11 +17,11 @@ async function login(email, password) {
     return user;
 }
 
-async function register(email, password, fullName) {
+async function register(email, password, fullName, imgUrl) {
     // logger.debug(`auth.service - register with email: ${email}, username: ${username}`)
     if (!email || !password || !fullName) return Promise.reject('email, password and full name are required!')
     const hash = await bcrypt.hash(password, saltRounds)
-    return userService.add({ email, password: hash, fullName })
+    return userService.add({ email, password: hash, fullName, imgUrl })
 }
 
 module.exports = {
