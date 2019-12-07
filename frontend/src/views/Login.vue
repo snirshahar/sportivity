@@ -117,6 +117,9 @@
 
 <script>
 import ActivityPreview from "../components/ActivityPreview";
+import ActivityService from "../services/ActivityService";
+import SocketService from "../services/SocketService";
+
 // import UserService from '../services/UserService';
 
 export default {
@@ -143,6 +146,24 @@ export default {
       }
       this.$router.push("/");
     }
-  }
+  },
+  async created(){
+    const activities = await ActivityService.getActivities();
+  //   const user = this.$store.getters.loggedinUser;
+  //   SocketService.emit("single socket", { user })
+  //       console.log('user', user);
+  //   console.log('activities', activities);
+  //   if(user && activities){
+  //     activities.forEach(activity=> {
+  //       activity.attendees.forEach(attendee=>{
+  //         if(activity._id===user._id){
+  //           console.log('user');
+            
+  //           SocketService.emit("user connect", { activityId: activity._id })
+  //       }
+  //       })
+  //     })
+  //   } else  SocketService.emit("single socket", { user: 'guest' })
+  } 
 };
 </script>
