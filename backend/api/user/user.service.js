@@ -9,7 +9,9 @@ module.exports = {
     getByEmail,
     remove,
     update,
-    add
+    add,
+    addToWishlist,
+    removeFromWishlist
 }
 
 async function query(filterBy = {}) {
@@ -25,20 +27,56 @@ async function query(filterBy = {}) {
     }
 }
 
+async function removeFromWishlist(userId, activityId){
+    const collection = await dbService.getCollection('user');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(userId) },
+        { $push: { "wishlist": ObjectId(activityId) } },
+        { new: true },
+        (err, doc) => {
+            console.log(doc);
+            return err ? 'An error has occured' : `${activityId} has been added to ${userId} wishlist`
+        }
+    )
+}
+
+async function addToWishlist(userId, activityId){
+    console.log(userId, activityId);
+    const collection = await dbService.getCollection('user');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(userId) },
+        { $push: { "wishlist": ObjectId(activityId) } },
+        { new: true },
+        (err, doc) => {
+            console.log(doc);
+            return err ? 'An error has occured' : `${activityId} has been added to ${userId} wishlist`
+        }
+    )
+}
+
 async function getById(userId) {
+    if (!userId) return null;
     const collection = await dbService.getCollection('user')
     try {
-        const user = await collection.findOne({ "_id": ObjectId(userId) })
-        delete user.password
-
-        user.givenActivties = await activityService.query({ byUserId: ObjectId(user._id) })
-        user.givenActivties = user.givenActivties.map(activity => {
-            delete activity.byUser
-            return activity
-        })
-
-
-        return user
+        user = await collection.aggregate([
+            {
+                $match: {"_id": ObjectId(userId)}
+            },
+            {
+                $lookup: {
+                    from: "activity",
+                    let: { user_id: "$_id" },
+                    pipeline: [
+                        { $match: { $expr: { $in: ["$$user_id", "$attendees._id"] } } }
+                    ],
+                    as: "activities"
+                }
+            }
+        ]).toArray();
+        delete user[0].password
+        delete user[0].inbox
+        delete user[0].isAdmin
+        return user[0]
     } catch (err) {
         console.log(`ERROR: while finding user ${userId}`)
         throw err;
@@ -83,7 +121,7 @@ async function add(user) {
     user.inbox = {};
     console.log('ASDASD', user.imgUrl);
     if (!user.imgUrl) user.imgUrl = "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png";
-    user.wishlist = {};
+    user.wishlist = [];
     user.createdAt = Date.now();
     const collection = await dbService.getCollection('user')
     try {

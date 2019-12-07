@@ -31,6 +31,15 @@
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
+    .top{
+      display: flex;
+      justify-content: space-between;
+      .preview-distance{
+        font-size: 0.8rem;
+        margin: auto 0;
+        color: darkgray;
+      }
+    }
   }
 
   .preview-title {
@@ -88,9 +97,8 @@
       position: absolute;
       right: 15px;
       top: 10px;
-      font-size: 1.2rem;
-      color: white;
-      -webkit-text-stroke: 2px black;
+      font-size: 1.1rem;
+      color: #2c3e50;
       transition: all 0.2s;
 
       &:hover {
@@ -119,5 +127,8 @@
   .preview-info {
     display: flex;
     margin: 4px 0px;
+  }
+  .red{
+    color: red;
   }
 }

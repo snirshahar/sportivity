@@ -28,7 +28,6 @@ function addAttendee(activity, attendee) {
 function deleteAttendee(activity, attendeeId){
     return HttpService.delete(BASE_URL + `${activity._id}/attendee/${attendeeId}`, { activity, attendeeId });
 }
-
 export default {
     getActivities,
     getActivity,

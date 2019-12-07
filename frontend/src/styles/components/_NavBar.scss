@@ -1,4 +1,4 @@
-.main-nav{
+.main-nav {
   z-index: 2;
   width: 100%;
   padding: 20px 15px;
@@ -8,29 +8,60 @@
   align-items: center;
   justify-content: space-between;
   // background-image: linear-gradient(to bottom, #000000, #0000006e, #00000000);
-  background: #00171F;
+  background: #00171f;
   .nav-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-width: 150px;
     padding-right: 12px;
+    .user-profile {
+      cursor: pointer;
+      display: flex;
+      p {
+        margin: auto 0;
+        color: darkgray;
+      }
+      img {
+        margin-left: 10px;
+        height: 40px;
+        border-radius: 50%;
+        width: 40px;
+        object-fit: cover;
+      }
+      .options {
+        position: absolute;
+        right: 0;
+        margin: 45px 25px 0px 0px;
+        border-radius: 5px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        .drop-down-item {
+          padding: 10px;
+          color: $clr5;
+          cursor: pointer;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.1s;
+          display: flex;
+          align-items: center;
+          color: darkgray;
+          &.router-link-exact-active {
+            color: $clr6;
+          }
+          &:hover {
+            color: $clr6;
+          }
+        }
+      }
+    }
   }
-  a,
-  .logout {
-    color: $clr5;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.1s;
-    display: flex;
-    align-items: center;
-    &.router-link-exact-active {
-      color: $clr6;
-    }
-    &:hover {
-      color: $clr6;
-    }
+  .seprator {
+    border-left: 1px solid gray;
+    display: block;
+    height: 15px;
+    margin: 0.75rem;
+    padding: 0;
   }
   .logo {
     cursor: pointer;
@@ -43,7 +74,6 @@
     .title {
       font-size: 1.3rem;
       margin-left: 10px;
-      
     }
   }
 }

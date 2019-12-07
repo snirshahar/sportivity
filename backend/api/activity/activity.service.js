@@ -98,6 +98,7 @@ async function add(activity) {
 }
 
 async function addAttendee(activity, attendee) {
+    attendee._id = ObjectId(attendee._id);
     activity = await getActivity(activity._id);
     if (activity.attendees.length === activity.maxAttendees) return 'The activity is full'; // Add a message
     const collection = await dbService.getCollection('activity');

@@ -33,7 +33,6 @@ async function addActivity(req, res) {
 async function addAttendee(req, res) {
     const { attendee, activity } = req.body;
     const response = await activityService.addAttendee(activity, attendee);
-    console.log('response', response);
     res.send(response)
 }
 

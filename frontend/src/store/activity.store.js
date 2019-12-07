@@ -3,7 +3,7 @@ import activityService from '../services/ActivityService';
 export default ({
   strict: true,
   state: {
-    activities: [],
+    activities: null,
     currActivity: null
   },
   mutations: {
@@ -21,6 +21,10 @@ export default ({
     async loadActivities(context) {
       const activities = await activityService.getActivities();
       context.commit({ type: 'setActivities', activities });
+    },
+    async saveActivities(context, { activities }) {
+      context.commit({ type: 'setActivities', activities });
+      return activities;
     },
     async saveActivity(context, { activity }) {
       activity = await activityService.addActivity(activity);

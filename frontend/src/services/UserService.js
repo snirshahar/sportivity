@@ -7,7 +7,12 @@ export default {
     getUsers,
     getById,
     remove,
-    update
+    update,
+    addToWishlist
+}
+
+function addToWishlist(activityId){
+    return HttpService.post(`user/wishlist/${activityId}`)
 }
 
 function getById(userId) {

@@ -1,19 +1,63 @@
 .explore-filter-container {
-  padding-left: 15px;
-  padding-right: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    font-size: 1.1rem;
-    margin: 10px;
-    text-decoration: none;
+  margin: 15px 0;
+  .btn-filter {
+    border: none;
+    outline: none;
+    background: none;
     letter-spacing: 0.3px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: rgb(131, 131, 131);
+  }
+  .cats,
+  .location,
+  .sort {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    background: #00171ff1;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  .location {
+    margin-left: 120px;
+    display: flex;
+    flex-direction: row;
+  }
+  .sort-item {
+    color: darkgray;
+    cursor: pointer;
+    width: 100%;
+    width: 114px;
+  }
+  .sort {
+    margin-left: 207px;
+    text-align: left;
+  }
+  .cats {
+    margin-left: 15px;
+    width: 134px;
+  }
+  a,
+  p {
+    font-size: 1rem;
+    margin: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: darkgray;
+    cursor: pointer;
+    transition: all .1s;
+    &:hover{
+      color: rgb(200, 200, 200)
+    }
   }
 
   .router-link-exact-active {
-    color: #00171F;
+    color: white;
   }
 }

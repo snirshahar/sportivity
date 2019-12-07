@@ -81,7 +81,6 @@ export default {
       this.activity.attendees.push(shortUser);
       const res = await activityService.addAttendee(this.activity, shortUser);
 
-      console.log("join", res);
 
       this.joined = true;
     },
@@ -90,7 +89,6 @@ export default {
         this.activity,
         this.user._id
       );
-      console.log("unjoin", res);
       this.activity.attendees = this.activity.attendees.filter(
         att => att._id !== this.user._id
       );

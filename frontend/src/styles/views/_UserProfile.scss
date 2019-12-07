@@ -1,0 +1,47 @@
+.user-container {
+  width: 100%;
+  margin-top: 20px;
+  flex: 1;
+  .user-details-container {
+    display: flex;
+    .user-profile-img {
+      position: relative;
+      img {
+        width: 300px;
+        padding: 5px;
+        height: 300px;
+        object-fit: cover;
+        border: solid 1px #efefef;
+      }
+      .btn-upload {
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        cursor: pointer;
+        border: none;
+        padding: 5px;
+        color: lightslategray;
+        outline: none;
+        &:hover {
+          color: $clr4;
+        }
+      }
+    }
+
+    .user-details {
+      padding: 0 20px;
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+  .activity-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    // display: flex;
+    // flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+  }
+}
