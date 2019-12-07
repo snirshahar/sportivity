@@ -88,7 +88,6 @@ export default {
       if(this.user){
         SocketService.emit("user joineded", { activityId: this.activity._id, 
         user:this.user });
-        BusService.$emit('user joineded', this.user);
       }
     },
     async unjoin() {

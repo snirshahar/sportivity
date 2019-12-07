@@ -11,7 +11,7 @@ created() {
     SocketService.on("msg to all activity members except sender", msg=>{
       console.log(`notification: ',${msg}`);
     }),
-    SocketService.on("user msg", msg=>{
+    SocketService.on("msg to single user", msg=>{
       console.log(`notification: ',${msg}`);
     })
   } 

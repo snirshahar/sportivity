@@ -6,18 +6,16 @@ function connectSockets(io) {
     io.on('connection', socket => {
         //daniel here you use to send msg to a every visitor
         socket.on('single socket', ({ user }) => {
-            if(user ==='guest'){
-                var user = {_id: 123, fullName: 'guest123'}
-            //here guest get a new id from server
-            // user.fullName = guest****
-            // user._id = await ... 
-            }
-            var userId = (user._id)? user.id : 123 
-            // const userId = user._id
+            if(!user) return;
+            else if(user ==='guest'){
+                const num = activityService.randomId()
+                user = {_id: num, fullName: `guest${num}`}
+            } 
+            const userId = user._id
             socket.join(userId)
-            io.to(userId).emit('user msg', `${user.fullName} has connected`);
+            io.to(userId).emit('msg to single user', `${user.fullName} has connected`);
         })
-        socket.on('user connect', ({ activityId }) => {
+        socket.on('user connect to socket activity', ({ activityId }) => {
             socket.activityId = activityId;
             socket.join(activityId)
         })
