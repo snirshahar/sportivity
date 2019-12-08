@@ -21,6 +21,8 @@ function connectSockets(io) {
 
         socket.on('user listen activity', ({ activityId }) => {
             socket.activityId = activityId;
+            console.log('activityId 1 : ', activityId);
+            
             socket.join(activityId)
         })
         socket.on('user unListen activity', ({ activityId }) => {
@@ -45,6 +47,8 @@ function connectSockets(io) {
 
         socket.on('chat addMsg', async (msg) => {
             const newMsg = await activityService.addMsg(msg.activityId, msg)
+            console.log('activityId 2: ', msg.activityId);
+            
             io.to(msg.activityId).emit('msg recieved', newMsg)
         })
     })
