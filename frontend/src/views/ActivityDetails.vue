@@ -86,7 +86,7 @@ export default {
       console.log("join", res);
       this.joined = true;
       if(this.user){
-        SocketService.emit("user joineded", { activityId: this.activity._id, 
+        SocketService.emit("user joined", { activityId: this.activity._id, 
         user:this.user });
       }
     },
@@ -101,7 +101,7 @@ export default {
       );
       this.joined = false;
       if(this.user){
-        SocketService.emit("user unjoineded", { activityId: this.activity._id, 
+        SocketService.emit("user unjoined", { activityId: this.activity._id, 
         user:this.user });
       }
     },
