@@ -4,7 +4,6 @@ module.exports = connectSockets
 
 function connectSockets(io) {
     io.on('connection', socket => {
-        //daniel here you use to send msg to a every visitor
         socket.on('single socket', ({ user }) => {
             if(!user) return;
             else if(user ==='guest'){
@@ -29,13 +28,19 @@ function connectSockets(io) {
             socket.leave(activityId)
         })
 
-        socket.on('user joineded', ({ activityId, user }) => {
+        socket.on('user joined', ({ activityId, user }) => {
+            socket.join(user._id)
+            socket.join(activityId)
             socket.activityId = activityId;
             socket.to(socket.activityId).emit('msg to all activity members except sender', `${user.fullName} has joined the activity`);
+            io.to(user._id).emit('msg to single user', `${user.fullName} you just connected`);
         })
-        socket.on('user unjoineded', ({ activityId, user }) => {
+        socket.on('user unjoined', ({ activityId, user }) => {
             socket.activityId = activityId;
             socket.to(socket.activityId).emit('msg to all activity members except sender', `${user.fullName} has left the activity`);
+            io.to(user._id).emit('msg to single user', `${user.fullName} you just unconnected`);
+            socket.leave(activityId)
+            socket.leave(user._id)
         })
 
         socket.on('chat addMsg', async (msg) => {
