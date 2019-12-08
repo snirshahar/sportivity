@@ -44,10 +44,14 @@ export default {
         this.$store.dispatch({ type: 'saveActivities', activities })
       })
   
-    const activities = this.$store.activities
+    const activities = this.$store.getters.activities
     const user = this.$store.getters.loggedinUser;
     if(!user) return
-    SocketService.activityConnect(activities, user)
+    setTimeout(()=>{
+      console.log(activities);
+      
+      SocketService.activityConnect(activities, user)
+    }, 100)
   } 
 }
 </script>

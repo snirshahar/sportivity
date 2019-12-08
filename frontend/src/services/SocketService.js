@@ -13,6 +13,8 @@ export default {
 }
 
 function activityConnect(activities, user){
+    console.log(activities, user);
+    
     if(user && activities){
         activities.forEach(activity=> {
           activity.attendees.forEach(attendee=>{

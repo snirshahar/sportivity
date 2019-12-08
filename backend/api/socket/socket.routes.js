@@ -7,7 +7,7 @@ function connectSockets(io) {
         socket.on('single socket', ({ user }) => {
             if(!user) return;
             else if(user ==='guest'){
-                const num = activityService.randomId()
+                const num = Math.floor(Math.random() * 10000);
                 user = {_id: num, fullName: `guest${num}`}
             } 
             const userId = user._id
