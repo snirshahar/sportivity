@@ -1,4 +1,3 @@
-
 <template>
   <div class="chat-message">
     <img :src="msg.from.imgUrl" alt />
@@ -14,7 +13,6 @@
 
 <script>
 import moment from "moment";
-
 export default {
   props: ["msg"],
   computed: {

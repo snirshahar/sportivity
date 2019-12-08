@@ -11,16 +11,15 @@ export default {
     activityConnect
 }
 
-function activityConnect(activities, user){
-    if(user && activities){
-        activities.forEach(activity=> {
-          activity.attendees.forEach(attendee=>{
-            if(attendee._id===user._id){
-              emit("user connect to socket activity", { activityId: activity._id })
-          }
-          })
+function activityConnect(activities, user) {
+    if (!user) return emit("single socket", { user: 'guest' })
+    activities.map(activity => {
+        activity.attendees.map(attendee => {
+            if (attendee._id === user._id) {
+                emit("user connect to socket activity", { activityId: activity._id })
+            }
         })
-      } else emit("single socket", { user: 'guest' })
+    })
 }
 
 function on(eventName, cb) {

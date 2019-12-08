@@ -118,8 +118,7 @@ async function update(user) {
 
 async function add(user) {
     user.isAdmin = false;
-    user.inbox = {};
-    console.log('ASDASD', user.imgUrl);
+    user.inbox = [];
     if (!user.imgUrl) user.imgUrl = "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png";
     user.wishlist = [];
     user.createdAt = Date.now();

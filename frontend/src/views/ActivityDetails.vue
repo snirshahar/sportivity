@@ -46,6 +46,7 @@
 <script>
 import activityService from "../services/ActivityService";
 import locationService from "../services/LocationService";
+import SocketService from '../services/SocketService';
 import ActivityDetailsBar from "../components/ActivityDetailsBar";
 import ActivityAbout from "../components/ActivityAbout";
 import ActivityMembers from "../components/ActivityMembers";
@@ -81,9 +82,11 @@ export default {
       this.activity.attendees.push(shortUser);
       const res = await activityService.addAttendee(this.activity, shortUser);
       this.joined = true;
-      if(this.user){
-        SocketService.emit("user joined", { activityId: this.activity._id, 
-        user:this.user });
+      if (this.user) {
+        SocketService.emit("user joined", {
+          activityId: this.activity._id,
+          user: this.user
+        });
       }
     },
     async unjoin() {
@@ -95,9 +98,11 @@ export default {
         att => att._id !== this.user._id
       );
       this.joined = false;
-      if(this.user){
-        SocketService.emit("user unjoined", { activityId: this.activity._id, 
-        user:this.user });
+      if (this.user) {
+        SocketService.emit("user unjoined", {
+          activityId: this.activity._id,
+          user: this.user
+        });
       }
     },
     handleScroll(event) {
@@ -148,6 +153,9 @@ export default {
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+    SocketService.emit("user unListen activity", {
+      activityId: this.activityId
+    });
   }
 };
 </script>

@@ -44,7 +44,7 @@ export default {
     this.user = this.$store.getters.loggedinUser;
     this.msg = !this.user ? null : { from: this.user, txt: "" };
     const activity = await ActivityService.getActivity(this.activityId);
-    SocketService.emit("user listen", { activityId: this.activityId });
+    SocketService.emit("user listen activity", { activityId: this.activityId });
     this.msgs = activity.msgs;
     setTimeout(
       () => (this.$refs.msgs.scrollTop = this.$refs.msgs.scrollHeight),
@@ -52,6 +52,7 @@ export default {
     );
     SocketService.on("msg recieved", msg => {
       this.msgs.push(msg);
+      console.log(msg);
       setTimeout(
         () => (this.$refs.msgs.scrollTop = this.$refs.msgs.scrollHeight),
         50

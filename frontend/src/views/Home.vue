@@ -97,7 +97,7 @@ export default {
 async created(){
     const activities = this.$store.activities
     const user = this.$store.getters.loggedinUser;
-    SocketService.activityConnect(activities, user)
+    if(!user) SocketService.activityConnect(activities, user)
   }
 };
 </script>
