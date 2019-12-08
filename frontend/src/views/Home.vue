@@ -96,17 +96,9 @@ export default {
     Video
   },
 async created(){
-    const activities = await ActivityService.getActivities();
+    const activities = this.$store.activities
     const user = this.$store.getters.loggedinUser;
-    if(user && activities){
-      activities.forEach(activity=> {
-        activity.attendees.forEach(attendee=>{
-          if(attendee._id===user._id){
-            SocketService.emit("user connect to socket activity", { activityId: activity._id })
-        }
-        })
-      })
-    } else  SocketService.emit("single socket", { user: 'guest' })
+    SocketService.activityConnect(activities, user)
   }
 };
 </script>
