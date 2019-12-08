@@ -19,6 +19,7 @@
 
 <script>
 import Video from "../components/Video";
+import SocketService from '../services/SocketService';
 import CategoryItem from "../components/CategoryItem";
 
 export default {
