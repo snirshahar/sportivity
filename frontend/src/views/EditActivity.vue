@@ -97,6 +97,7 @@
 <style lang="scss" scoped>
 .edit-activity-container {
   color: white;
+  flex: 1;
 }
 .google-map-container {
   text-align: center;
@@ -118,10 +119,7 @@
   flex: 1;
 }
 .form {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  padding: 15px;
-  border-radius: 3px;
-  width: 80%;
+  width: 600px;
   text-align: left;
   margin: 20px auto;
   display: flex;
@@ -201,7 +199,6 @@ export default {
       if (this.placeChanged) {
         setTimeout(async () => {
           var res = await locationService.getCoors(ev.target.value);
-          console.log(res);
           const result = res.data.results[0];
           this.activity.location._id = result.place_id;
           this.activity.location.coords = {
@@ -209,7 +206,6 @@ export default {
             lng: result.geometry.location.lng
           };
           this.activity.location.address = result.formatted_address;
-          console.log(this.activity.location);
           // res = await locationService.getLocation({});
           // const str = res.data.plus_code.compound_code;
           // this.activity.location.city = str.substring(str.indexOf(" ") + 1, str.indexOf(","));
@@ -225,7 +221,6 @@ export default {
     },
     async saveActivity() {
       this.activity.startsAt = new Date(this.activity.startsAt).getTime();
-      console.log("new activity", this.activity);
       await this.$store.dispatch({
         type: "saveActivity",
         activity: this.activity

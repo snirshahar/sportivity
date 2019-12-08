@@ -1,7 +1,7 @@
 const userService = require('./user.service')
 
 async function getUser(req, res) {
-    const user = await userService.getById(req.params._id)
+    const user = await userService.getById(req.params.id)
     res.send(user)
 }
   
@@ -11,7 +11,7 @@ async function getUsers(req, res) {
 }
 
 async function deleteUser(req, res) {
-    await userService.remove(req.params._id)
+    await userService.remove(req.params.id)
     res.end()
 }
 
@@ -21,9 +21,17 @@ async function updateUser(req, res) {
     res.send(user)
 }
 
+
+
+async function addToWishlist(req, res){
+    const status = await userService.addToWishlist(req.session.user._id, req.params.activityId)
+    res.send(status)
+}
+
 module.exports = {
     getUser,
     getUsers,
     deleteUser,
-    updateUser
+    updateUser,
+    addToWishlist
 }

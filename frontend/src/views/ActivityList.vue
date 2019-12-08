@@ -1,6 +1,6 @@
 <template>
   <section class="activity-list-container">
-    <ActivityFilter></ActivityFilter>
+    <ActivityFilter @filter="setRange" @sort="setSort"></ActivityFilter>
     <transition-group class="activity-list" name="fade">
       <ActivityPreview
         v-for="activity in filterActivities"
@@ -14,29 +14,42 @@
 <script>
 import ActivityPreview from "../components/ActivityPreview";
 import ActivityFilter from "../components/ActivityFilter";
+import locationService from "../services/LocationService";
 
 export default {
   name: "activityList",
   data() {
     return {
-      filterBy: null
+      filterBy: null,
+      location: null,
+      range: 0,
+      sortBy: null
     };
   },
   components: {
     ActivityPreview,
     ActivityFilter
   },
+  methods: {
+    setSort(val){
+      this.sortBy = val;
+    },
+    setRange(val){
+      this.range = val;
+    },
+  },
   computed: {
     filterActivities() {
-      const activities = this.$store.getters.activities;
-      return !this.filterBy
-        ? activities
-        : activities.filter(activity => activity.category === this.filterBy);
-    }
+      var activities = JSON.parse(JSON.stringify(this.$store.getters.activities))
+      activities = this.filterBy ? activities.filter(activity => activity.category === this.filterBy) : activities;
+      activities = this.range ? activities.filter(activity => this.range > activity.distance) : activities;
+      activities = this.sortBy ? activities.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? 1 : ((b[this.sortBy] > a[this.sortBy]) ? -1 : 0)) : activities;
+      if(this.sortBy === 'attendees') activities.reverse();
+      return activities;
+    },
   },
-  async created() {
+  created() {
     this.filterBy = this.$route.params.category;
-    console.log(this.activities);
   },
   watch: {
     "$route.params.category"() {

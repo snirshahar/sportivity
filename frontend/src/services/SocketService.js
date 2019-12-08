@@ -4,6 +4,7 @@ const BASE_URL = process.env.NODE_ENV !== 'development'
     ? '/'
     : '//localhost:3000/'
 const socket = io(BASE_URL)
+
 export default {
     on,
     emit

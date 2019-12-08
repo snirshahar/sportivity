@@ -25,9 +25,6 @@ export default {
   components: {
     CarouselCard,
     CarouselCardItem
-  },
-  created() {
-    console.log(this.images);
   }
 };
 </script>

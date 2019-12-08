@@ -6,7 +6,7 @@ if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user);
 export default ({
   strict: true,
   state: {
-    loggedInUser: localLoggedinUser,
+    loggedInUser: localLoggedinUser
   },
   getters: {
     loggedinUser(state) {
@@ -19,7 +19,7 @@ export default ({
     },
     removeUser(state) {
       state.loggedInUser = null;
-    },
+    }
   },
   actions: {
     async login(context, { cred }) {
@@ -36,6 +36,11 @@ export default ({
       await userService.logout()
       context.commit({ type: "removeUser" })
       return console.log('user signout successfully');
+    },
+    async updateUser(context, { user }) {
+      user = await userService.update(user)
+      context.commit({ type: "setUser", user });
+      return user;
     }
   }
 })

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="attendee-list-container">
-      <AttendeePreview v-for="attendee in attendees" :attendee="attendee" :key="attendee._id" size="'40px'"></AttendeePreview>
+      <AttendeePreview v-for="attendee in attendees" :attendee="attendee" :key="attendee._id" :size="'40px'"></AttendeePreview>
     </div>
   </section>
 </template>

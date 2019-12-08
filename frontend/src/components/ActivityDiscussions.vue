@@ -2,7 +2,7 @@
   <div class="activity-details-section wall-container">
     <h1>Discussions</h1>
     <div class="wall">
-      <div class="msgs">
+      <div class="msgs" ref="msgs">
         <ChatMsg v-for="(msg,idx) in msgs" :key="idx" :msg="msg"></ChatMsg>
       </div>
       <form @submit.prevent="sendMsg" v-if="user" class="form">
@@ -44,12 +44,18 @@ export default {
     this.user = this.$store.getters.loggedinUser;
     this.msg = !this.user ? null : { from: this.user, txt: "" };
     const activity = await ActivityService.getActivity(this.activityId);
-
-    SocketService.emit("user listen activity", { activityId: this.activityId });
+    SocketService.emit("user listen", { activityId: this.activityId });
     this.msgs = activity.msgs;
+    setTimeout(
+      () => (this.$refs.msgs.scrollTop = this.$refs.msgs.scrollHeight),
+      100
+    );
     SocketService.on("msg recieved", msg => {
-      console.log("msg recieved", msg);
-      this.msgs.unshift(msg);
+      this.msgs.push(msg);
+      setTimeout(
+        () => (this.$refs.msgs.scrollTop = this.$refs.msgs.scrollHeight),
+        50
+      );
     });
   },
   components: {
@@ -62,6 +68,6 @@ export default {
       SocketService.emit("chat addMsg", this.msg);
       this.msg.txt = "";
     }
-  },
+  }
 };
 </script>
