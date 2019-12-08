@@ -16,6 +16,14 @@ function connectSockets(io) {
             socket.join(userId)
             io.to(userId).emit('msg to single user', `${user.fullName} has connected`);
         })
+        socket.on('user listen activity', ({ activityId }) => {
+            socket.activityId = activityId;
+            socket.join(activityId)
+        })
+        socket.on('user unListen activity', ({ activityId }) => {
+            delete socket.activityId;
+            socket.leave(activityId)
+        })
         socket.on('user connect to socket activity', ({ activityId }) => {
             socket.activityId = activityId;
             socket.join(activityId)
