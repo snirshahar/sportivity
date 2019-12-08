@@ -9,7 +9,8 @@ module.exports = {
     addAttendee,
     deleteAttendee,
     add,
-    addMsg
+    addMsg,
+    randomId
 }
 
 async function getActivity(id) {
@@ -142,4 +143,11 @@ async function addMsg(activityId, msg) {
 function _buildCriteria(filterBy) {
     const criteria = {};
     return criteria;
+}
+function randomId(){
+    var num=0;
+    for(var i=0; i<5; i++){
+        num+= Math.floor(Math.random()*10)
+    }
+    return num
 }

@@ -51,6 +51,8 @@ import ActivityAbout from "../components/ActivityAbout";
 import ActivityMembers from "../components/ActivityMembers";
 import ActivityDiscussions from "../components/ActivityDiscussions";
 import ActivityPhotos from "../components/ActivityPhotos";
+import SocketService from "../services/SocketService";
+import BusService from '../services/BusService';
 
 export default {
   data() {
@@ -68,6 +70,7 @@ export default {
     this.user = this.getUser;
     this.joined = this.isJoined;
     window.addEventListener("scroll", this.handleScroll);
+
   },
   methods: {
     async join() {
@@ -80,10 +83,12 @@ export default {
       };
       this.activity.attendees.push(shortUser);
       const res = await activityService.addAttendee(this.activity, shortUser);
-
       console.log("join", res);
-
       this.joined = true;
+      if(this.user){
+        SocketService.emit("user joineded", { activityId: this.activity._id, 
+        user:this.user });
+      }
     },
     async unjoin() {
       const res = await activityService.deleteAttendee(
@@ -95,6 +100,10 @@ export default {
         att => att._id !== this.user._id
       );
       this.joined = false;
+      if(this.user){
+        SocketService.emit("user unjoineded", { activityId: this.activity._id, 
+        user:this.user });
+      }
     },
     handleScroll(event) {
       window.pageYOffset > 663
@@ -144,6 +153,9 @@ export default {
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+    if(!this.joined){
+      SocketService.emit("user unListen activity", { activityId: this.activityId });
+  }
   }
 };
 </script>

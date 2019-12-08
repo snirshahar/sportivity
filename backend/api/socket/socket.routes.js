@@ -4,25 +4,41 @@ module.exports = connectSockets
 
 function connectSockets(io) {
     io.on('connection', socket => {
-        socket.on('user listen', ({ activityId }) => {
-            console.log('user listen');
+        //daniel here you use to send msg to a every visitor
+        socket.on('single socket', ({ user }) => {
+            if(!user) return;
+            else if(user ==='guest'){
+                const num = activityService.randomId()
+                user = {_id: num, fullName: `guest${num}`}
+            } 
+            const userId = user._id
+            socket.join(userId)
+            io.to(userId).emit('msg to single user', `${user.fullName} has connected`);
+        })
+        socket.on('user connect to socket activity', ({ activityId }) => {
+            socket.activityId = activityId;
             socket.join(activityId)
-            socket.activityId = activityId;
         })
-        socket.on('user joined', ({ activityId, user }) => {
-            console.log('user join');
 
+        socket.on('user listen activity', ({ activityId }) => {
             socket.activityId = activityId;
-            io.to(socket.activityId).emit('msg recieved', { from: `${user.fullName} joined the activity` })
+            socket.join(activityId)
         })
-        socket.on('user left', ({ activityId, user }) => {
-            console.log('user left')
-            socket.activityId = activityId;
-            io.to(socket.activityId).emit('msg recieved', { from: `${user.fullName} left the activity` })
+        socket.on('user unListen activity', ({ activityId }) => {
+            delete socket.activityId;
             socket.leave(activityId)
         })
+
+        socket.on('user joineded', ({ activityId, user }) => {
+            socket.activityId = activityId;
+            socket.to(socket.activityId).emit('msg to all activity members except sender', `${user.fullName} has joined the activity`);
+        })
+        socket.on('user unjoineded', ({ activityId, user }) => {
+            socket.activityId = activityId;
+            socket.to(socket.activityId).emit('msg to all activity members except sender', `${user.fullName} has left the activity`);
+        })
+
         socket.on('chat addMsg', async (msg) => {
-            console.log('chat addMsg')
             const newMsg = await activityService.addMsg(msg.activityId, msg)
             io.to(msg.activityId).emit('msg recieved', newMsg)
         })

@@ -3,6 +3,7 @@
     <div class="logo" @click="navToHome">
       <img src="../img/logo.png" />
     </div>
+  <notifications></notifications>
     <div class="nav-items">
       <router-link to="/activity/add"><font-awesome-icon :icon="['fa', 'plus']" /><span style="margin-left:7px">Create an activity</span></router-link>
       <div class="seprator"></div>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import notifications from './Notifications'
 export default {
   methods: {
     navToHome() {
@@ -27,6 +29,9 @@ export default {
     user() {
       return this.$store.getters.loggedinUser;
     }
+  },
+  components:{
+    notifications
   }
 };
 </script>
