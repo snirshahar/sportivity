@@ -92,6 +92,11 @@ export default {
   components: {
     CategoryItem,
     Video
+  },
+async created(){
+    const activities = this.$store.activities
+    const user = this.$store.getters.loggedinUser;
+    SocketService.activityConnect(activities, user)
   }
 };
 </script>

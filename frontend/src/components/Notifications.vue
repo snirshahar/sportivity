@@ -4,7 +4,6 @@
 
 <script>
 import SocketService from "../services/SocketService";
-import BusService from '../services/BusService';
 
 export default {
 created() {

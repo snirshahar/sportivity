@@ -42,6 +42,11 @@ export default {
         activities.map(activity => activity.distance = this.getDistance(activity.location.coords, location))
         this.$store.dispatch({ type: 'saveActivities', activities })
       })
-  }
-};
+  
+    const activities = this.$store.activities
+    const user = this.$store.getters.loggedinUser;
+    if(!user) return
+    SocketService.activityConnect(activities, user)
+  } 
+}
 </script>

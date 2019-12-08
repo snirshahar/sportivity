@@ -7,7 +7,20 @@ const socket = io(BASE_URL)
 
 export default {
     on,
-    emit
+    emit,
+    activityConnect
+}
+
+function activityConnect(activities, user){
+    if(user && activities){
+        activities.forEach(activity=> {
+          activity.attendees.forEach(attendee=>{
+            if(attendee._id===user._id){
+              emit("user connect to socket activity", { activityId: activity._id })
+          }
+          })
+        })
+      } else emit("single socket", { user: 'guest' })
 }
 
 function on(eventName, cb) {
