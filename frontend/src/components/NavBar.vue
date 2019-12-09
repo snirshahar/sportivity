@@ -1,10 +1,10 @@
 <template>
-  <nav class="main-nav">
+  <nav class="main-nav" :class="{home: homePage }">
     <div class="logo" @click="nav('/')">
       <img src="../img/logo.png" />
     </div>
     <div class="nav-items">
-      <router-link to="/activity/add">
+      <router-link to="/activity/add" :class="{home: homePage }">
         <font-awesome-icon :icon="['fa', 'plus']" />
         <span style="margin-left:7px">Create an activity</span>
       </router-link>
@@ -15,7 +15,7 @@
         <span style="margin-left:7px">Login</span>
       </router-link>
       <div v-else class="user-profile" @click="showOpts = !showOpts">
-        <p>{{loggedinUser.fullName}}</p>
+        <p :class="{white: homePage }">{{loggedinUser.fullName}}</p>
         <img :src="loggedinUser.imgUrl" width="40px" />
         <transition name="fade">
           <div class="options" v-if="showOpts">
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       loggedinUser: null,
-      showOpts: false
+      showOpts: false,
     };
   },
   methods: {
@@ -53,6 +53,11 @@ export default {
     async doLogout() {
       await this.$store.dispatch({ type: "logout" });
       this.$router.push("/");
+    }
+  },
+  computed:{
+    homePage(){
+      return (this.$route.path==='/')? true : false
     }
   },
   created() {

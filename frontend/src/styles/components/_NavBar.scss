@@ -6,9 +6,11 @@
   border-bottom: none;
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: space-between;
-  // background-image: linear-gradient(to bottom, #000000, #0000006e, #00000000);
-  background: #00171f;
+  // background: #00171f;
+  background-image: linear-gradient(to bottom, #000000, #00171f);
+
   .nav-items {
     display: flex;
     justify-content: space-around;
@@ -76,4 +78,15 @@
       margin-left: 10px;
     }
   }
+}
+.white {
+    color: $clr5 !important
+}
+.main-nav.home{
+  a{
+    color: $clr5
+  }
+  position: absolute;
+  top:0;
+  background-image: linear-gradient(to bottom, #000000, #00171f96, rgba(0,0,0,0), rgba(0,0,0,0));
 }

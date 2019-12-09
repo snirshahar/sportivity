@@ -486,6 +486,7 @@ Sun, 08 Dec 2019 09:22:10 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 09:40:47 GMT - Info - Server is running on port: 3000
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Sun, 08 Dec 2019 09:42:48 GMT - Info - Server is running on port: 3000
 =======
 Sun, 08 Dec 2019 09:41:33 GMT - Info - Server is running on port: 3000
@@ -532,3 +533,6 @@ Sun, 08 Dec 2019 12:18:05 GMT - Info - Server is running on port: 3000
 >>>>>>> 486f1e8be8ec1f1ed8ef8ab93a9d628815c90f8e
 
 Sun, 08 Dec 2019 12:26:43 GMT - Info - Server is running on port: 3000
+=======
+Sun, 08 Dec 2019 09:41:33 GMT - Info - Server is running on port: 3000
+>>>>>>> b1f0ba7097f3da79034979a03edd935720997918
