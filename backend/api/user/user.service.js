@@ -11,7 +11,8 @@ module.exports = {
     update,
     add,
     addToWishlist,
-    removeFromWishlist
+    removeFromWishlist,
+    addMsg
 }
 
 async function query(filterBy = {}) {
@@ -54,7 +55,7 @@ async function addToWishlist(userId, activityId){
     )
 }
 
-async function getById(userId) {
+async function getById(userId, withInbox = false) {
     if (!userId) return null;
     const collection = await dbService.getCollection('user')
     try {
@@ -65,7 +66,7 @@ async function getById(userId) {
             {
                 $lookup: {
                     from: "activity",
-                    let: { user_id: "$_id" },
+                let: { user_id: "$_id" },
                     pipeline: [
                         { $match: { $expr: { $in: ["$$user_id", "$attendees._id"] } } }
                     ],
@@ -74,7 +75,7 @@ async function getById(userId) {
             }
         ]).toArray();
         delete user[0].password
-        delete user[0].inbox
+        if(!withInbox) delete user[0].inbox
         delete user[0].isAdmin
         return user[0]
     } catch (err) {
@@ -82,6 +83,21 @@ async function getById(userId) {
         throw err;
     }
 }
+
+async function addMsg(userId, msg) {
+    msg.isRead = false;
+    msg.sentAt = Date.now()
+    const collection = await dbService.getCollection('user');
+    collection.findOneAndUpdate(
+        { '_id': ObjectId(userId) },
+        { $push: { "inbox": msg } },
+        // (err, doc) => {
+            // console.log(doc.value.msgs);
+        // }
+    )
+    return msg;
+}
+
 async function getByEmail(email) {
     const collection = await dbService.getCollection('user')
     try {
@@ -118,8 +134,7 @@ async function update(user) {
 
 async function add(user) {
     user.isAdmin = false;
-    user.inbox = {};
-    console.log('ASDASD', user.imgUrl);
+    user.inbox = [];
     if (!user.imgUrl) user.imgUrl = "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png";
     user.wishlist = [];
     user.createdAt = Date.now();

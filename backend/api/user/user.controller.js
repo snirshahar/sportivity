@@ -1,7 +1,11 @@
 const userService = require('./user.service')
 
 async function getUser(req, res) {
-    const user = await userService.getById(req.params.id)
+    let withInbox = false
+    if(req.session.user && req.session.user._id === req.params.id){
+        withInbox = !withInbox;
+    }
+    const user = await userService.getById(req.params.id, withInbox)
     res.send(user)
 }
   

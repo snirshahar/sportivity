@@ -1,22 +1,23 @@
-.chat-message{
-    width: 100%;
+.chat-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  p {
+    margin: 0;
+    text-align: left;
+  }
+  .msg-info {
+    font-size: 1.1rem;
     display: flex;
-    align-items: center;
-    p{
-        margin: 0;
-        text-align: left;
-      }
-      .msg-info{
-        font-size: 1.1rem;
-        display: flex;
-      }
-      .msg-txt{
-        font-size: 1rem;
-        color: gray;
-      }
-      img{
-        height: 40px;
-        width: 40px;
-        margin: 5px;
-      }
+  }
+  .msg-txt {
+    font-size: 0.9rem;
+    color: gray;
+    word-break: break-all;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
 }

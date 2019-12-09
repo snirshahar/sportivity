@@ -1,5 +1,6 @@
 <template>
-  <div class="form-container">
+  <div class="container">
+    <div class="form-container">
       <div class="form-type">
         <div @click="type='Login'; msg=''" :class="{active: type === 'Login'}">Login</div>
         <div @click="type='Register'; msg=''" :class="{active: type === 'Register'}">Register</div>
@@ -51,10 +52,14 @@
         <input class="button" type="submit" v-model="type" />
         <p class="msg" v-if="msg">{{msg}}</p>
       </form>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container {
+  flex: 1;
+}
 .form-container {
   flex: 1;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);

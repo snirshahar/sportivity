@@ -9,8 +9,7 @@ module.exports = {
     addAttendee,
     deleteAttendee,
     add,
-    addMsg,
-    randomId
+    addMsg
 }
 
 async function getActivity(id) {
@@ -21,59 +20,9 @@ async function getActivity(id) {
 }
 
 async function query(filterBy = {}) {
-    // const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('activity')
     const items = await collection.find(filterBy).toArray();
-
     return items;
-
-    try {
-        // const activities = await collection.find(criteria).toArray();
-        var activities = await collection.aggregate([
-            {
-                $match: filterBy
-            },
-            {
-                $lookup:
-                {
-                    from: 'user',
-                    localField: 'byUserId',
-                    foreignField: '_id',
-                    as: 'byUser'
-                }
-            },
-            {
-                $unwind: '$byUser'
-            },
-            {
-                $lookup:
-                {
-                    from: 'user',
-                    localField: 'aboutUserId',
-                    foreignField: '_id',
-                    as: 'aboutUser'
-                }
-            },
-            {
-                $unwind: '$aboutUser'
-            }
-        ]).toArray()
-        console.log('GET ACTIVITIES:', collection.find());
-
-        activities = activities.map(activity => {
-            activity.byUser = { _id: activity.byUser._id, username: activity.byUser.username }
-            activity.aboutUser = { _id: activity.aboutUser._id, username: activity.aboutUser.username }
-            delete activity.byUserId;
-            delete activity.aboutUserId;
-
-            return activity;
-        })
-
-        return activities
-    } catch (err) {
-        console.log('ERROR: cannot find activities')
-        throw err;
-    }
 }
 
 async function remove(activityId) {
@@ -86,11 +35,16 @@ async function remove(activityId) {
     }
 }
 
-async function add(activity) {
+async function add(activity, owner) {
+    activity.createdBy = owner;
     activity.createdBy._id = ObjectId(activity.createdBy._id);
+    activity.createdAt = Date.now();
+    activity.msgs = [];
+    activity.attendees = [];
     const collection = await dbService.getCollection('activity')
     try {
-        await collection.insertOne(activity);
+        await collection.insertOne(activity, async (err, doc) => 
+        await addAttendee(doc.ops[0]._id, owner));
         return activity;
     } catch (err) {
         console.log(`ERROR: cannot insert activity, ${err}`)
@@ -98,9 +52,12 @@ async function add(activity) {
     }
 }
 
-async function addAttendee(activity, attendee) {
+async function addAttendee(activityId, attendee) {
+    console.log(activityId, attendee)
     attendee._id = ObjectId(attendee._id);
-    activity = await getActivity(activity._id);
+    let activity = await getActivity(activityId);
+
+    console.log('ATTTTTTTTTTT', activity.attendees);
     if (activity.attendees.length === activity.maxAttendees) return 'The activity is full'; // Add a message
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
@@ -116,6 +73,7 @@ async function addAttendee(activity, attendee) {
 async function deleteAttendee(activity, attendeeId) {
     // activity = await getActivity(activity._id);
     const currAttendees = activity.attendees.filter(att => att._id !== attendeeId);
+    currAttendees.forEach(att => att._id = ObjectId(att._id))
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
         { '_id': ObjectId(activity._id) },
@@ -144,11 +102,4 @@ async function addMsg(activityId, msg) {
 function _buildCriteria(filterBy) {
     const criteria = {};
     return criteria;
-}
-function randomId(){
-    var num=0;
-    for(var i=0; i<5; i++){
-        num+= Math.floor(Math.random()*10)
-    }
-    return num
 }

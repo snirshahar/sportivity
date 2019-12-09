@@ -44,6 +44,7 @@ export default {
       activities = this.filterBy ? activities.filter(activity => activity.category === this.filterBy) : activities;
       activities = this.range ? activities.filter(activity => this.range > activity.distance) : activities;
       activities = this.sortBy ? activities.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? 1 : ((b[this.sortBy] > a[this.sortBy]) ? -1 : 0)) : activities;
+      if(this.sortBy === 'attendees') activities.reverse();
       return activities;
     },
   },
