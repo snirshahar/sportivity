@@ -43,7 +43,8 @@ export default {
     this.user = this.$store.getters.loggedinUser;
     this.msg = !this.user ? null : { from: this.user, txt: "" };
     const activity = await ActivityService.getActivity(this.activityId);
-    SocketService.emit("user listen", { activityId: this.activityId });
+
+    SocketService.emit("user listen activity", { activityId: this.activityId });
     this.msgs = activity.msgs;
     SocketService.on("msg recieved", msg => {
       console.log("msg recieved", msg);
@@ -55,13 +56,11 @@ export default {
   },
   methods: {
     sendMsg() {
-      console.log("before");
       if (!this.msg.txt || !this.user) return;
-      console.log("after");
       this.msg.activityId = this.activityId;
       SocketService.emit("chat addMsg", this.msg);
       this.msg.txt = "";
     }
-  }
+  },
 };
 </script>

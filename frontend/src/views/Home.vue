@@ -20,6 +20,8 @@
 <script>
 import Video from "../components/Video";
 import CategoryItem from "../components/CategoryItem";
+import SocketService from "../services/SocketService";
+import ActivityService from "../services/ActivityService";
 
 export default {
   name: "home",
@@ -92,6 +94,19 @@ export default {
   components: {
     CategoryItem,
     Video
+  },
+async created(){
+    const activities = await ActivityService.getActivities();
+    const user = this.$store.getters.loggedinUser;
+    if(user && activities){
+      activities.forEach(activity=> {
+        activity.attendees.forEach(attendee=>{
+          if(attendee._id===user._id){
+            SocketService.emit("user connect to socket activity", { activityId: activity._id })
+        }
+        })
+      })
+    } else  SocketService.emit("single socket", { user: 'guest' })
   }
 };
 </script>

@@ -8,7 +8,10 @@
 
 <script>
 import NavBar from "./components/NavBar";
+import SocketService from "./services/SocketService";
 import Footer from "./components/Footer";
+import ActivityService from "./services/ActivityService";
+
 
 export default {
   components: {

@@ -3,6 +3,7 @@
     <div class="logo" @click="nav('/')">
       <img src="../img/logo.png" />
     </div>
+  <notifications></notifications>
     <div class="nav-items">
       <router-link to="/activity/add">
         <font-awesome-icon :icon="['fa', 'plus']" />
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+import notifications from './Notifications'
 export default {
   data() {
     return {
@@ -63,6 +65,9 @@ export default {
       const user = this.$store.getters.loggedinUser;
       if(user && user._id) this.loggedinUser = user;
     }
+  },
+  components:{
+    notifications
   }
 };
 </script>
