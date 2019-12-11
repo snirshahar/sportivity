@@ -65,7 +65,6 @@ export default {
       return address.substring(address.indexOf(",") + 2);
     },
     isFull(){
-      console.log(this.activity.attendees.length, this.activity.maxAttendees);
       return this.activity.attendees.length === this.activity.maxAttendees;
     }
   }

@@ -46,7 +46,7 @@
 <script>
 import activityService from "../services/ActivityService";
 import locationService from "../services/LocationService";
-import SocketService from '../services/SocketService';
+import SocketService from "../services/SocketService";
 import ActivityDetailsBar from "../components/ActivityDetailsBar";
 import ActivityAbout from "../components/ActivityAbout";
 import ActivityMembers from "../components/ActivityMembers";
@@ -69,41 +69,35 @@ export default {
     this.user = this.getUser;
     this.joined = this.isJoined;
     window.addEventListener("scroll", this.handleScroll);
+    SocketService.on("add user", user => {
+      this.activity.attendees.push({
+        _id: user._id,
+        fullName: user.fullName,
+        imgUrl: user.imgUrl
+      });
+    });
+    SocketService.on("remove user", userId => {
+      this.activity.attendees = this.activity.attendees.filter(
+        att => att._id !== userId
+      );
+    });
   },
   methods: {
     async join() {
       if (!this.user) return this.$router.push("/login");
       if (this.isFull || this.isJoined) return;
-      const shortUser = {
-        _id: this.user._id,
-        fullName: this.user.fullName,
-        imgUrl: this.user.imgUrl
-      };
-      this.activity.attendees.push(shortUser);
-      const res = await activityService.addAttendee(this.activity, shortUser);
       this.joined = true;
-      if (this.user) {
-        SocketService.emit("user joined", {
-          activityId: this.activity._id,
-          user: this.user
-        });
-      }
+      SocketService.emit("user joined", {
+        activityId: this.activity._id,
+        user: this.user
+      });
     },
     async unjoin() {
-      const res = await activityService.deleteAttendee(
-        this.activity,
-        this.user._id
-      );
-      this.activity.attendees = this.activity.attendees.filter(
-        att => att._id !== this.user._id
-      );
       this.joined = false;
-      if (this.user) {
-        SocketService.emit("user unjoined", {
-          activityId: this.activity._id,
-          user: this.user
-        });
-      }
+      SocketService.emit("user unjoined", {
+        activityId: this.activity._id,
+        user: this.user
+      });
     },
     handleScroll(event) {
       window.pageYOffset > (window.innerHeight * 7.9) / 10

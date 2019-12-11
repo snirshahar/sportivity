@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <NavBar />
-    <Notifications />
     <router-view />
     <Footer />
   </div>
@@ -10,14 +9,12 @@
 <script>
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Notifications from "./components/Notifications";
 import SocketService from "./services/SocketService";
 
 export default {
   components: {
     Footer,
-    NavBar,
-    Notifications
+    NavBar
   },
   methods: {
     getDistance(from, to) {
