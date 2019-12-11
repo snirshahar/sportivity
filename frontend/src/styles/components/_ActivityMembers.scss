@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
+
+@media screen and (max-width: 530px){
+    .attendees{
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    }
+}
