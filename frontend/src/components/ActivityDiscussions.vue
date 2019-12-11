@@ -16,8 +16,7 @@
       </form>
       <div v-else>
         <p>
-          Please
-          <router-link to="/login">login</router-link>to chat
+          Please <router-link to="/login">login</router-link> to chat
         </p>
       </div>
     </div>

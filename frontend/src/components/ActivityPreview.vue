@@ -3,7 +3,7 @@
     <div class="preview-image-container">
       <img class="preview-image" v-if="activity.imgUrls[0]" :src="activity.imgUrls[0]" />
       <div class="wishlist-heart" :class="{red : wishlist}" @click.stop="toggleWishlist"><font-awesome-icon :icon="['fa', 'heart']" /></div>
-      <div class="ribbon">
+      <div class="ribbon"  :class="{full: isFull}">
         <p class="preview-attendees">
           <font-awesome-icon :icon="['fa', 'user']" />
           {{attendees}}/{{activity.maxAttendees}}
@@ -63,6 +63,10 @@ export default {
     city() {
       const address = this.activity.location.address;
       return address.substring(address.indexOf(",") + 2);
+    },
+    isFull(){
+      console.log(this.activity.attendees.length, this.activity.maxAttendees);
+      return this.activity.attendees.length === this.activity.maxAttendees;
     }
   }
 };

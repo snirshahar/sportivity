@@ -21,18 +21,13 @@ async function addActivity(req, res) {
     if (!activity.imgUrls || !activity.imgUrls.length) {
         activity.imgUrls = ['https://www.subaruhawaii.com/sites/default/files/styles/subaru_step2_accessory/public/model/model_management/1422065168_54c2fe103503d.jpg?itok=f7LACBG8']
     }
-
-    activity.createdAt = Date.now();
-    activity.msgs = [];
-    activity.createdBy = owner;
-    activity.attendees = [owner];
-    activity = await activityService.add(activity)
+    activity = await activityService.add(activity, owner)
     res.send(activity)
 }
 
 async function addAttendee(req, res) {
     const { attendee, activity } = req.body;
-    const response = await activityService.addAttendee(activity, attendee);
+    const response = await activityService.addAttendee(activity._id, attendee);
     res.send(response)
 }
 
