@@ -1,10 +1,8 @@
 <template>
-  <router-link :to="`/profile/${attendee._id}`">
-    <div class="preview-card" v-if="attendee">
-      <img :src="attendee.imgUrl" class="attendee-image" :width="size" :height="size" />
-      <p v-if="showName">{{shortName}}</p>
-    </div>
-  </router-link>
+  <div class="preview-card" v-if="attendee" @click="$router.push(`/profile/${attendee._id}`)">
+    <img :src="attendee.imgUrl" class="attendee-image" :width="size" :height="size" />
+    <p v-if="showName">{{shortName}}</p>
+  </div>
 </template>
 
 <script>

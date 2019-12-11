@@ -8,7 +8,11 @@
         <router-link class="btn-explore" to="/explore">Explore</router-link>
       </div>
     </div>
+
     <div class="categories-container">
+      <div class="submain-header">
+        <h2>Discover</h2>
+      </div>
       <div class="categories">
         <CategoryItem :category="category" v-for="category in categories" :key="category.name" />
       </div>
@@ -19,7 +23,7 @@
 
 <script>
 import Video from "../components/Video";
-import SocketService from '../services/SocketService';
+import SocketService from "../services/SocketService";
 import CategoryItem from "../components/CategoryItem";
 
 export default {
@@ -94,10 +98,10 @@ export default {
     CategoryItem,
     Video
   },
-async created(){
-    const activities = this.$store.activities
+  async created() {
+    const activities = this.$store.activities;
     const user = this.$store.getters.loggedinUser;
-    if(!user) SocketService.activityConnect(activities, user)
+    if (!user) SocketService.activityConnect(activities, user);
   }
 };
 </script>
