@@ -14,7 +14,7 @@
     }
     .form {
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       display: flex;
       width: 100%;
       .msg-input {
@@ -35,5 +35,11 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+@media screen and (max-width: 530px){
+  .wall-container .wall .form{
+    width: calc(100% - 20px);
   }
 }

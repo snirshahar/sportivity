@@ -8,7 +8,11 @@
         <router-link class="btn-explore" to="/explore">Explore</router-link>
       </div>
     </div>
+
     <div class="categories-container">
+      <div class="submain-header">
+        <h2>Discover</h2>
+      </div>
       <div class="categories">
         <CategoryItem :category="category" v-for="category in categories" :key="category.name" />
       </div>
@@ -19,7 +23,7 @@
 
 <script>
 import Video from "../components/Video";
-import SocketService from '../services/SocketService';
+import SocketService from "../services/SocketService";
 import CategoryItem from "../components/CategoryItem";
 
 export default {
@@ -45,7 +49,7 @@ export default {
         {
           name: "tennis",
           imgUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvxyplOOEpDRPjoGBvcrBLS8TZGEaOwkp1lODiFqCinUuj54x&s"
+            "https://images.unsplash.com/photo-1560012057-4372e14c5085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
         },
         {
           name: "workout",
@@ -75,7 +79,7 @@ export default {
         {
           name: "yoga",
           imgUrl:
-            "http://www.iyengar-yoga.co.il/dyncontent/UserContent/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9C%D7%9B%D7%AA%D7%91%D7%94%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%94%D7%A8%D7%90%D7%A9%D7%99.jpg"
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
           name: "pool",
@@ -94,10 +98,10 @@ export default {
     CategoryItem,
     Video
   },
-async created(){
-    const activities = this.$store.activities
+  async created() {
+    const activities = this.$store.activities;
     const user = this.$store.getters.loggedinUser;
-    if(!user) SocketService.activityConnect(activities, user)
+    if (!user) SocketService.activityConnect(activities, user);
   }
 };
 </script>

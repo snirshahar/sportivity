@@ -12,8 +12,8 @@
 // // COMPONENTS
 @import 'components/ActivityAbout';
 @import 'components/ActivityDetailsBar';
-@import 'components/ActivityDiscussions';
 @import 'components/ActivityFilter';
+@import 'components/ActivityDiscussions';
 @import 'components/ActivityMembers';
 @import 'components/ActivityPhotos';
 @import 'components/ActivityPreview';
@@ -29,6 +29,7 @@
 // PAGES
 // @import 'views/ActivityDetails';
 @import 'views/ActivityList';
+@import 'views/ActivityDetails';
 // @import 'views/EditActivity';
 @import 'views/Home';
 @import 'views/UserProfile';

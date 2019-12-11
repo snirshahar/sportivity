@@ -1,6 +1,8 @@
 .group-container {
   display: flex;
   flex-direction: column;
+  max-width: 1140px;
+  margin: 0 auto
 }
 
 img {
@@ -18,16 +20,21 @@ p {
 
 .details {
   margin: 0;
-  color: white;
   position: relative;
   z-index: 1;
   margin: auto 10px;
+
   .deep-details {
     display: flex;
     flex-direction: column;
+
     p {
       color: white;
     }
+  }
+
+  h1:first-child {
+    color: white;
   }
 }
 
@@ -43,7 +50,8 @@ p {
   justify-content: space-between;
   background-size: cover;
 }
-.img > .img-blur-line {
+
+.img>.img-blur-line {
   position: absolute;
   bottom: 0;
   padding: 20px 0;
@@ -54,11 +62,13 @@ p {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+
   p {
     padding: 3px 0;
   }
 }
-.img > .img-blur-line::before {
+
+.img>.img-blur-line::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -70,7 +80,8 @@ p {
   -webkit-filter: blur(4px);
   filter: blur(4px);
 }
-.img > .img-blur-line::after {
+
+.img>.img-blur-line::after {
   content: "";
   position: absolute;
   top: 0;
@@ -122,4 +133,32 @@ p {
 
 .disabled {
   background: gray;
+}
+
+@media screen and (max-width: 530px) {
+  .img-blur-line {
+    flex-direction: column;
+  }
+
+  .attend {
+    margin: 10px;
+
+    .btn-join, .btn-unjoin {
+      width: 100%;
+    }
+  }
+
+  .container-details-bar {
+    display: none;
+  }
+
+  .activity-details-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .activity-details-section{
+  }
 }

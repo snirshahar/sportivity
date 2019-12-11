@@ -1,6 +1,6 @@
 <template>
   <div class="activity-details-section about-page-container" v-if="activity" id="about">
-    <div class="details">
+    <div class="about-details">
       <h1>About</h1>
       <div class="created-by">
         <h3>Organizer</h3>

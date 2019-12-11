@@ -16,12 +16,12 @@
     border-radius: 50%;
     height: 50px;
   }
-  .details {
+  .about-details {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-  .details div {
+  .about-details div {
     flex-basis: 100px;
   }
   .ml-50 {
@@ -30,7 +30,7 @@
   .text {
     word-break: break-word;
   }
-  .details,
+  .about-details,
   .google-map {
     flex: 1;
   }
@@ -48,5 +48,11 @@
     width: 100%;
     padding: 20px;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .about-page-container .google-map{
+    height: 300px;
   }
 }
