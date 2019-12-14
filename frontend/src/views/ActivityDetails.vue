@@ -1,6 +1,6 @@
 <template>
   <section class="details-container" v-if="activity">
-    <div class="img" :style="{ backgroundImage: `url(${activity.imgUrls[0]})` }">
+    <div class="img-mobile img" :style="{ backgroundImage: `url(${activity.imgUrls[0]})` }">
       <div class="img-blur-line">
         <div class="details">
           <h1>{{activity.title}}</h1>
@@ -20,25 +20,31 @@
           </div>
         </div>
         <div class="attend">
-          <button v-if="isOwner" class="btn-delete" @click="join">Delete this group</button>
+          <button v-if="isOwner" class="btn-delete" @click="join">Delete</button>
           <button
             v-else-if="!joined"
             class="btn-join"
             @click="join"
             :class="{ disabled: isFull }"
-          >Join this group</button>
-          <button v-else class="btn-unjoin" @click="unjoin">Leave this group</button>
+          >Attend</button>
+          <button v-else class="btn-unjoin" @click="unjoin">Leave</button>
         </div>
       </div>
     </div>
-    <div :class="{'container-details-bar': true, sticky: topNavBar}">
-      <ActivityDetailsBar />
+    <div class="imgs-container">
+      <div class="img-hover-zoom img-hover-zoom--xyz img1"><img class="img" :src="activity.imgUrls[0]"/></div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img2"><img class="img" v-if="activity.imgUrls[1]" :src="activity.imgUrls[1]"/></div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img3"><img class="img" v-if="activity.imgUrls[2]" :src="activity.imgUrls[2]"/></div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img4"><img class="img" v-if="activity.imgUrls[3]" :src="activity.imgUrls[3]"/></div>
     </div>
+    <ActivityDetailsBar />
     <div class="group-container">
       <ActivityAbout ref="about" />
-      <ActivityMembers :attendees="activity.attendees" />
-      <ActivityDiscussions />
-      <ActivityPhotos :images="activity.imgUrls" />
+      <div class="members-section">
+        <ActivityMembers :attendees="activity.attendees" />
+        <ActivityDiscussions />
+      </div>
+      <ActivityLocation />
     </div>
   </section>
 </template>
@@ -51,14 +57,13 @@ import ActivityDetailsBar from "../components/ActivityDetailsBar";
 import ActivityAbout from "../components/ActivityAbout";
 import ActivityMembers from "../components/ActivityMembers";
 import ActivityDiscussions from "../components/ActivityDiscussions";
-import ActivityPhotos from "../components/ActivityPhotos";
+import ActivityLocation from "../components/ActivityLocation";
 
 export default {
   data() {
     return {
       activity: null,
       user: null,
-      topNavBar: false,
       joined: false
     };
   },
@@ -68,7 +73,6 @@ export default {
     this.activity = this.$store.getters.currActivity;
     this.user = this.getUser;
     this.joined = this.isJoined;
-    window.addEventListener("scroll", this.handleScroll);
     SocketService.on("add user", user => {
       this.activity.attendees.push({
         _id: user._id,
@@ -99,11 +103,6 @@ export default {
         user: this.user
       });
     },
-    handleScroll(event) {
-      window.pageYOffset > (window.innerHeight * 7.9) / 10
-        ? (this.topNavBar = true)
-        : (this.topNavBar = false);
-    }
   },
   computed: {
     createdAt() {
@@ -143,10 +142,9 @@ export default {
     ActivityAbout,
     ActivityMembers,
     ActivityDiscussions,
-    ActivityPhotos
+    ActivityLocation
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
     SocketService.emit("user unListen activity", {
       activityId: this.activityId
     });

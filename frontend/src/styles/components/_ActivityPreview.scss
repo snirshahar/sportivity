@@ -1,6 +1,6 @@
-.preview-details-container {
-  border-radius: 7px;
+.card-container {
   background-color: #fff;
+  border-radius: 3px;
   outline: 1px;
   cursor: pointer;
   flex: 0 0 260px;
@@ -11,127 +11,68 @@
   position: relative;
   transition: all 0.2s;
   box-shadow: 0px 0px 1px;
-  .ribbon {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    top: 10px;
-    left: 0;
-    background: #2c3e50;
-    position: absolute;
-    p {
-      padding: 4px 10px;
-      color: white;
-    }
-  }
-  p {
-    margin: 0;
-    padding: 0px 3px;
-  }
-  .preview-desc {
-    padding: 5px 10px;
-    display: flex;
-    flex-direction: column;
-    .top{
-      display: flex;
-      justify-content: space-between;
-      .preview-distance{
-        font-size: 0.8rem;
-        margin: auto 0;
-        color: darkgray;
-      }
-    }
-  }
-
-  .preview-title {
-    color: #00355c;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
-  .preview-location {
-    color: rgb(54, 50, 50);
-    font-size: 0.9rem;
-    color: gray;
-    letter-spacing: 0.2px;
-  }
-
-  .preview-top {
-    display: flex;
-    justify-content: space-between;
-
-    .preview-created-by-name {
-      margin-left: 63px;
-      font-weight: bold;
-    }
-
-    p {
-      margin: auto;
-    }
-  }
-
-  .preview-starts {
-    // color: rgb(105, 114, 105);
-    color: gray;
-    font-size: 0.9rem;
-  }
-
-  .preview-image-container {
-    .preview-image {
-      border-top-left-radius: 7px;
-      border-top-right-radius: 7px;
+  .top-container {
+    height: 200px;
+    position: relative;
+    .card-image {
+      border-radius: 3px;
       width: 100%;
       height: 200px;
+      object-fit: cover;
     }
-
-    .left {
-      left: 50%;
-    }
-
-    .wrap {
+    .category {
       position: absolute;
-      top: 170px;
-      left: 10px;
-    }
-
-    .wishlist-heart {
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      font-size: 1.1rem;
-      color: #2c3e50;
-      transition: all 0.2s;
-
-      &:hover {
-        color: rgb(214, 91, 91);
+      bottom: 0;
+      p {
+        background: $clr4;
+        color: white;
+        padding: 5px;
+        font-size: 1.1rem;
       }
     }
-
-    .image-cropper {
-      width: 100px;
-      height: 100px;
-      position: relative;
-      overflow: hidden;
+    .date-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+      background: $clr4;
+      color: white;
       border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-weight: bold;
+      }
+      .month{
+          font-size: 0.75rem;
+      }
     }
   }
-
-  .preview-desc-text {
-    color: gray;
-    margin: 10px 0;
-    font-size: 1rem;
-    height: 5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .preview-info {
+  .bottom-container {
+    flex-direction: column;
     display: flex;
-    margin: 4px 0px;
-  }
-  .red{
-    color: red;
-  }
-  .full{
-    background: #ff6b6b;
+    margin: 0px 20px 0px 20px;
+    justify-content: space-evenly;
+    /* margin: 19px 20px; */
+    height: 175px;
+    .title {
+      font-size: 1.4rem;
+      color: black;
+      flex-basis: 54px;
+    }
+    .location {
+      font-size: 1.1rem;
+      color: $clr4;
+    }
+    .info {
+      display: flex;
+      color: gray;
+      .text-info {
+        margin-right: 20px;
+      }
+    }
   }
 }

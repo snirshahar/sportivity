@@ -42,7 +42,7 @@
             id="description"
             name="description"
             rows="4"
-            v-model="activity.location.description"
+            v-model="activity.description"
           />
         </section>
         <section class="info-details">

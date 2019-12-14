@@ -15,7 +15,7 @@
         <button class="btn-send">Send</button>
       </form>
       <div v-else>
-        <p>
+        <p style="padding: 10px;">
           Please <router-link to="/login">login</router-link> to chat
         </p>
       </div>

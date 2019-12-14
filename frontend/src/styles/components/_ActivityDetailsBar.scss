@@ -17,13 +17,16 @@
     position: fixed;
     top: 0;
     background: white;
-    z-index: 1;
+    z-index: 999;
     width: 100%;
     margin: 0 auto;
   }
   .nav-bar {
     padding: 20px 0;
     display: flex;
+    .attend-bar {
+      flex-basis: 150px;
+    }
   }
 
   .buttons,
@@ -35,6 +38,7 @@
   .nav-button {
     text-decoration: none;
     color: gray;
+    padding: 0;
     margin-right: 30px;
     font-weight: bold;
     cursor: pointer;
@@ -43,7 +47,7 @@
     font-size: 1.1rem;
     transition: all 0.3s;
     &:hover {
-      color: #F13A59;
+      color: #f13a59;
     }
   }
 }
@@ -51,7 +55,31 @@
 .sticky {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 999;
   width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 530px) {
+  .container-details-bar .buttons,
+  .container-details-bar .attend {
+    text-align: center;
+    .nav-button {
+      margin-right: 7px;
+      padding: 6px;
+      font-size: 1rem;
+    }
+  }
+  .attend-bar {
+    display: none;
+  }
+  .nav-bar {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1150px) and (min-width: 531px) {
+  .nav-bar {
+    margin: 0 10px;
+  }
 }

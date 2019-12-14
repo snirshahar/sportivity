@@ -11,12 +11,12 @@ import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch, faBell, faClock, faEnvelope, faInfoCircle, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch, faBell, faClock, faEnvelope, faInfoCircle, faHeart, faHourglassStart } from '@fortawesome/free-solid-svg-icons';
 import scss from './styles/global.scss';
 import { CarouselCard, CarouselCardItem } from 'vue-carousel-card'
 import 'vue-carousel-card/styles/index.css';
 
-library.add([faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch, faBell, faClock, faEnvelope, faInfoCircle, faHeart]);
+library.add([faUser, faMapMarker, faCalendarPlus, faSignInAlt, faSignOutAlt, faUserPlus, faPlus, faSearch, faBell, faClock, faEnvelope, faInfoCircle, faHeart, faHourglassStart]);
 
 Vue.component(CarouselCard.name, CarouselCard)
 Vue.component(CarouselCardItem.name, CarouselCardItem)

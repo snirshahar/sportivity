@@ -1,6 +1,42 @@
 .about-page-container {
-  display: flex;
   text-align: left;
+  .details {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    margin: auto 10px;
+    .created-by-card-name {
+      margin: auto 10px;
+    }
+    .created-by {
+      display: flex;
+      flex-direction: column;
+      flex-basis: auto;
+    }
+    .created-by-card {
+      display: flex;
+    }
+    .flex-column {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      .deep-details {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        p {
+          color: #2c3e50;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    h1:first-child {
+      color: #2c3e50;
+    }
+  }
   p {
     margin: 0;
   }
@@ -30,29 +66,22 @@
   .text {
     word-break: break-word;
   }
-  .about-details,
-  .google-map {
-    flex: 1;
-  }
-  .created-by-card-name {
-    margin: auto 10px;
-  }
-  .created-by {
-    display: flex;
-    flex-direction: column;
-  }
-  .created-by-card {
-    display: flex;
-  }
-  .google-map {
-    width: 100%;
-    padding: 20px;
-    height: 100%;
-  }
 }
 
-@media screen and (max-width: 530px){
-  .about-page-container .google-map{
+@media screen and (max-width: 530px) {
+  .about-page-container .google-map {
     height: 300px;
+  }
+
+  .about-page-container .details .flex-column .deep-details {
+    display: none;
+  }
+
+  .created-by{
+    order: -1;
+    margin-bottom: 20px;
+  }
+  .details {
+    flex-direction: column;
   }
 }
