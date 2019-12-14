@@ -79,7 +79,7 @@ export default {
     },
     day() {
       const time = moment(this.activity.startsAt).format("ll");
-      return time.substring(4, 6);
+      return time.substring(4, time.indexOf(','));
     },
     month(){
       const time = moment(this.activity.startsAt).format("ll");
