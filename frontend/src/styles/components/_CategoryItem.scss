@@ -25,7 +25,7 @@
     }
       background: rgb(204, 42, 42);
       mix-blend-mode: multiply;
-      filter: grayscale(1);
+      filter: grayscale(0.75);
       &:hover{
         transition: filter .3s;
         mix-blend-mode: normal;
