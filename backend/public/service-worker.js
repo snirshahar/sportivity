@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.d81c2e949b9d124b6f3dd4d2b4b949ca.js"
+  "/precache-manifest.6160d154e67ac55a85f752f796a23164.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "sportivity"});
