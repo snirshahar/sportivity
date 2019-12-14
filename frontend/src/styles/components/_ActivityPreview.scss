@@ -70,9 +70,7 @@
     .info {
       display: flex;
       color: gray;
-      .text-info {
-        margin-right: 20px;
-      }
+      justify-content: space-between;
     }
   }
 }
