@@ -7,8 +7,10 @@
     text-align: left;
   }
   .msg-info {
-    font-size: 1.1rem;
     display: flex;
+    p{
+      font-size: 1.1rem;
+    }
   }
   .msg-txt {
     font-size: 0.9rem;

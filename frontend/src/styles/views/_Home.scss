@@ -7,11 +7,11 @@
       background: $clr6;
       color: white;
       text-decoration: none;
-      margin: 15px;
-      padding: 10px 36px;
+      padding: 10px;
+      width: 200px;
+      margin: 0 auto;
       border-radius: 4px;
       transition: all 0.1s;
-      font-weight: bold;
 
       &:hover {
         background: #E81035;
@@ -27,7 +27,8 @@
       width: 100%;
       color: white;
       width: 100%;
-
+      display: flex;
+      flex-direction: column;
       h2 {
         font-size: 4.5rem;
         margin: 5px;
@@ -67,7 +68,6 @@
 
   .home-main-container {
     .home {
-
       .center-text {
         h2 {
           font-size: 3rem;
@@ -89,9 +89,11 @@
 @media screen and (max-width:530px) {
   .home-main-container {
     .home {
+      .btn-explore{
+        width: 100%;
+      }
       .center-text {
-        display: flex;
-        flex-direction: column;
+        padding: 15px;
         h2 {
           font-size: 2rem;
         }

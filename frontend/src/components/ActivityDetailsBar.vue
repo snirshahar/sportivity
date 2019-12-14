@@ -24,6 +24,9 @@
 </template>
 
 <script>
+import SocketService from '../services/SocketService';
+import ActivityService from "../services/ActivityService";
+
 export default {
   data() {
     return {
@@ -69,10 +72,22 @@ export default {
   async created() {
     const id = this.$route.params.id;
     await this.$store.dispatch({ type: "loadCurrActivity", id });
-    this.activity = this.$store.getters.currActivity;
+    this.activity = JSON.parse(JSON.stringify(this.$store.getters.currActivity));
     this.user = this.getUser;
     this.joined = this.isJoined;
     window.addEventListener("scroll", this.handleScroll);
+    SocketService.on("add user", user => {
+      this.activity.attendees.push({
+        _id: user._id,
+        fullName: user.fullName,
+        imgUrl: user.imgUrl
+      });
+    });
+    SocketService.on("remove user", userId => {
+      this.activity.attendees = this.activity.attendees.filter(
+        att => att._id !== userId
+      );
+    });
   },
   methods: {
     scrollToClass(className) {
@@ -90,10 +105,15 @@ export default {
     async join() {
       if (!this.user) return this.$router.push("/login");
       if (this.isFull || this.isJoined) return;
+      const shortUser = {
+        _id: this.user._id,
+        fullName: this.user.fullName,
+        imgUrl: this.user.imgUrl
+      }
       this.joined = true;
       SocketService.emit("user joined", {
         activityId: this.activity._id,
-        user: this.user
+        user: shortUser
       });
     },
     async unjoin() {
