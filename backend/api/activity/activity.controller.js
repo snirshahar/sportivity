@@ -32,8 +32,8 @@ async function addAttendee(req, res) {
 }
 
 async function deleteAttendee(req, res) {
-    const { attendeeId, activity } = req.body;
-    res.send(await activityService.deleteAttendee(activity, attendeeId))
+    const { attendeeId, activityId } = req.body;
+    res.send(await activityService.deleteAttendee(activityId, attendeeId))
 }
 
 module.exports = {

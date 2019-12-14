@@ -26,6 +26,7 @@ function connectSockets(io) {
             socket.leave(activityId)
         })
         socket.on('user joined', async ({ activityId, user }) => {
+            await activityService.addAttendee(activityId, user);
             socket.join(user._id)
             socket.join(activityId)
             socket.activityId = activityId;
@@ -33,6 +34,7 @@ function connectSockets(io) {
         })
         socket.on('user unjoined', async ({ activityId, user }) => {
             const activity = await activityService.getActivity(activityId);
+            await activityService.deleteAttendee(activityId, user._id);
             socket.activityId = activityId;
             io.to(user._id).emit('msg to single user', `You left ${activity.title}`);
             io.in(socket.activityId).emit('remove user', user._id)

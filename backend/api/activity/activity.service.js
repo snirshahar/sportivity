@@ -53,11 +53,8 @@ async function add(activity, owner) {
 }
 
 async function addAttendee(activityId, attendee) {
-    console.log(activityId, attendee)
     attendee._id = ObjectId(attendee._id);
     let activity = await getActivity(activityId);
-
-    console.log('ATTTTTTTTTTT', activity.attendees);
     if (activity.attendees.length === activity.maxAttendees) return 'The activity is full'; // Add a message
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
@@ -70,9 +67,9 @@ async function addAttendee(activityId, attendee) {
     ) 
 }
 
-async function deleteAttendee(activity, attendeeId) {
-    // activity = await getActivity(activity._id);
-    const currAttendees = activity.attendees.filter(att => att._id !== attendeeId);
+async function deleteAttendee(activityId, attendeeId) {
+    activity = await getActivity(activityId);
+    const currAttendees = activity.attendees.filter(att => !attendeeId.includes(att._id));
     currAttendees.forEach(att => att._id = ObjectId(att._id))
     const collection = await dbService.getCollection('activity');
     collection.findOneAndUpdate(
