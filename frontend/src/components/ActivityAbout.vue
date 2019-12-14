@@ -19,7 +19,7 @@
             </p>
             <p>
               <font-awesome-icon :icon="['fa', 'calendar-plus']" />
-              {{this.activity.cycle}}
+              {{cycle}}
             </p>
           </div>
 
@@ -73,6 +73,11 @@ export default {
   computed: {
     starts() {
       return moment(this.activity.startsAt).format("llll");
+    },
+    cycle(){
+      let cycle = this.activity.cycle;
+      const cycleCapitalized = cycle.charAt(0).toUpperCase() + cycle.slice(1);
+      return cycleCapitalized;
     }
   }
 };

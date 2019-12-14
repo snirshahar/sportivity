@@ -19,7 +19,7 @@
             </p>
             <p>
               <font-awesome-icon :icon="['fa', 'calendar-plus']" />
-              {{this.activity.cycle}}
+              {{cycle}}
             </p>
           </div>
         </div>
@@ -151,6 +151,11 @@ export default {
     isOwner() {
       if (!this.user) return false;
       return this.activity.createdBy._id === this.user._id;
+    },
+    cycle(){
+      let cycle = this.activity.cycle;
+      const cycleCapitalized = cycle.charAt(0).toUpperCase() + cycle.slice(1);
+      return cycleCapitalized;
     }
   },
   components: {
