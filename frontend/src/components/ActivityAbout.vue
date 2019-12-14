@@ -10,6 +10,10 @@
               {{activity.location.address}}
             </p>
             <p>
+              <font-awesome-icon :icon="['fa', 'hourglass-start']" />
+              {{starts}}
+            </p>
+            <p>
               <font-awesome-icon :icon="['fa', 'user']" />
               {{activity.attendees.length}}/{{activity.maxAttendees}} Members
             </p>
@@ -39,6 +43,8 @@
 
 <script>
 import SocketService from "../services/SocketService";
+import moment from 'moment';
+
 export default {
   data() {
     return {
@@ -50,7 +56,7 @@ export default {
     const id = this.$route.params.id;
     await this.$store.dispatch({ type: "loadCurrActivity", id });
     this.activity = this.$store.getters.currActivity;
-    
+
     SocketService.on("add user", user => {
       this.activity.attendees.push({
         _id: user._id,
@@ -63,6 +69,11 @@ export default {
         att => att._id !== userId
       );
     });
+  },
+  computed: {
+    starts() {
+      return moment(this.activity.startsAt).format("llll");
+    }
   }
 };
 </script>

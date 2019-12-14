@@ -10,6 +10,10 @@
               {{activity.location.address}}
             </p>
             <p>
+              <font-awesome-icon :icon="['fa', 'hourglass-start']" />
+              {{starts}}
+            </p>
+            <p>
               <font-awesome-icon :icon="['fa', 'user']" />
               {{activity.attendees.length}}/{{activity.maxAttendees}} Members
             </p>
@@ -32,10 +36,18 @@
       </div>
     </div>
     <div class="imgs-container">
-      <div class="img-hover-zoom img-hover-zoom--xyz img1"><img class="img" :src="activity.imgUrls[0]"/></div>
-      <div class="img-hover-zoom img-hover-zoom--xyz img2"><img class="img" v-if="activity.imgUrls[1]" :src="activity.imgUrls[1]"/></div>
-      <div class="img-hover-zoom img-hover-zoom--xyz img3"><img class="img" v-if="activity.imgUrls[2]" :src="activity.imgUrls[2]"/></div>
-      <div class="img-hover-zoom img-hover-zoom--xyz img4"><img class="img" v-if="activity.imgUrls[3]" :src="activity.imgUrls[3]"/></div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img1">
+        <img class="img" :src="activity.imgUrls[0]" />
+      </div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img2">
+        <img class="img" v-if="activity.imgUrls[1]" :src="activity.imgUrls[1]" />
+      </div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img3">
+        <img class="img" v-if="activity.imgUrls[2]" :src="activity.imgUrls[2]" />
+      </div>
+      <div class="img-hover-zoom img-hover-zoom--xyz img4">
+        <img class="img" v-if="activity.imgUrls[3]" :src="activity.imgUrls[3]" />
+      </div>
     </div>
     <ActivityDetailsBar />
     <div class="group-container">
@@ -58,6 +70,7 @@ import ActivityAbout from "../components/ActivityAbout";
 import ActivityMembers from "../components/ActivityMembers";
 import ActivityDiscussions from "../components/ActivityDiscussions";
 import ActivityLocation from "../components/ActivityLocation";
+import moment from 'moment';
 
 export default {
   data() {
@@ -102,9 +115,12 @@ export default {
         activityId: this.activity._id,
         user: this.user
       });
-    },
+    }
   },
   computed: {
+    starts() {
+      return moment(this.activity.startsAt).format('llll');
+    },
     createdAt() {
       return new Date(this.activity.createdAt).toLocaleString("en-us");
     },
